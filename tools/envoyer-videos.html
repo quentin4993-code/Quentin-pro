@@ -1,0 +1,123 @@
+<title>Envoyer mes rushes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+  /* Layout : une colonne étroite façon appli mobile, un gros bouton jaune au centre de l'attention */
+  :root {
+    --bg: #F6F6F2;
+    --card: #FFFFFF;
+    --fg: #121212;
+    --muted: #5C5C55;
+    --line: #E2E2DA;
+    --accent: #FFD60A;
+    --on-accent: #121212;
+    --display: "Montserrat", "Arial Black", system-ui, sans-serif;
+    --body: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101010; --card: #1B1B19; --fg: #F4F4EF; --muted: #A5A59C; --line: #2E2E2A;
+      --accent: #FFD60A; --on-accent: #121212; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101010; --card: #1B1B19; --fg: #F4F4EF; --muted: #A5A59C; --line: #2E2E2A;
+    --accent: #FFD60A; --on-accent: #121212; color-scheme: dark;
+  }
+  body {
+    background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 28px 40px;
+  }
+  main { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+  .tag {
+    align-self: flex-start; font-family: var(--display); font-weight: 900; font-size: 13px; letter-spacing: 1.5px;
+    background: var(--fg); color: var(--bg); padding: 5px 10px; border-radius: 8px;
+  }
+  h1 { font-family: var(--display); font-weight: 900; font-size: clamp(30px, 8vw, 40px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  h1 span { background: var(--accent); color: var(--on-accent); padding: 0 8px; border-radius: 8px; display: inline-block; transform: rotate(-1.5deg); }
+  .lead { margin: 0; color: var(--muted); }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  label { font-family: var(--display); font-weight: 800; font-size: 15px; }
+  .row { display: flex; gap: 10px; align-items: center; }
+  input {
+    font: 600 22px var(--display); width: 100%; min-width: 0; padding: 12px 14px; border-radius: 12px;
+    border: 2px solid var(--line); background: var(--bg); color: var(--fg);
+  }
+  input:focus-visible { outline: none; border-color: var(--accent); }
+  .hint { font-size: 14px; color: var(--muted); margin: 0; }
+  .hint code { font-family: ui-monospace, Menlo, monospace; background: var(--bg); padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); }
+  .go {
+    display: block; text-align: center; text-decoration: none; font-family: var(--display); font-weight: 900; font-size: 20px;
+    background: var(--accent); color: var(--on-accent); padding: 18px; border-radius: 14px; box-shadow: 0 6px 0 #C9A700;
+  }
+  .go:active { transform: translateY(3px); box-shadow: 0 3px 0 #C9A700; }
+  .go:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+  ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
+  ol li::marker { font-family: var(--display); font-weight: 900; }
+  h2 { font-family: var(--display); font-weight: 900; font-size: 18px; margin: 0; }
+  .links { display: flex; flex-direction: column; gap: 8px; }
+  .links a { color: var(--fg); font-weight: 600; }
+  .warn { border-left: 4px solid var(--accent); padding: 4px 0 4px 12px; font-size: 14px; color: var(--muted); margin: 0; }
+  @media (prefers-reduced-motion: reduce) { .go:active { transform: none; } }
+</style>
+
+<main>
+  <div class="tag">PRÉPA 1ER TRAIL · 22 JOURS</div>
+  <h1>Envoyer mes <span>rushes</span></h1>
+  <p class="lead">Le raccourci pour déposer tes vidéos lourdes (jusqu'à 2 Go par fichier) là où Claude peut les récupérer.</p>
+
+  <section class="panel" aria-labelledby="day-label">
+    <label id="day-label" for="day">Jour n° (optionnel)</label>
+    <div class="row">
+      <input id="day" inputmode="numeric" pattern="[0-9]*" placeholder="ex. 4" autocomplete="off">
+    </div>
+    <p class="hint">Nom de l'envoi : <code id="tagName">rushes-…</code></p>
+    <a id="go" class="go" href="https://github.com/quentin4993-code/Quentin-pro/releases/new" target="_blank" rel="noopener">Ouvrir la page d'envoi →</a>
+  </section>
+
+  <section class="panel">
+    <h2>Sur la page GitHub</h2>
+    <ol>
+      <li>Si la page est mal affichée : <strong>« aA » → Demander le site pour ordinateur</strong>.</li>
+      <li>Descends jusqu'à <strong>« Attach binaries… »</strong> et choisis tes vidéos.</li>
+      <li>Attends que chaque fichier ait fini de charger.</li>
+      <li>Touche le bouton vert <strong>Publish release</strong>.</li>
+      <li>Dis à Claude : <strong>« c'est publié, jour X, Y km »</strong>.</li>
+    </ol>
+  </section>
+
+  <p class="warn">Le dépôt est public : les vidéos envoyées sont visibles par tout le monde. Pense à supprimer l'envoi une fois la vidéo montée.</p>
+
+  <div class="links">
+    <a href="https://github.com/quentin4993-code/Quentin-pro/releases" target="_blank" rel="noopener">Voir et supprimer mes envois</a>
+  </div>
+</main>
+
+<script>
+  const base = "https://github.com/quentin4993-code/Quentin-pro/releases/new";
+  const input = document.getElementById("day");
+  const go = document.getElementById("go");
+  const tagName = document.getElementById("tagName");
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function update() {
+    const day = input.value.replace(/\D/g, "");
+    let tag, title;
+    if (day) {
+      tag = "jour-" + day;
+      title = "Jour " + day;
+    } else {
+      // sans numéro : nom unique basé sur la date et l'heure
+      const d = new Date();
+      tag = "rushes-" + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + "-" + pad(d.getHours()) + pad(d.getMinutes());
+      title = "Rushes du " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
+    }
+    tagName.textContent = tag;
+    go.href = base + "?tag=" + encodeURIComponent(tag) + "&title=" + encodeURIComponent(title);
+  }
+  input.addEventListener("input", update);
+  go.addEventListener("click", update);
+  update();
+</script>

@@ -8,6 +8,11 @@
 
 Les vidéos sont trop lourdes pour GitHub classique (25 Mo max). On passe par les **Releases** (jusqu'à 2 Go par fichier).
 
+👉 **Raccourci : https://claude.ai/artifact/RYnegRCEi893sVQPtRhuJx** (page « Envoyer mes rushes », source `tools/envoyer-videos.html`).
+Taper le numéro du jour → gros bouton jaune → la page d'envoi GitHub s'ouvre déjà remplie (nom `jour-X`, ou `rushes-AAAAMMJJ-HHMM` sans numéro).
+
+Sinon, à la main :
+
 1. Ouvrir dans Safari (pas dans l'appli GitHub), en remplaçant `N` par le numéro suivant :
    `https://github.com/quentin4993-code/Quentin-pro/releases/new?tag=rushes-N&title=Rushes%20N`
 2. Si la page s'affiche mal sur iPad/iPhone : « aA » → **Demander le site pour ordinateur**.

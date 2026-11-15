@@ -7,6 +7,8 @@ Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail 
 2. `docs/METHODE.md` — processus complet : envoi des rushes par les Releases GitHub, préparation, transcription, montage, rendu.
 3. `docs/SUIVI.md` — état du projet et historique des demandes.
 
+Raccourci d'envoi des vidéos pour Quentin : https://claude.ai/artifact/RYnegRCEi893sVQPtRhuJx (Releases nommées `jour-X`). Chercher la dernière Release avec l'outil GitHub `list_releases`.
+
 ## Règles essentielles
 - Parler à Quentin en **français**, simplement (il travaille souvent depuis iPad/iPhone).
 - Quentin **prépare** son premier trail (22 jours de prépa) : ne jamais écrire comme s'il le courait (« PRÉPA 1ER TRAIL », pas « MON 1ER TRAIL » seul).
