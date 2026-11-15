@@ -45,6 +45,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | 9 | Enlever la jauge « mi-parcours » du haut (doublon) ; musique nulle → plus motivante ; « fais quelque chose de bien » | V5 : jauge du haut retirée, vraie musique « Raving Energy » (Kevin MacLeod) ; fichiers numérotés par version |
 | 10 | Enregistrer tout ce qu'on s'est dit et ma DA pour les prochaines vidéos | DA, méthode, suivi et `CLAUDE.md` mis à jour |
 | 11 | Photo de couverture TikTok dans le style du hook | 2 couvertures : `out/Couverture-Jour3-Course.jpg` et `out/Couverture-Jour3-Visage.jpg` |
+| 12 | Description TikTok accrocheuse | 3 options dans `docs/DESCRIPTIONS.md` |
+| 13 | « MON 1ER TRAIL » fait croire que je cours le trail, alors que je le **prépare** | Couvertures → « PRÉPA 1ER TRAIL » (V2), descriptions corrigées, règle ajoutée dans la DA et `CLAUDE.md` |
 
 ---
 

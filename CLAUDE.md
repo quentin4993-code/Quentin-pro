@@ -9,6 +9,7 @@ Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail 
 
 ## Règles essentielles
 - Parler à Quentin en **français**, simplement (il travaille souvent depuis iPad/iPhone).
+- Quentin **prépare** son premier trail (22 jours de prépa) : ne jamais écrire comme s'il le courait (« PRÉPA 1ER TRAIL », pas « MON 1ER TRAIL » seul).
 - Style : pro, dynamique, sobre. **Pas de zoom, pas de flash, pas de gros textes « motivation », pas de mots en jaune dans les sous-titres, une seule jauge (la ligne de parcours en bas).**
 - Garder : hook en 3 blocs (blanc / jaune / petite ligne), sous-titres classiques blancs contour noir, compteur « IL RESTE X KM », ligne de parcours, fin « Abonne-toi » + flèche.
 - Musique : vraie musique énergique libre de droits (incompetech.com), jamais de musique synthétisée maison ; rappeler le crédit pour la description TikTok.

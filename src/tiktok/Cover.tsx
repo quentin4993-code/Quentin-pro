@@ -44,7 +44,7 @@ export const Cover: React.FC<CoverProps> = ({ bg, day, highlight, sub, position 
         }}
       >
         <div style={{ ...box, fontSize: 150, color: "black", backgroundColor: "white" }}>{day}</div>
-        <div style={{ ...box, fontSize: 112, color: "black", backgroundColor: ACCENT, transform: "rotate(-2deg)" }}>{highlight}</div>
+        <div style={{ ...box, fontSize: Math.min(112, Math.floor(940 / (highlight.length * 0.7))), color: "black", backgroundColor: ACCENT, transform: "rotate(-2deg)" }}>{highlight}</div>
         {sub && (
           <div
             style={{

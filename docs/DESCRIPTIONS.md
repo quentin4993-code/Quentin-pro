@@ -1,12 +1,13 @@
 # Descriptions TikTok
 
+> ⚠️ Je **prépare** mon premier trail : ne jamais écrire comme si je le courais.
 > Style : courte, accrocheuse, une question pour faire réagir en commentaire, 5–7 hashtags, **crédit musique obligatoire**.
 
 ## Jour 3 / 22
 
 **Option 1 (retenue par défaut)**
 ```
-Jour 3/22 avant mon tout premier trail 🏔️ 10 km de sortie longue… avec les jambes déjà lourdes 😮‍💨
+Jour 3/22 de prépa pour mon tout premier trail 🏔️ 10 km de sortie longue… avec les jambes déjà lourdes 😮‍💨
 Tu crois que je tiens jusqu'au jour 22 ? 👇
 
 #trail #trailrunning #running #course #preparation #objectiftrail #runnerfr
@@ -26,7 +27,7 @@ Musique : "Raving Energy" – Kevin MacLeod (incompetech.com) – CC BY 4.0
 
 **Option 3**
 ```
-Mon premier trail approche… et mes jambes le savent déjà 😅 Jour 3/22 ✅
+Je prépare mon premier trail… et mes jambes le sentent déjà 😅 Jour 3/22 ✅
 C'était quoi ta première course ? 👇
 
 #trail #trailrunning #course #running #preparationtrail #runnerfr

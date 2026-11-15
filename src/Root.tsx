@@ -23,14 +23,14 @@ export const RemotionRoot: React.FC = () => {
         component={Cover}
         width={1080}
         height={1920}
-        defaultProps={{ bg: "covers/jour3-41.3.jpg", day: "JOUR 3 / 22", highlight: "MON 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "bottom" as const }}
+        defaultProps={{ bg: "covers/jour3-41.3.jpg", day: "JOUR 3 / 22", highlight: "PRÉPA 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "bottom" as const }}
       />
       <Still
         id="CoverJour3Visage"
         component={Cover}
         width={1080}
         height={1920}
-        defaultProps={{ bg: "covers/jour3-24.5.jpg", day: "JOUR 3 / 22", highlight: "MON 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "top" as const }}
+        defaultProps={{ bg: "covers/jour3-24.5.jpg", day: "JOUR 3 / 22", highlight: "PRÉPA 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "top" as const }}
       />
       <Composition
         id="HelloWorld"
