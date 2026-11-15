@@ -87,3 +87,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### Couverture Jour 3
 - Composant `src/tiktok/Cover.tsx` + compositions `CoverJour3Course` (image à 41,3 s) et `CoverJour3Visage` (image à 24,5 s).
 - Fichiers : `out/Couverture-Jour3-Course.jpg`, `out/Couverture-Jour3-Visage.jpg`.
+
+### Nettoyage
+- Fichiers de travail supprimés à la demande de Quentin (il a tout enregistré) : rushes téléchargés (`public/videos/`), images de couverture (`public/covers/`), rendus (`out/`), fichiers temporaires.
+- Gardé : DA, méthode, suivi, descriptions, code du montage, police et musique.
+- Pour refaire un rendu du Jour 3 : retélécharger `rushes-1` depuis les Releases (si elle existe encore) puis relancer `scripts/prepare_rush.sh` (voir `METHODE.md`).
