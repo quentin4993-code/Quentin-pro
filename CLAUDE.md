@@ -12,6 +12,6 @@ Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail 
 - Style : pro, dynamique, sobre. **Pas de zoom, pas de flash, pas de gros textes « motivation », pas de mots en jaune dans les sous-titres, une seule jauge (la ligne de parcours en bas).**
 - Garder : hook en 3 blocs (blanc / jaune / petite ligne), sous-titres classiques blancs contour noir, compteur « IL RESTE X KM », ligne de parcours, fin « Abonne-toi » + flèche.
 - Musique : vraie musique énergique libre de droits (incompetech.com), jamais de musique synthétisée maison ; rappeler le crédit pour la description TikTok.
-- Pour chaque vidéo, proposer aussi 2 couvertures TikTok (`src/tiktok/Cover.tsx`) : plan d'action + gros plan visage.
+- Pour chaque vidéo, proposer aussi une description accrocheuse (3 options, voir `docs/DESCRIPTIONS.md`) et 2 couvertures TikTok (`src/tiktok/Cover.tsx`) : plan d'action + gros plan visage.
 - Livrer chaque version avec un **nom de fichier numéroté** (`out/JourX-TikTok-VN.mp4`).
 - Modèle de montage : `src/tiktok/rush1.ts` (Jour 3). Mettre à jour `docs/SUIVI.md` après chaque version.
