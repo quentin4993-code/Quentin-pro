@@ -68,6 +68,16 @@ ffmpeg -i out/jourX-tiktok.mp4 -c:v libx264 -preset slow -crf 23 -maxrate 7M -bu
 - **Nom de fichier avec numéro de version** (`-V1`, `-V2`…), sinon l'appli peut montrer une ancienne version.
 - Envoyer le fichier à Quentin + rappeler le **crédit musique** pour la description.
 
+## 5 bis. Couverture TikTok (Claude)
+
+```bash
+# extraire l'image de fond (choisir un moment : course ou gros plan visage)
+ffmpeg -ss <seconde> -i public/videos/rushN.mov -frames:v 1 -vf scale=1080:1920:flags=lanczos -q:v 2 public/covers/jourX-<seconde>.jpg
+# déclarer un <Still> CoverJourX… dans src/Root.tsx (props : bg, day, highlight, sub, position "top"/"bottom")
+npx remotion still CoverJourXCourse out/Couverture-JourX-Course.png
+```
+Convertir en JPG et envoyer les 2 options à Quentin.
+
 ## 6. Clôture
 
 - Mettre à jour [SUIVI.md](SUIVI.md) (statut + journal) et [DA.md](DA.md) si un nouveau retour change le style.

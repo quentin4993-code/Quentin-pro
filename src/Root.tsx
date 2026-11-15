@@ -1,8 +1,9 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { TikTokEdit } from "./tiktok/TikTokEdit";
 import { rush1 } from "./tiktok/rush1";
 import { FPS, totalFrames } from "./tiktok/types";
+import { Cover } from "./tiktok/Cover";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -15,6 +16,21 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{ edit: rush1, music: "music/raving-energy.mp3" }}
+      />
+      {/* Couvertures TikTok (images fixes) */}
+      <Still
+        id="CoverJour3Course"
+        component={Cover}
+        width={1080}
+        height={1920}
+        defaultProps={{ bg: "covers/jour3-41.3.jpg", day: "JOUR 3 / 22", highlight: "MON 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "bottom" as const }}
+      />
+      <Still
+        id="CoverJour3Visage"
+        component={Cover}
+        width={1080}
+        height={1920}
+        defaultProps={{ bg: "covers/jour3-24.5.jpg", day: "JOUR 3 / 22", highlight: "MON 1ER TRAIL", sub: "10 km · déjà mal aux jambes…", position: "top" as const }}
       />
       <Composition
         id="HelloWorld"

@@ -69,6 +69,12 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 - Bouton **jaune** « Abonne-toi pour suivre les 22 jours », qui pulse, + **flèche** blanche qui rebondit.
 - La ligne de parcours s'efface juste avant.
 
+### Couverture TikTok ✅
+- Image fixe 1080×1920 tirée de la vidéo (`src/tiktok/Cover.tsx`, compositions `CoverJourX…`).
+- Même style que le hook : bloc **blanc** « JOUR X / 22 » (~150 px), bloc **jaune** « MON 1ER TRAIL » penché, petite ligne sur fond noir (distance + accroche).
+- Texte placé là où il ne cache pas le visage (en haut sur le ciel, ou en bas), toujours dans la zone centrale 3:4 visible sur la grille du profil (y 240–1680).
+- Proposer 2 options : un **plan d'action** (course) et un **gros plan visage**.
+
 ---
 
 ## 5. Montage

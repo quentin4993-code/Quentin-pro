@@ -44,6 +44,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | 8 | Trop d'écritures en jaune ; enlever « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN » | V4 : plus de mots en jaune ni de gros textes sur les paysages (et « C'EST PARTI ») |
 | 9 | Enlever la jauge « mi-parcours » du haut (doublon) ; musique nulle → plus motivante ; « fais quelque chose de bien » | V5 : jauge du haut retirée, vraie musique « Raving Energy » (Kevin MacLeod) ; fichiers numérotés par version |
 | 10 | Enregistrer tout ce qu'on s'est dit et ma DA pour les prochaines vidéos | DA, méthode, suivi et `CLAUDE.md` mis à jour |
+| 11 | Photo de couverture TikTok dans le style du hook | 2 couvertures : `out/Couverture-Jour3-Course.jpg` et `out/Couverture-Jour3-Visage.jpg` |
 
 ---
 
@@ -80,3 +81,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - `docs/DA.md` réécrit avec tous les choix validés et la liste de ce qu'il ne faut plus faire.
 - `docs/METHODE.md` réécrit avec le processus complet (envoi → préparation → transcription → montage → rendu → livraison).
 - `CLAUDE.md` ajouté à la racine pour que les prochaines sessions appliquent la DA automatiquement.
+
+### Couverture Jour 3
+- Composant `src/tiktok/Cover.tsx` + compositions `CoverJour3Course` (image à 41,3 s) et `CoverJour3Visage` (image à 24,5 s).
+- Fichiers : `out/Couverture-Jour3-Course.jpg`, `out/Couverture-Jour3-Visage.jpg`.
