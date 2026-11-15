@@ -14,8 +14,8 @@ import { ACCENT, fontFamily } from "./style";
 import { Counter, Progress, shakeOffset, Slam } from "./Animations";
 import { Circuit } from "./Circuit";
 
-const MUSIC_TALK = 0.09; // musique sous la voix
-const MUSIC_BROLL = 0.4; // musique sur les paysages
+const MUSIC_TALK = 0.13; // musique sous la voix
+const MUSIC_BROLL = 0.6; // musique sur les paysages
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // ---------- Un plan vidéo (sans zoom) ----------

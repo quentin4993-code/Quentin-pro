@@ -18,7 +18,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 | ID composition | Sujet | Format | Durée | Statut | Notes |
 |---|---|---|---|---|---|
-| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | ✅ V4 validée | Source : `rushes-1` |
+| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | 🟡 V5 | Source : `rushes-1` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | À supprimer plus tard |
 
 ## Prochaines étapes
@@ -57,3 +57,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### 2026-11-15 (V4) — retours de Quentin
 - Retiré : mots-clés en jaune dans les sous-titres et gros textes sur les paysages (« C'EST PARTI », « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN ») : jugés « trop enfant ».
 - Gardé : hook, compteur 10 KM, carte mi-parcours, ligne de parcours, fin.
+
+### 2026-11-15 (V5) — retours de Quentin
+- Confirmé : aucun gros texte sur les paysages (« C'EST PARTI », « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN »).
+- Retiré : carte « MI-PARCOURS » en haut (doublon avec la ligne de parcours du bas).
+- Nouvelle musique : « Raving Energy » – Kevin MacLeod (incompetech.com), CC BY 4.0, passage 1:11 → 1:55. **Crédit obligatoire dans la description TikTok** (voir `public/music/CREDITS.md`).
+- Chaque version est désormais exportée avec son numéro (`out/Jour3-TikTok-V5.mp4`) pour éviter de revoir une ancienne version en cache.

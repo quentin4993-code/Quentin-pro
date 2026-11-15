@@ -58,7 +58,6 @@ export const rush1: VideoEdit = {
   // Animations (at = seconde dans la source, dur = durée à l'écran)
   callouts: [
     { type: "counter", at: 5.3, dur: 1.5, value: 10, unit: "KM", label: "IL RESTE" },
-    { type: "progress", at: 21.5, dur: 1.9, done: 5, total: 10, unit: "KM" },
   ],
   // Ligne de parcours en bas : 0 km au début, 5 km à mi-parcours, 10 km au récap Strava
   route: {

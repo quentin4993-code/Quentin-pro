@@ -14,7 +14,7 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1080}
         height={1920}
-        defaultProps={{ edit: rush1, music: "music/run-beat.mp3" }}
+        defaultProps={{ edit: rush1, music: "music/raving-energy.mp3" }}
       />
       <Composition
         id="HelloWorld"

@@ -38,6 +38,8 @@ Polices Google chargeables via le paquet `@remotion/google-fonts`.
 - **Rythme** : une scène toutes les 3 à 5 s en moyenne.
 
 ## Son
+- Musique validée en cours de test : électro énergique (« Raving Energy », Kevin MacLeod, CC BY 4.0) — basse sous la voix, forte sur les paysages.
+- Musiques libres : incompetech.com (créditer l'auteur dans la description).
 - **Musique** : _style, volume_
 - **Effets sonores** : _oui / non, lesquels_
 - **Voix off** : _oui / non_
@@ -50,7 +52,7 @@ Polices Google chargeables via le paquet `@remotion/google-fonts`.
 - Hook en blocs blanc + jaune `#FFD60A`, police Montserrat Black.
 - Sous-titres classiques blancs contour noir, **sans mots en jaune**.
 - Coupes nettes et fondus courts, **pas de zoom ni de flash**.
-- Ligne de parcours départ → arrivée en bas.
+- Ligne de parcours départ → arrivée en bas (une seule jauge, pas de doublon en haut).
 - Fin : bouton « Abonne-toi » jaune + flèche.
 
 ## À éviter
