@@ -18,7 +18,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 | ID composition | Sujet | Format | Durée | Statut | Notes |
 |---|---|---|---|---|---|
-| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | 🟡 V3 | Source : `rushes-1` |
+| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | ✅ V4 validée | Source : `rushes-1` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | À supprimer plus tard |
 
 ## Prochaines étapes
@@ -53,3 +53,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Plans de paysage rallongés (1,5 à 3,5 s), fondus courts de 6 images entre eux, coupes franches sur le face caméra.
 - Nouvelle ligne de parcours en bas (`src/tiktok/Circuit.tsx`) : départ → arrivée, point qui avance de 0 à 10 km, drapeau validé à l'arrivée. Réglage dans `route` de `src/tiktok/rush1.ts`.
 - Barre de progression du haut retirée (remplacée par la ligne de parcours).
+
+### 2026-11-15 (V4) — retours de Quentin
+- Retiré : mots-clés en jaune dans les sous-titres et gros textes sur les paysages (« C'EST PARTI », « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN ») : jugés « trop enfant ».
+- Gardé : hook, compteur 10 KM, carte mi-parcours, ligne de parcours, fin.
