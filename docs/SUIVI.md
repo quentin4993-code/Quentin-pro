@@ -9,7 +9,8 @@
 | Installation Remotion | ✅ Fait (v4.0.543) |
 | Composition de test `HelloWorld` | ✅ Fait |
 | Direction artistique | 🟡 À définir — voir [DA.md](DA.md) |
-| Première vraie vidéo | ⬜ À faire |
+| Envoi des rushes (Releases GitHub) | ✅ Fait — `rushes-1` |
+| Première vraie vidéo | 🟡 En cours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -31,3 +32,5 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Installation de Remotion, React et TypeScript.
 - Création de la composition `HelloWorld` et rendu de test réussi.
 - Création des fichiers `SUIVI.md`, `METHODE.md` et `DA.md`.
+- Rushes envoyés via les Releases GitHub (tag `rushes-1`) : `rush1.mov`, 51 s, vertical 2160×3840, vlog course à pied « JOUR 3/22 ».
+- Les vidéos lourdes ne sont pas versionnées dans git : elles sont stockées dans les Releases et téléchargées dans `public/videos/`.

@@ -1,2 +1,4 @@
 node_modules
 out
+public/videos/*.mov
+public/videos/*.mp4
