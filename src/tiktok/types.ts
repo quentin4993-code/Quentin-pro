@@ -22,6 +22,8 @@ export type VideoEdit = {
   clips: Clip[];
   subtitles: Subtitle[];
   callouts?: Callout[];
+  // Ligne de parcours : points de repère (seconde source -> km parcourus)
+  route?: { totalKm: number; checkpoints: { at: number; km: number }[] };
 };
 
 export const FPS = 30;

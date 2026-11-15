@@ -19,7 +19,7 @@ export const Slam: React.FC<{ words: string[]; frames: number }> = ({ words, fra
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: exit }}>
       {words.map((w, i) => {
         const start = i * step;
-        const s = spring({ frame: frame - start, fps, config: { damping: 9, stiffness: 260, mass: 0.6 } });
+        const s = spring({ frame: frame - start, fps, config: { damping: 14, stiffness: 220 } });
         const visible = frame >= start;
         const isLast = i === words.length - 1;
         return (
@@ -28,14 +28,14 @@ export const Slam: React.FC<{ words: string[]; frames: number }> = ({ words, fra
             style={{
               fontFamily,
               fontWeight: 900,
-              fontSize: isLast ? 150 : 110,
+              fontSize: Math.min(isLast ? 150 : 110, Math.floor(960 / (w.length * 0.74))),
               lineHeight: 1,
               color: isLast ? ACCENT : "white",
               WebkitTextStroke: "12px black",
               paintOrder: "stroke fill",
               textShadow: "0 10px 30px rgba(0,0,0,0.5)",
               opacity: visible ? 1 : 0,
-              transform: `scale(${interpolate(s, [0, 1], [2.4, 1])}) rotate(${(i % 2 ? 3 : -3) * (1 - s)}deg)`,
+              transform: `scale(${interpolate(s, [0, 1], [1.5, 1])}) translateY(${interpolate(s, [0, 1], [30, 0])}px)`,
               marginTop: 6,
             }}
           >

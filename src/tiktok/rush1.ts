@@ -11,27 +11,25 @@ export const rush1: VideoEdit = {
   },
   cta: "Abonne-toi pour suivre les 22 jours",
   clips: [
-    // Face caméra 1
-    { in: 0.0, out: 6.8, kind: "talk", zoom: 1 },
-    { in: 6.83, out: 8.92, kind: "talk", zoom: 1.15 },
-    { in: 10.2, out: 11.95, kind: "talk", zoom: 1 },
+    // Face caméra 1 (coupes franches sur les pauses)
+    { in: 0.0, out: 6.8, kind: "talk" },
+    { in: 6.83, out: 8.92, kind: "talk" },
+    { in: 10.2, out: 11.9, kind: "talk" },
     // Paysages 1
-    { in: 11.6, out: 12.6, kind: "broll" },
-    { in: 13.0, out: 13.9, kind: "broll" },
-    { in: 14.5, out: 15.7, kind: "broll" },
-    { in: 17.3, out: 18.3, kind: "broll" },
-    { in: 19.0, out: 20.0, kind: "broll" },
+    { in: 11.9, out: 12.8, kind: "broll" }, // montre
+    { in: 12.85, out: 14.3, kind: "broll" }, // fleurs
+    { in: 14.4, out: 16.5, kind: "broll" }, // pieds sur le sentier
+    { in: 17.2, out: 20.05, kind: "broll" }, // chemin puis la mer
     // Face caméra 2
-    { in: 20.95, out: 23.4, kind: "talk", zoom: 1 },
-    { in: 23.4, out: 28.85, kind: "talk", zoom: 1.15 },
-    { in: 29.78, out: 32.85, kind: "talk", zoom: 1 },
+    { in: 20.95, out: 23.4, kind: "talk" },
+    { in: 23.4, out: 28.85, kind: "talk" },
+    { in: 29.78, out: 32.85, kind: "talk" },
     // Paysages 2
-    { in: 33.3, out: 34.5, kind: "broll" },
-    { in: 35.0, out: 36.3, kind: "broll" },
-    { in: 37.2, out: 38.7, kind: "broll" },
-    { in: 39.3, out: 40.5, kind: "broll" },
-    { in: 41.0, out: 42.8, kind: "broll" },
-    { in: 44.0, out: 45.3, kind: "broll" },
+    { in: 33.25, out: 34.65, kind: "broll" }, // herbes hautes
+    { in: 35.4, out: 38.9, kind: "broll" }, // rochers puis la côte
+    { in: 39.25, out: 40.65, kind: "broll" }, // chemin
+    { in: 40.75, out: 43.65, kind: "broll" }, // course face caméra
+    { in: 43.75, out: 46.0, kind: "broll" }, // vue mer de dos
     // Récap Strava
     { in: 48.1, out: 51.15, kind: "end" },
   ],
@@ -60,12 +58,19 @@ export const rush1: VideoEdit = {
   // Animations (at = seconde dans la source, dur = durée à l'écran)
   callouts: [
     { type: "counter", at: 5.3, dur: 1.5, value: 10, unit: "KM", label: "IL RESTE" },
-    { type: "shake", at: 7.7, dur: 0.4 },
-    { type: "shake", at: 11.12, dur: 0.5 },
-    { type: "slam", at: 11.97, dur: 1.7, words: ["C'EST", "PARTI"] },
-    { type: "slam", at: 17.3, dur: 1.9, words: ["CAP SUR", "L'OCÉAN"] },
+    { type: "slam", at: 12.0, dur: 1.8, words: ["C'EST", "PARTI"] },
+    { type: "slam", at: 17.6, dur: 2.0, words: ["CAP SUR", "L'OCÉAN"] },
     { type: "progress", at: 21.5, dur: 1.9, done: 5, total: 10, unit: "KM" },
-    { type: "slam", at: 33.3, dur: 2.0, words: ["LES 5", "DERNIERS KM"] },
-    { type: "slam", at: 39.3, dur: 2.0, words: ["ON NE", "LÂCHE", "RIEN"] },
+    { type: "slam", at: 33.4, dur: 2.0, words: ["LES 5", "DERNIERS KM"] },
+    { type: "slam", at: 40.9, dur: 2.0, words: ["ON NE", "LÂCHE", "RIEN"] },
   ],
+  // Ligne de parcours en bas : 0 km au début, 5 km à mi-parcours, 10 km au récap Strava
+  route: {
+    totalKm: 10,
+    checkpoints: [
+      { at: 3.3, km: 0 },
+      { at: 21.5, km: 5 },
+      { at: 48.1, km: 10 },
+    ],
+  },
 };

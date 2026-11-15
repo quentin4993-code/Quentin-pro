@@ -12,46 +12,27 @@ import {
 import { f, placeClips, PlacedClip, toOutputFrame, VideoEdit } from "./types";
 import { ACCENT, fontFamily } from "./style";
 import { Counter, Progress, shakeOffset, Slam } from "./Animations";
+import { Circuit } from "./Circuit";
 
 const MUSIC_TALK = 0.09; // musique sous la voix
 const MUSIC_BROLL = 0.4; // musique sur les paysages
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-// ---------- Un plan vidéo, avec transition d'entrée ----------
-const ClipView: React.FC<{ clip: PlacedClip; prev?: PlacedClip; src: string; index: number }> = ({ clip, prev, src, index }) => {
+// ---------- Un plan vidéo (sans zoom) ----------
+// Les plans de paysage entrent en fondu court par-dessus le plan précédent.
+const XF = 6; // durée du fondu en images
+
+const ClipView: React.FC<{ clip: PlacedClip; src: string; fadeIn: boolean; extend: number }> = ({ clip, src, fadeIn, extend }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  let scale: number;
-  if (clip.kind === "talk") {
-    const base = clip.zoom ?? 1;
-    scale = base * interpolate(frame, [0, clip.frames], [1, 1.04]);
-  } else {
-    // paysages : zoom avant ou arrière alterné (Ken Burns)
-    scale = interpolate(frame, [0, clip.frames], index % 2 === 0 ? [1.08, 1.18] : [1.18, 1.08]);
-  }
-
-  // Transition « whip zoom » : flou + zoom + légère rotation qui se résorbent
-  const changesScene = !prev || prev.kind !== clip.kind || clip.kind !== "talk";
-  const t = spring({ frame, fps, config: { damping: 200 }, durationInFrames: changesScene ? 7 : 5 });
-  const whipScale = interpolate(t, [0, 1], [changesScene ? 1.35 : 1.06, 1]);
-  const blur = changesScene ? interpolate(t, [0, 1], [22, 0]) : 0;
-  const rot = changesScene ? interpolate(t, [0, 1], [index % 2 ? 4 : -4, 0]) : 0;
-
+  const opacity = fadeIn ? interpolate(frame, [0, XF], [0, 1], clamp) : 1;
   return (
-    <AbsoluteFill style={{ overflow: "hidden", backgroundColor: "black" }}>
+    <AbsoluteFill style={{ backgroundColor: "black", opacity }}>
       <OffthreadVideo
         src={staticFile(src)}
         trimBefore={f(clip.in)}
-        trimAfter={f(clip.out)}
-        volume={clip.kind === "talk" ? 1 : 0.2}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          transform: `scale(${scale * whipScale}) rotate(${rot}deg)`,
-          filter: blur > 0.5 ? `blur(${blur}px)` : undefined,
-        }}
+        trimAfter={f(clip.out) + extend}
+        volume={(fr) => (clip.kind === "talk" ? 1 : 0.2) * (fr >= clip.frames ? 0 : 1)}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
     </AbsoluteFill>
   );
@@ -142,7 +123,7 @@ const SubtitleLine: React.FC<{ text: string; frames: number }> = ({ text, frames
   const out = interpolate(frame, [frames - 2, frames], [1, 0], clamp);
   const parts = text.split("*");
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 520 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 590 }}>
       <div
         style={{
           maxWidth: 920,
@@ -161,7 +142,7 @@ const SubtitleLine: React.FC<{ text: string; frames: number }> = ({ text, frames
       >
         {parts.map((p, i) =>
           i % 2 === 1 ? (
-            <span key={i} style={{ color: ACCENT, display: "inline-block", margin: "0 0.2em", transform: `scale(${interpolate(hl, [0, 1], [1.5, 1.08])}) rotate(-2deg)` }}>
+            <span key={i} style={{ color: ACCENT, display: "inline-block", margin: "0 0.06em", transform: `scale(${interpolate(hl, [0, 1], [1.5, 1.08])}) rotate(-2deg)` }}>
               {p}
             </span>
           ) : (
@@ -169,17 +150,6 @@ const SubtitleLine: React.FC<{ text: string; frames: number }> = ({ text, frames
           ),
         )}
       </div>
-    </AbsoluteFill>
-  );
-};
-
-// ---------- Barre de progression ----------
-const ProgressBar: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
-  return (
-    <AbsoluteFill>
-      <div style={{ position: "absolute", top: 0, left: 0, height: 10, width: `${(frame / durationInFrames) * 100}%`, backgroundColor: ACCENT }} />
     </AbsoluteFill>
   );
 };
@@ -244,7 +214,14 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
     .filter((x) => x.c.type === "shake")
     .map((x) => shakeOffset(frame, x.from, x.frames))
     .reduce((a, b) => ({ x: a.x + b.x, y: a.y + b.y, r: a.r + b.r }), { x: 0, y: 0, r: 0 });
-  const shaking = shake.x !== 0 || shake.y !== 0;
+
+  // progression sur la ligne de parcours (interpolée entre les points de repère)
+  const cps = (edit.route?.checkpoints ?? []).flatMap((cp) => {
+    const fr = toOutputFrame(clips, cp.at);
+    return fr === null ? [] : [{ fr, km: cp.km }];
+  });
+  const routeKm = cps.length >= 2 ? interpolate(frame, cps.map((c) => c.fr), cps.map((c) => c.km), clamp) : 0;
+  const finishFrame = cps.length ? cps[cps.length - 1].fr : 0;
 
   // volume de la musique : bas sous la voix, fort sur les paysages
   const musicVolume = (fr: number) => {
@@ -260,12 +237,19 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
 
   return (
     <AbsoluteFill style={{ backgroundColor: "black" }}>
-      <AbsoluteFill style={{ transform: `translate(${shake.x}px, ${shake.y}px) rotate(${shake.r}deg) scale(${shaking ? 1.04 : 1})` }}>
-        {clips.map((c, i) => (
-          <Sequence key={i} from={c.from} durationInFrames={c.frames} premountFor={30}>
-            <ClipView clip={c} prev={clips[i - 1]} src={edit.src} index={i} />
-          </Sequence>
-        ))}
+      <AbsoluteFill style={{ transform: `translate(${shake.x}px, ${shake.y}px) rotate(${shake.r}deg)` }}>
+        {clips.map((c, i) => {
+          const next = clips[i + 1];
+          // le plan continue sous le suivant pendant son fondu d'entrée
+          const extend = next && next.kind === "broll" ? XF : 0;
+          const prev = clips[i - 1];
+          const fadeIn = c.kind === "broll" && !!prev;
+          return (
+            <Sequence key={i} from={c.from} durationInFrames={c.frames + extend} premountFor={30}>
+              <ClipView clip={c} src={edit.src} fadeIn={fadeIn} extend={extend} />
+            </Sequence>
+          );
+        })}
       </AbsoluteFill>
 
       {edit.subtitles.map((s, i) => {
@@ -295,12 +279,20 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
       </Sequence>
 
       {edit.cta && (
-        <Sequence from={last.from + 10} durationInFrames={last.frames - 10}>
+        <Sequence from={last.from + 18} durationInFrames={last.frames - 18}>
           <Cta text={edit.cta} />
         </Sequence>
       )}
 
-      <ProgressBar />
+      {edit.route && (
+        <Circuit
+          progress={routeKm / edit.route.totalKm}
+          km={routeKm}
+          totalKm={edit.route.totalKm}
+          finishFrame={finishFrame}
+          hideFrom={last.from + 10}
+        />
+      )}
       <Audio src={staticFile(music)} volume={musicVolume} />
     </AbsoluteFill>
   );

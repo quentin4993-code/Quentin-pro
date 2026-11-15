@@ -18,7 +18,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 | ID composition | Sujet | Format | Durée | Statut | Notes |
 |---|---|---|---|---|---|
-| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 38 s | 🟡 V2 | Source : `rushes-1` |
+| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | 🟡 V3 | Source : `rushes-1` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | À supprimer plus tard |
 
 ## Prochaines étapes
@@ -47,3 +47,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Texte « JOUR 3/22 » incrusté d'origine effacé (`scripts/prepare_rush.sh`, option `DELOGO`) et caché sous le hook.
 - Animations ajoutées : transitions flou/zoom, hook qui claque avec secousse, mots-clés des sous-titres en jaune, compteur « IL RESTE 10 KM », jauge « MI-PARCOURS 5/10 KM », gros textes sur les paysages, secousses sur « mal » et « au pire », flèche animée sur l'appel à s'abonner.
 - Les animations se règlent dans `src/tiktok/rush1.ts` (liste `callouts`).
+
+### 2026-11-15 (V3) — retours de Quentin
+- Retiré : zooms (transitions, face caméra, paysages), flashs/flous et secousses de l'image. Gardé : hook et fin (validés).
+- Plans de paysage rallongés (1,5 à 3,5 s), fondus courts de 6 images entre eux, coupes franches sur le face caméra.
+- Nouvelle ligne de parcours en bas (`src/tiktok/Circuit.tsx`) : départ → arrivée, point qui avance de 0 à 10 km, drapeau validé à l'arrivée. Réglage dans `route` de `src/tiktok/rush1.ts`.
+- Barre de progression du haut retirée (remplacée par la ligne de parcours).

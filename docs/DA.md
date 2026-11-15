@@ -46,5 +46,14 @@ Polices Google chargeables via le paquet `@remotion/google-fonts`.
 - Fichiers dans `public/brand/`
 - Règles d'usage : _taille minimale, position, fond_
 
+## Retenu pour les vlogs TikTok (validé)
+- Hook en blocs blanc + jaune `#FFD60A`, police Montserrat Black.
+- Sous-titres blancs contour noir, mots-clés en jaune.
+- Coupes nettes et fondus courts, **pas de zoom ni de flash**.
+- Ligne de parcours départ → arrivée en bas.
+- Fin : bouton « Abonne-toi » jaune + flèche.
+
 ## À éviter
+- Zooms et flashs répétés (rendu « bâclé »).
+- Plans trop courts (moins de 1,5 s).
 - _ex. plus de 3 couleurs à l'écran, textes trop longs, polices fantaisie_
