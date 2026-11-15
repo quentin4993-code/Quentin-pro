@@ -6,60 +6,77 @@
 
 | Élément | Statut |
 |---|---|
-| Installation Remotion | ✅ Fait (v4.0.543) |
-| Composition de test `HelloWorld` | ✅ Fait |
-| Direction artistique | 🟡 À définir — voir [DA.md](DA.md) |
-| Envoi des rushes (Releases GitHub) | ✅ Fait — `rushes-1` |
-| Première vraie vidéo (`Jour3`) | ✅ Version 1 rendue — en attente de retours |
+| Installation Remotion | ✅ v4.0.543 |
+| Méthode d'envoi des vidéos lourdes (Releases GitHub) | ✅ Validée |
+| Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
+| Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
+| Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
+| Vidéo suivante | ⬜ En attente des rushes (`rushes-2`) |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 ## Vidéos
 
-| ID composition | Sujet | Format | Durée | Statut | Notes |
-|---|---|---|---|---|---|
-| `Jour3` | Vlog course « Jour 3/22 » : hook, sous-titres, musique, montage dynamique | 1080×1920 · 30 fps | 43 s | 🟡 V5 | Source : `rushes-1` |
-| `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | À supprimer plus tard |
+| ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
+|---|---|---|---|---|---|---|
+| `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
+| `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
 
-- [ ] Remplir la direction artistique (couleurs, polices, ton)
-- [ ] Choisir le sujet de la première vidéo
-- [ ] Écrire le script / storyboard
+- [ ] Recevoir les rushes du jour suivant (`rushes-2`) avec le numéro du jour et la distance
+- [ ] Monter en suivant [METHODE.md](METHODE.md) et [DA.md](DA.md)
+- [ ] (Option) Faire une version « modèle » réutilisable si la série garde la même structure
+
+---
+
+## Historique des demandes de Quentin
+
+| # | Demande | Ce qui a été fait |
+|---|---|---|
+| 1 | Installer Remotion | Projet Remotion + React + TypeScript, rendu de test |
+| 2 | Créer les fichiers suivi, méthode, DA | `docs/SUIVI.md`, `docs/METHODE.md`, `docs/DA.md` |
+| 3 | Pouvoir m'envoyer des vidéos lourdes | Dossier `public/videos/` (limite 25 Mo) puis **Releases GitHub** (2 Go) avec lien pré-rempli |
+| 4 | Peut-on travailler sur iPad / téléphone ? | Non en direct : seulement sur ordinateur (Claude Desktop). Sur iPad → Releases |
+| 5 | Première vidéo : hook écrit, sous-titres classiques, musique adaptée, vidéo dynamique qui donne envie de rester | V1 : transcription Whisper, hook, sous-titres, musique, coupes, appel à s'abonner |
+| 6 | Ajouter des animations + enlever le « JOUR 3/22 » d'origine (répétition) | V2 : texte d'origine effacé, animations ajoutées |
+| 7 | Trop de zooms et de flashs, plans trop courts (« bâclé ») ; ajouter une ligne de circuit en bas départ → arrivée ; hook et fin « super cool » | V3 : zooms/flashs/secousses retirés, plans de 1,5–3,5 s avec fondus, **ligne de parcours** |
+| 8 | Trop d'écritures en jaune ; enlever « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN » | V4 : plus de mots en jaune ni de gros textes sur les paysages (et « C'EST PARTI ») |
+| 9 | Enlever la jauge « mi-parcours » du haut (doublon) ; musique nulle → plus motivante ; « fais quelque chose de bien » | V5 : jauge du haut retirée, vraie musique « Raving Energy » (Kevin MacLeod) ; fichiers numérotés par version |
+| 10 | Enregistrer tout ce qu'on s'est dit et ma DA pour les prochaines vidéos | DA, méthode, suivi et `CLAUDE.md` mis à jour |
+
+---
 
 ## Journal
 
-### 2026-11-15
-- Installation de Remotion, React et TypeScript.
-- Création de la composition `HelloWorld` et rendu de test réussi.
-- Création des fichiers `SUIVI.md`, `METHODE.md` et `DA.md`.
-- Rushes envoyés via les Releases GitHub (tag `rushes-1`) : `rush1.mov`, 51 s, vertical 2160×3840, vlog course à pied « JOUR 3/22 ».
-- Les vidéos lourdes ne sont pas versionnées dans git : elles sont stockées dans les Releases et téléchargées dans `public/videos/`.
+### 2026-11-15 — Mise en place
+- Installation de Remotion, React et TypeScript ; composition de test `HelloWorld`.
+- Création de `SUIVI.md`, `METHODE.md`, `DA.md`.
+- Envoi de vidéo : le dossier `public/videos/` ne suffit pas (25 Mo max par le site GitHub) → **Releases GitHub** (`rushes-1`) : `rush1.mov`, 51 s, vertical 4K, vlog course « JOUR 3/22 ».
+- Environnement cloud **« Quentin-pro »** créé : accès à huggingface.co (transcription) puis incompetech.com (musique).
 
-### 2026-11-15 (suite)
-- Transcription automatique de la voix (Whisper) pour les sous-titres.
-- Musique libre de droits générée par `scripts/make_music.py` (120 BPM, La mineur) → `public/music/run-beat.mp3`.
-- Montage `Jour3` : 51 s → 38 s, coupes des pauses, zooms, plans de paysage raccourcis, hook, sous-titres, barre de progression, appel à s'abonner.
-- Voix normalisée (−14 LUFS) pour être au même niveau que la musique.
-- Rendu : `npx remotion render Jour3 out/jour3-tiktok.mp4`.
+### 2026-11-15 — Jour 3, V1
+- Transcription Whisper, sous-titres corrigés.
+- Musique synthétisée maison (abandonnée depuis).
+- Montage 51 s → 38 s, hook, sous-titres, barre de progression, appel à s'abonner ; voix normalisée.
 
-### 2026-11-15 (V2)
-- Texte « JOUR 3/22 » incrusté d'origine effacé (`scripts/prepare_rush.sh`, option `DELOGO`) et caché sous le hook.
-- Animations ajoutées : transitions flou/zoom, hook qui claque avec secousse, mots-clés des sous-titres en jaune, compteur « IL RESTE 10 KM », jauge « MI-PARCOURS 5/10 KM », gros textes sur les paysages, secousses sur « mal » et « au pire », flèche animée sur l'appel à s'abonner.
-- Les animations se règlent dans `src/tiktok/rush1.ts` (liste `callouts`).
+### V2
+- Texte « JOUR 3/22 » d'origine effacé (`scripts/prepare_rush.sh`, option `DELOGO`) et caché sous le hook.
+- Animations : transitions flou/zoom, mots-clés en jaune, compteur 10 KM, carte mi-parcours, gros textes sur les paysages, secousses. *(La plupart retirées ensuite.)*
 
-### 2026-11-15 (V3) — retours de Quentin
-- Retiré : zooms (transitions, face caméra, paysages), flashs/flous et secousses de l'image. Gardé : hook et fin (validés).
-- Plans de paysage rallongés (1,5 à 3,5 s), fondus courts de 6 images entre eux, coupes franches sur le face caméra.
-- Nouvelle ligne de parcours en bas (`src/tiktok/Circuit.tsx`) : départ → arrivée, point qui avance de 0 à 10 km, drapeau validé à l'arrivée. Réglage dans `route` de `src/tiktok/rush1.ts`.
-- Barre de progression du haut retirée (remplacée par la ligne de parcours).
+### V3 — retours
+- Retiré : zooms, flashs/flous, secousses de l'image. Plans de paysage rallongés (1,5–3,5 s) avec fondus de 6 images.
+- Ajout de la **ligne de parcours** en bas (`src/tiktok/Circuit.tsx`). Barre du haut retirée.
 
-### 2026-11-15 (V4) — retours de Quentin
-- Retiré : mots-clés en jaune dans les sous-titres et gros textes sur les paysages (« C'EST PARTI », « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN ») : jugés « trop enfant ».
-- Gardé : hook, compteur 10 KM, carte mi-parcours, ligne de parcours, fin.
+### V4 — retours
+- Retiré : mots en jaune dans les sous-titres, gros textes sur les paysages.
 
-### 2026-11-15 (V5) — retours de Quentin
-- Confirmé : aucun gros texte sur les paysages (« C'EST PARTI », « CAP SUR L'OCÉAN », « LES 5 DERNIERS KM », « ON NE LÂCHE RIEN »).
-- Retiré : carte « MI-PARCOURS » en haut (doublon avec la ligne de parcours du bas).
-- Nouvelle musique : « Raving Energy » – Kevin MacLeod (incompetech.com), CC BY 4.0, passage 1:11 → 1:55. **Crédit obligatoire dans la description TikTok** (voir `public/music/CREDITS.md`).
-- Chaque version est désormais exportée avec son numéro (`out/Jour3-TikTok-V5.mp4`) pour éviter de revoir une ancienne version en cache.
+### V5 — retours (validée : « parfait »)
+- Retiré : carte « MI-PARCOURS » en haut.
+- Musique : « Raving Energy » – Kevin MacLeod, CC BY 4.0, passage 1:11 → 1:55 (`public/music/raving-energy.mp3`). Crédit à mettre dans la description TikTok.
+- Fichiers livrés avec numéro de version (`out/Jour3-TikTok-V5.mp4`).
+
+### Enregistrement de la DA
+- `docs/DA.md` réécrit avec tous les choix validés et la liste de ce qu'il ne faut plus faire.
+- `docs/METHODE.md` réécrit avec le processus complet (envoi → préparation → transcription → montage → rendu → livraison).
+- `CLAUDE.md` ajouté à la racine pour que les prochaines sessions appliquent la DA automatiquement.

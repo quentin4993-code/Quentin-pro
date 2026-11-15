@@ -1,43 +1,97 @@
-# Méthode de travail
+# Méthode de travail — d'un rush à la vidéo TikTok finie
 
-Comment on passe d'une idée à une vidéo finie avec Remotion.
+> À suivre pour chaque nouveau jour de la série. Style : voir [DA.md](DA.md).
 
-## 1. Brief
-- **Objectif** : à quoi sert la vidéo ?
-- **Public** : qui la regarde ?
-- **Diffusion** : YouTube, Instagram, LinkedIn, site… (détermine le format)
-- **Durée cible**
+---
 
-## 2. Script et storyboard
-- Écrire le texte (voix off ou textes à l'écran).
-- Découper en **scènes** : pour chacune, durée, contenu visuel, texte, animation.
-- Vérifier que tout respecte la [direction artistique](DA.md).
+## 1. Envoyer la vidéo (Quentin)
 
-## 3. Développement
-- Une vidéo = une `<Composition>` déclarée dans `src/Root.tsx`.
-- Une scène = un composant dans `src/scenes/`, placé dans le temps avec `<Sequence>` ou `<Series>`.
-- Éléments réutilisables (titres, logos, fonds) dans `src/components/`.
-- Couleurs et polices centralisées dans un fichier de thème (`src/theme.ts`) tiré de la DA.
-- Animer avec `useCurrentFrame()`, `interpolate()` et `spring()` — jamais avec des animations CSS ou `setTimeout`.
-- Médias (images, sons, vidéos) dans `public/`, chargés avec `staticFile()`.
+Les vidéos sont trop lourdes pour GitHub classique (25 Mo max). On passe par les **Releases** (jusqu'à 2 Go par fichier).
 
-## 4. Relecture
-- `npm run dev` → ouvrir le Studio et regarder la vidéo en entier.
-- Vérifier : rythme, lisibilité des textes, cohérence avec la DA, fautes.
-- Corriger, puis relire à nouveau.
+1. Ouvrir dans Safari (pas dans l'appli GitHub), en remplaçant `N` par le numéro suivant :
+   `https://github.com/quentin4993-code/Quentin-pro/releases/new?tag=rushes-N&title=Rushes%20N`
+2. Si la page s'affiche mal sur iPad/iPhone : « aA » → **Demander le site pour ordinateur**.
+3. Tout en bas, zone **« Attach binaries… »** → choisir la ou les vidéos → attendre la fin du chargement.
+4. Bouton vert **Publish release**.
+5. Prévenir Claude avec : **numéro du jour**, **distance du jour**, et ce qui est spécial dans la vidéo.
 
-## 5. Rendu
-- `npx remotion render <ID> out/<nom>.mp4`
-- Vérifier le fichier final (son, qualité, durée).
+⚠️ Le dépôt est **public** : les vidéos envoyées sont visibles par tout le monde.
+
+Déjà envoyé : `rushes-1` → Jour 3.
+
+---
+
+## 2. Récupérer et préparer la vidéo (Claude)
+
+```bash
+# télécharger depuis la Release (lien donné par l'API GitHub)
+curl -L -o public/videos/rushN.mov "<browser_download_url>"
+
+# 1080x1920, 30 i/s, voix normalisée ; DELOGO efface un texte incrusté (x:y:largeur:hauteur:jusqu'à_s)
+DELOGO="160:235:720:135:3.05" scripts/prepare_rush.sh public/videos/rushN.mov public/videos/rushN.mp4
+```
+
+- Les vidéos ne sont **pas** commitées (ignorées par git) : l'original reste dans la Release.
+- Regarder la vidéo : planche d'images toutes les secondes (`ffmpeg ... fps=1,tile`) + détection des changements de plan (`select='gt(scene,0.25)'`).
+- Repérer : face caméra, paysages, récap Strava, texte incrusté éventuel à effacer.
+
+## 3. Transcrire la voix (Claude)
+
+- **faster-whisper**, modèle `medium`, français, horodatage mot par mot.
+- Nécessite l'environnement cloud **« Quentin-pro »** (autorise huggingface.co, ses serveurs de fichiers et incompetech.com).
+- Lancer avec `HF_HUB_DISABLE_XET=1` et donner l'audio en WAV 16 kHz lu avec numpy.
+- Corriger le texte à la main (fautes, répétitions).
+
+## 4. Monter (Claude)
+
+1. Copier `src/tiktok/rush1.ts` → `src/tiktok/rushN.ts` et remplir :
+   - `hook` : 3 textes (blanc / jaune / petite ligne) ;
+   - `clips` : liste des plans (secondes dans la source) — face caméra coupé sur les pauses, paysages de 1,5 à 3,5 s ;
+   - `subtitles` : phrases de 3 à 6 mots, **sans étoiles** (pas de jaune) ;
+   - `callouts` : seulement le **compteur** « IL RESTE X KM » ;
+   - `route` : `totalKm` + repères (0 km après le hook, mi-distance quand je le dis, arrivée au récap Strava) ;
+   - `cta` : « Abonne-toi pour suivre les 22 jours ».
+2. Déclarer la composition `JourX` dans `src/Root.tsx` (musique : `music/raving-energy.mp3` ou une autre validée).
+3. Vérifier le style avec des images fixes : `npx remotion still JourX ... --frame=N`.
+
+## 5. Rendre et livrer (Claude)
+
+```bash
+npx remotion render JourX out/jourX-tiktok.mp4 --crf=20
+# version légère pour le téléphone
+ffmpeg -i out/jourX-tiktok.mp4 -c:v libx264 -preset slow -crf 23 -maxrate 7M -bufsize 14M \
+  -c:a aac -b:a 192k -movflags +faststart out/JourX-TikTok-V1.mp4
+```
+
+- Dans le cloud, ajouter `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`.
+- Vérifier le son (voix audible, musique bien dosée) et une planche d'images de la vidéo finale.
+- **Nom de fichier avec numéro de version** (`-V1`, `-V2`…), sinon l'appli peut montrer une ancienne version.
+- Envoyer le fichier à Quentin + rappeler le **crédit musique** pour la description.
 
 ## 6. Clôture
-- Mettre à jour [SUIVI.md](SUIVI.md) (statut + journal).
-- Commiter le code (les vidéos rendues dans `out/` ne sont pas versionnées).
+
+- Mettre à jour [SUIVI.md](SUIVI.md) (statut + journal) et [DA.md](DA.md) si un nouveau retour change le style.
+- Commit + push sur la branche de travail.
+
+---
+
+## Outils du projet
+
+| Fichier | Rôle |
+|---|---|
+| `src/tiktok/TikTokEdit.tsx` | Composition TikTok (plans, fondus, hook, sous-titres, compteur, fin, musique) |
+| `src/tiktok/Circuit.tsx` | Ligne de parcours en bas |
+| `src/tiktok/Animations.tsx` | Compteur (et anciennes animations non utilisées) |
+| `src/tiktok/style.ts` | Couleur d'accent + police Montserrat |
+| `src/tiktok/rush1.ts` | Montage du Jour 3 = **modèle** pour les suivants |
+| `scripts/prepare_rush.sh` | Préparation des rushes (format, voix, effacement de texte) |
+| `public/music/` | Musiques + `CREDITS.md` |
+| `scripts/make_music.py` | Ancien générateur de musique (abandonné) |
 
 ## Formats courants
 
 | Usage | Taille | FPS |
 |---|---|---|
-| YouTube / paysage | 1920×1080 | 30 |
 | Reels / TikTok / Shorts | 1080×1920 | 30 |
+| YouTube / paysage | 1920×1080 | 30 |
 | Post carré | 1080×1080 | 30 |
