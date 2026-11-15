@@ -9,39 +9,34 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont } from "@remotion/fonts";
-import { f, placeClips, PlacedClip, VideoEdit } from "./types";
+import { f, placeClips, PlacedClip, toOutputFrame, VideoEdit } from "./types";
+import { ACCENT, fontFamily } from "./style";
+import { Counter, Progress, shakeOffset, Slam } from "./Animations";
 
-const fontFamily = "Montserrat";
-for (const weight of ["700", "800", "900"]) {
-  loadFont({ family: fontFamily, url: staticFile(`fonts/montserrat-latin-${weight}-normal.woff2`), weight });
-}
-
-const ACCENT = "#FFD60A";
 const MUSIC_TALK = 0.09; // musique sous la voix
 const MUSIC_BROLL = 0.4; // musique sur les paysages
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-// ---------- Un plan vidéo ----------
-const ClipView: React.FC<{ clip: PlacedClip; src: string; index: number }> = ({ clip, src, index }) => {
+// ---------- Un plan vidéo, avec transition d'entrée ----------
+const ClipView: React.FC<{ clip: PlacedClip; prev?: PlacedClip; src: string; index: number }> = ({ clip, prev, src, index }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   let scale: number;
   if (clip.kind === "talk") {
-    // léger zoom continu + « punch » d'entrée
     const base = clip.zoom ?? 1;
-    const punch = spring({ frame, fps, config: { damping: 200 }, durationInFrames: 6 });
-    scale = base * interpolate(punch, [0, 1], [1.04, 1]) * interpolate(frame, [0, clip.frames], [1, 1.04]);
+    scale = base * interpolate(frame, [0, clip.frames], [1, 1.04]);
   } else {
-    // paysages : zoom avant ou arrière alterné
-    const dir = index % 2 === 0;
-    scale = interpolate(frame, [0, clip.frames], dir ? [1.08, 1.18] : [1.18, 1.08]);
-    const punch = interpolate(frame, [0, 5], [1.12, 1], { extrapolateRight: "clamp" });
-    scale *= punch;
+    // paysages : zoom avant ou arrière alterné (Ken Burns)
+    scale = interpolate(frame, [0, clip.frames], index % 2 === 0 ? [1.08, 1.18] : [1.18, 1.08]);
   }
 
-  // petit flash blanc à l'entrée des plans de paysage
-  const flash = clip.kind === "broll" ? interpolate(frame, [0, 3], [0.35, 0], { extrapolateRight: "clamp" }) : 0;
+  // Transition « whip zoom » : flou + zoom + légère rotation qui se résorbent
+  const changesScene = !prev || prev.kind !== clip.kind || clip.kind !== "talk";
+  const t = spring({ frame, fps, config: { damping: 200 }, durationInFrames: changesScene ? 7 : 5 });
+  const whipScale = interpolate(t, [0, 1], [changesScene ? 1.35 : 1.06, 1]);
+  const blur = changesScene ? interpolate(t, [0, 1], [22, 0]) : 0;
+  const rot = changesScene ? interpolate(t, [0, 1], [index % 2 ? 4 : -4, 0]) : 0;
 
   return (
     <AbsoluteFill style={{ overflow: "hidden", backgroundColor: "black" }}>
@@ -50,70 +45,107 @@ const ClipView: React.FC<{ clip: PlacedClip; src: string; index: number }> = ({ 
         trimBefore={f(clip.in)}
         trimAfter={f(clip.out)}
         volume={clip.kind === "talk" ? 1 : 0.2}
-        style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${scale})` }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          transform: `scale(${scale * whipScale}) rotate(${rot}deg)`,
+          filter: blur > 0.5 ? `blur(${blur}px)` : undefined,
+        }}
       />
-      {flash > 0 && <AbsoluteFill style={{ backgroundColor: "white", opacity: flash }} />}
     </AbsoluteFill>
   );
 };
 
 // ---------- Hook ----------
+// Placé exactement sur l'ancien texte « JOUR 3/22 » effacé de la source (y ≈ 235–370).
 const Hook: React.FC<{ hook: VideoEdit["hook"] }> = ({ hook }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const dur = f(hook.duration);
-  const pop = (delay: number) => spring({ frame: frame - delay, fps, config: { damping: 12, stiffness: 180 } });
-  const out = interpolate(frame, [dur - 6, dur], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const slam = (delay: number) => spring({ frame: frame - delay, fps, config: { damping: 10, stiffness: 220, mass: 0.7 } });
+  const out = interpolate(frame, [dur - 5, dur], [1, 0], clamp);
   const wiggle = Math.sin(frame / 3) * 1.2;
+  // secousse quand le 2e bloc tombe
+  const impact = Math.max(0, 1 - Math.abs(frame - 9) / 5);
+  const shakeX = Math.sin(frame * 3) * 10 * impact;
 
   const box: React.CSSProperties = {
-    display: "inline-block",
+    position: "absolute",
+    left: "50%",
     padding: "10px 26px",
     borderRadius: 18,
     fontFamily,
     fontWeight: 900,
     lineHeight: 1.05,
     textAlign: "center",
+    whiteSpace: "nowrap",
   };
 
+  const s1 = slam(0);
+  const s2 = slam(5);
+  const s3 = spring({ frame: frame - 14, fps, config: { damping: 14 } });
+
   return (
-    <AbsoluteFill style={{ alignItems: "center", paddingTop: 430, opacity: out }}>
-      <div style={{ transform: `scale(${pop(0)})` }}>
-        <span style={{ ...box, fontSize: 62, color: "black", backgroundColor: "white", whiteSpace: "nowrap" }}>{hook.top}</span>
+    <AbsoluteFill style={{ opacity: out, transform: `translateX(${shakeX}px)` }}>
+      <div
+        style={{
+          ...box,
+          top: 225,
+          fontSize: 64,
+          color: "black",
+          backgroundColor: "white",
+          transform: `translateX(-50%) scale(${interpolate(s1, [0, 1], [1.6, 1])})`,
+        }}
+      >
+        {hook.top}
       </div>
-      <div style={{ marginTop: 14, transform: `scale(${pop(5)}) rotate(${-2 + wiggle}deg)` }}>
-        <span style={{ ...box, fontSize: 100, color: "black", backgroundColor: ACCENT, whiteSpace: "nowrap" }}>{hook.highlight}</span>
+      <div
+        style={{
+          ...box,
+          top: 308,
+          fontSize: 102,
+          color: "black",
+          backgroundColor: ACCENT,
+          opacity: frame >= 5 ? 1 : 0,
+          transform: `translateX(-50%) scale(${interpolate(s2, [0, 1], [2.2, 1])}) rotate(${-2 + wiggle}deg)`,
+        }}
+      >
+        {hook.highlight}
       </div>
       {hook.sub && (
-        <div style={{ marginTop: 26, transform: `translateY(${interpolate(pop(12), [0, 1], [40, 0])}px)`, opacity: pop(12) }}>
-          <span
-            style={{
-              ...box,
-              fontSize: 46,
-              fontWeight: 800,
-              color: "white",
-              backgroundColor: "rgba(0,0,0,0.65)",
-            }}
-          >
-            {hook.sub}
-          </span>
+        <div
+          style={{
+            ...box,
+            top: 470,
+            fontSize: 46,
+            fontWeight: 800,
+            color: "white",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            opacity: s3,
+            transform: `translateX(-50%) translateY(${interpolate(s3, [0, 1], [40, 0])}px)`,
+          }}
+        >
+          {hook.sub}
         </div>
       )}
     </AbsoluteFill>
   );
 };
 
-// ---------- Sous-titres classiques ----------
+// ---------- Sous-titres classiques (mots *mis en valeur* en jaune) ----------
 const SubtitleLine: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const pop = spring({ frame, fps, config: { damping: 14, stiffness: 220 }, durationInFrames: 8 });
-  const out = interpolate(frame, [frames - 2, frames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const hl = spring({ frame: frame - 3, fps, config: { damping: 8, stiffness: 240 } });
+  const out = interpolate(frame, [frames - 2, frames], [1, 0], clamp);
+  const parts = text.split("*");
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 520 }}>
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: 920,
           textAlign: "center",
           fontFamily,
           fontWeight: 800,
@@ -127,18 +159,18 @@ const SubtitleLine: React.FC<{ text: string; frames: number }> = ({ text, frames
           opacity: out,
         }}
       >
-        {text}
+        {parts.map((p, i) =>
+          i % 2 === 1 ? (
+            <span key={i} style={{ color: ACCENT, display: "inline-block", margin: "0 0.2em", transform: `scale(${interpolate(hl, [0, 1], [1.5, 1.08])}) rotate(-2deg)` }}>
+              {p}
+            </span>
+          ) : (
+            <span key={i}>{p}</span>
+          ),
+        )}
       </div>
     </AbsoluteFill>
   );
-};
-
-// Convertit un temps source en image de la vidéo finale (si ce moment a été gardé)
-const toOutputFrame = (clips: PlacedClip[], sec: number): number | null => {
-  for (const c of clips) {
-    if (sec >= c.in - 0.001 && sec <= c.out + 0.001) return c.from + (f(sec) - f(c.in));
-  }
-  return null;
 };
 
 // ---------- Barre de progression ----------
@@ -156,9 +188,11 @@ const ProgressBar: React.FC = () => {
 const Cta: React.FC<{ text: string }> = ({ text }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const pop = spring({ frame, fps, config: { damping: 12 } });
+  const pop = spring({ frame, fps, config: { damping: 9, stiffness: 200 } });
+  const pulse = frame > 15 ? 1 + Math.max(0, Math.sin((frame - 15) / 4)) * 0.05 : 1;
+  const arrow = Math.abs(Math.sin(frame / 5)) * 22;
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 330 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 300 }}>
       <div
         style={{
           fontFamily,
@@ -170,10 +204,26 @@ const Cta: React.FC<{ text: string }> = ({ text }) => {
           borderRadius: 20,
           textAlign: "center",
           maxWidth: 880,
-          transform: `scale(${pop}) rotate(-2deg)`,
+          transform: `scale(${pop * pulse}) rotate(-2deg)`,
+          boxShadow: "0 12px 40px rgba(0,0,0,0.45)",
         }}
       >
         {text}
+      </div>
+      <div
+        style={{
+          marginTop: 18,
+          fontFamily,
+          fontWeight: 900,
+          fontSize: 80,
+          color: "white",
+          WebkitTextStroke: "8px black",
+          paintOrder: "stroke fill",
+          opacity: pop,
+          transform: `translateY(${arrow}px)`,
+        }}
+      >
+        ↓
       </div>
     </AbsoluteFill>
   );
@@ -181,29 +231,42 @@ const Cta: React.FC<{ text: string }> = ({ text }) => {
 
 // ---------- Composition complète ----------
 export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit, music }) => {
+  const frame = useCurrentFrame();
   const clips = placeClips(edit.clips);
   const last = clips[clips.length - 1];
+  const callouts = (edit.callouts ?? []).flatMap((c) => {
+    const from = toOutputFrame(clips, c.at);
+    return from === null ? [] : [{ c, from, frames: f(c.dur) }];
+  });
+
+  // tremblements cumulés
+  const shake = callouts
+    .filter((x) => x.c.type === "shake")
+    .map((x) => shakeOffset(frame, x.from, x.frames))
+    .reduce((a, b) => ({ x: a.x + b.x, y: a.y + b.y, r: a.r + b.r }), { x: 0, y: 0, r: 0 });
+  const shaking = shake.x !== 0 || shake.y !== 0;
 
   // volume de la musique : bas sous la voix, fort sur les paysages
-  const musicVolume = (frame: number) => {
-    const c = clips.find((cl) => frame >= cl.from && frame < cl.from + cl.frames) ?? last;
+  const musicVolume = (fr: number) => {
+    const c = clips.find((cl) => fr >= cl.from && fr < cl.from + cl.frames) ?? last;
     const target = c.kind === "talk" ? MUSIC_TALK : MUSIC_BROLL;
-    // transition douce sur 5 images autour des changements de plan
     const prev = clips[clips.indexOf(c) - 1];
     if (prev) {
       const prevTarget = prev.kind === "talk" ? MUSIC_TALK : MUSIC_BROLL;
-      return interpolate(frame, [c.from, c.from + 5], [prevTarget, target], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+      return interpolate(fr, [c.from, c.from + 5], [prevTarget, target], clamp);
     }
     return target;
   };
 
   return (
     <AbsoluteFill style={{ backgroundColor: "black" }}>
-      {clips.map((c, i) => (
-        <Sequence key={i} from={c.from} durationInFrames={c.frames} premountFor={30}>
-          <ClipView clip={c} src={edit.src} index={i} />
-        </Sequence>
-      ))}
+      <AbsoluteFill style={{ transform: `translate(${shake.x}px, ${shake.y}px) rotate(${shake.r}deg) scale(${shaking ? 1.04 : 1})` }}>
+        {clips.map((c, i) => (
+          <Sequence key={i} from={c.from} durationInFrames={c.frames} premountFor={30}>
+            <ClipView clip={c} prev={clips[i - 1]} src={edit.src} index={i} />
+          </Sequence>
+        ))}
+      </AbsoluteFill>
 
       {edit.subtitles.map((s, i) => {
         const from = toOutputFrame(clips, s.s);
@@ -212,6 +275,17 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
         return (
           <Sequence key={`sub-${i}`} from={from} durationInFrames={to - from}>
             <SubtitleLine text={s.t} frames={to - from} />
+          </Sequence>
+        );
+      })}
+
+      {callouts.map(({ c, from, frames }, i) => {
+        if (c.type === "shake") return null;
+        return (
+          <Sequence key={`co-${i}`} from={from} durationInFrames={frames}>
+            {c.type === "slam" && <Slam words={c.words} frames={frames} />}
+            {c.type === "counter" && <Counter value={c.value} unit={c.unit} label={c.label} frames={frames} />}
+            {c.type === "progress" && <Progress done={c.done} total={c.total} unit={c.unit} frames={frames} />}
           </Sequence>
         );
       })}

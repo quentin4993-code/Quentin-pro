@@ -5,7 +5,15 @@ export type Clip = {
   zoom?: number; // zoom de base (faux changement de plan sur le face caméra)
 };
 
+// Texte entre *étoiles* = mot mis en valeur (jaune)
 export type Subtitle = { s: number; e: number; t: string };
+
+// Animations ponctuelles. `at` = seconde dans la SOURCE, `dur` = durée à l'écran (s)
+export type Callout =
+  | { type: "slam"; at: number; dur: number; words: string[] } // gros texte qui claque sur les paysages
+  | { type: "counter"; at: number; dur: number; value: number; unit: string; label: string } // compteur animé
+  | { type: "progress"; at: number; dur: number; done: number; total: number; unit: string } // jauge de parcours
+  | { type: "shake"; at: number; dur: number }; // tremblement de l'image
 
 export type VideoEdit = {
   src: string; // chemin dans public/
@@ -13,6 +21,7 @@ export type VideoEdit = {
   cta?: string;
   clips: Clip[];
   subtitles: Subtitle[];
+  callouts?: Callout[];
 };
 
 export const FPS = 30;
@@ -33,3 +42,11 @@ export const placeClips = (clips: Clip[]): PlacedClip[] => {
 
 export const totalFrames = (clips: Clip[]) =>
   placeClips(clips).reduce((a, c) => a + c.frames, 0);
+
+// Convertit un temps source en image de la vidéo finale (si ce moment a été gardé)
+export const toOutputFrame = (clips: PlacedClip[], sec: number): number | null => {
+  for (const c of clips) {
+    if (sec >= c.in - 0.001 && sec <= c.out + 0.001) return c.from + (f(sec) - f(c.in));
+  }
+  return null;
+};
