@@ -11,7 +11,7 @@
 | Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
 | Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
 | Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
-| Vidéo Jour 4 (`Jour4`) | 🟡 V3 livrée — en attente de retours |
+| Vidéo Jour 4 (`Jour4`) | 🟡 V4 livrée — en attente de retours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V3 | Release `jour-4` | `out/Jour4-TikTok-V3.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 53 | 🟡 V4 | Release `jour-4` | `out/Jour4-TikTok-V4.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -114,3 +114,10 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Demande : ajouter des bruitages (clics, pops) pour plus de dynamisme, notamment quand les objets se rangent.
 - Bruitages générés par `scripts/make_sfx.py` → `public/sfx/` : pop (aigu INDISPENSABLE / moyen UTILE / grave PAS INDISPENSABLE), whoosh + impact sur le hook, whoosh à l'apparition du tableau, ding sur « Abonne-toi ».
 - Activés par `sfx: true` dans le montage. Vérifié : 12 pops alignés sur les verdicts, ~7 dB sous le niveau global.
+
+### Jour 4, V4 — retours
+- « On ne voit pas les objets » → à l'annonce de chaque objet, une **carte** (icône + nom) entre à droite du visage ; au verdict elle **vole** jusqu'à sa colonne, l'étiquette rebondit avec un flash jaune.
+- « Pas d'animation de bruit au placement » → whoosh à l'arrivée de la carte, whoosh au départ du vol, **pop bien audible** (volume 0,9) à l'atterrissage.
+- « Trop bref » → explications remises pour chaque objet (blancs > 0,35 s coupés) : 1 min 04 → 1 min 53.
+- Icônes : Material Design Icons (Apache 2.0) dans `src/tiktok/icons.ts`, casquette dessinée à la main.
+- Sous-titres refaits à partir du son monté (`subtitleTime: "output"`) puis relus à la main.

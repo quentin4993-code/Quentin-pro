@@ -21,11 +21,12 @@ export type VideoEdit = {
   cta?: string;
   clips: Clip[];
   subtitles: Subtitle[];
+  subtitleTime?: "source" | "output"; // temps des sous-titres : dans la source (défaut) ou dans la vidéo finale
   callouts?: Callout[];
   // Ligne de parcours : points de repère (seconde source -> km parcourus)
   route?: { totalKm: number; checkpoints: { at: number; km: number }[] };
   // Tableau de classement (vidéo « tier list ») : at = seconde source du verdict
-  tiers?: { label: string; col: number; at: number }[];
+  tiers?: { label: string; col: number; at: number; ann?: number }[]; // at = verdict, ann = annonce de l'objet
   sfx?: boolean; // bruitages (pop sur le tableau, whoosh/impact du hook, ding de fin)
   ctaAt?: number; // seconde source où apparaît « Abonne-toi » (sinon : début du dernier plan)
 };

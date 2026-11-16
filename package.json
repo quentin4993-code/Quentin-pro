@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/quentin4993-code/Quentin-pro#readme",
   "dependencies": {
+    "@mdi/svg": "^7.4.47",
     "@remotion/cli": "^4.0.543",
     "@remotion/fonts": "^4.0.543",
     "@remotion/paths": "^4.0.543",
+    "@tabler/icons": "^3.31.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "remotion": "^4.0.543"

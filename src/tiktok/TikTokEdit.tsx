@@ -9,11 +9,12 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { Fragment } from "react";
 import { f, placeClips, PlacedClip, toOutputFrame, VideoEdit } from "./types";
 import { ACCENT, fontFamily } from "./style";
 import { Counter, Progress, shakeOffset, Slam } from "./Animations";
 import { Circuit } from "./Circuit";
-import { TierBoard } from "./TierBoard";
+import { FLY, TierBoard } from "./TierBoard";
 
 const MUSIC_TALK = 0.13; // musique sous la voix
 const MUSIC_BROLL = 0.6; // musique sur les paysages
@@ -263,8 +264,9 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
       </AbsoluteFill>
 
       {edit.subtitles.map((s, i) => {
-        const from = toOutputFrame(clips, s.s);
-        const to = toOutputFrame(clips, s.e);
+        const out = edit.subtitleTime === "output";
+        const from = out ? f(s.s) : toOutputFrame(clips, s.s);
+        const to = out ? f(s.e) : toOutputFrame(clips, s.e);
         if (from === null || to === null || to <= from) return null;
         return (
           <Sequence key={`sub-${i}`} from={from} durationInFrames={to - from}>
@@ -292,10 +294,10 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
         <TierBoard
           items={edit.tiers.flatMap((t) => {
             const fr = toOutputFrame(clips, t.at);
-            return fr === null ? [] : [{ label: t.label, col: t.col, frame: fr }];
+            const ann = t.ann !== undefined ? toOutputFrame(clips, t.ann) ?? undefined : undefined;
+            return fr === null ? [] : [{ label: t.label, col: t.col, frame: fr, annFrame: ann }];
           })}
           startFrame={f(edit.hook.duration)}
-          hideFrom={1e9}
         />
       )}
 
@@ -308,8 +310,16 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
           {edit.tiers && <Sfx at={f(edit.hook.duration)} name="whoosh" volume={0.2} />}
           {(edit.tiers ?? []).map((t, i) => {
             const fr = toOutputFrame(clips, t.at);
+            const ann = t.ann !== undefined ? toOutputFrame(clips, t.ann) : null;
             const name = t.col < 1 ? "pop-hi" : t.col < 2 ? "pop-mid" : "pop-lo";
-            return fr === null ? null : <Sfx key={`pop-${i}`} at={fr} name={name} volume={0.55} />;
+            return fr === null ? null : (
+              <Fragment key={`pop-${i}`}>
+                {/* arrivée de la carte (petit whoosh) puis pop à l'atterrissage dans le tableau */}
+                {ann !== null && <Sfx at={ann} name="whoosh" volume={0.22} />}
+                <Sfx at={fr} name="whoosh" volume={0.18} />
+                <Sfx at={fr + FLY} name={name} volume={0.9} />
+              </Fragment>
+            );
           })}
           {edit.cta && (
             <Sfx at={(edit.ctaAt !== undefined ? toOutputFrame(clips, edit.ctaAt) : null) ?? last.from + 18} name="ding" volume={0.3} />

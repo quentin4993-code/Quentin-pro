@@ -79,7 +79,8 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 ### Vidéos sans course (face caméra, conseils, classement) — proposé Jour 4
 - Pas de ligne de parcours ni de compteur km.
 - **Tableau de classement** sobre en haut (sous les onglets TikTok) : 3 colonnes INDISPENSABLE (jaune) / UTILE (blanc) / PAS INDISPENSABLE (noir) ; chaque objet apparaît au moment du verdict ; « entre les deux » = étiquette en pointillés à cheval.
-- Durée visée ≤ 1 min (4 min de rush → ~1 min).
+- Quand un objet est annoncé : **carte avec icône** à côté du visage, qui **vole** se ranger dans sa colonne au verdict (+ pop).
+- Garder les **explications** de Quentin sur chaque objet (« ça fait très bref » sinon) : couper seulement les blancs et les redites. Jour 4 : ~1 min 50.
 
 ---
 
