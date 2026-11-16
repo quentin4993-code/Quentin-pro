@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` (étirements) | 8 étirements, sans voix, hook + noms + « 30 SEC » | 1080×1920 · 30 fps | 26 s | 🟡 V1 livrée, musique à choisir | Release `jour-16` (nommée par erreur, c'est le Jour 4) | `out/Jour4-TikTok-V1.mp4` |
+| `Jour4` (étirements) | 8 étirements, sans voix, hook + noms + « 30 SEC » | 1080×1920 · 30 fps | 26 s | 🟡 V2 livrée, musique à choisir | Release `jour-16` (nommée par erreur, c'est le Jour 4) | `out/Jour4-TikTok-V2.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -101,3 +101,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Remotion non installable dans cette session (pas de réseau npm) → rendu des calques avec Chromium/Playwright, mêmes styles que `TikTokEdit.tsx` (`tools/etirements/`).
 - Hook placé en bas (le visage est en haut sur le plan debout). Noms en bloc blanc + « ⏱ 30 SEC » en bloc jaune, en haut.
 - Musique : pas encore (Quentin veut du dynamique, pas d'électro ; incompetech inaccessible ici).
+
+### Jour 4, V2
+- Hook comme le Jour 3 : « 22 JOURS POUR PRÉPARER » / « MON 1ER TRAIL » / « Jour 4 : ma routine d'étirements ».
+- « ⏱ 30 SEC CHAQUE CÔTÉ » sur fente profonde, ischios, pigeon, torsion du dos ; « 30 SEC » sur les autres.

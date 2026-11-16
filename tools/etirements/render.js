@@ -12,7 +12,7 @@ let hookFrames = 0;
 for (const c of E.clips) {
   const st = F(t), d = F(c.dur);
   if (!c.name) hookFrames = st + d;
-  else labels.push({ name: c.name, time: '30 SEC', start: st, end: st + F(c.labelDur ?? c.dur) });
+  else labels.push({ name: c.name, time: c.time ?? '30 SEC', start: st, end: st + F(c.labelDur ?? c.dur) });
   t += c.dur;
 }
 const total = F(t);
@@ -23,7 +23,7 @@ fs.writeFileSync(outDir + '/timeline.json', JSON.stringify({ total, ...T }, null
 (async () => {
   const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
-  await p.goto('file:///home/claude/build/overlay.html');
+  await p.goto('file://'+__dirname+'/overlay.html');
   await p.evaluate((T) => { window.T = T; T && (globalThis.T = T); }, T);
   await p.evaluate((T) => { T_ = T; }, T).catch(() => {});
   await p.addScriptTag({ content: `T = ${JSON.stringify(T)};` });

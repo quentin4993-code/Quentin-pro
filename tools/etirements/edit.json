@@ -1,17 +1,70 @@
 {
-  "fps": 30,
-  "clips": [
-    {"src": 0.0,  "dur": 2.4, "note": "serviette"},
-    {"src": 2.6,  "dur": 1.7, "note": "1re position debout"},
-    {"src": 5.3,  "dur": 2.5, "name": "COBRA"},
-    {"src": 9.0,  "dur": 2.5, "name": "CHIEN TÊTE EN BAS"},
-    {"src": 13.5, "dur": 2.5, "name": "FENTE PROFONDE"},
-    {"src": 18.5, "dur": 2.5, "name": "ÉTIREMENT ISCHIOS"},
-    {"src": 23.0, "dur": 2.5, "name": "POSITION DE L'ENFANT"},
-    {"src": 29.5, "dur": 2.5, "name": "PIGEON"},
-    {"src": 34.0, "dur": 2.5, "name": "TORSION DU DOS"},
-    {"src": 38.0, "dur": 4.6, "name": "PAPILLON", "labelDur": 2.5}
-  ],
-  "hook": {"a": "PRÉPA 1ER TRAIL", "b": "8 ÉTIREMENTS", "c": "Jour 4 : 4 min pour délier tes jambes", "top": 1150},
-  "cta": {"text": "Abonne-toi pour suivre les 22 jours", "beforeEnd": 2.1}
+ "fps": 30,
+ "clips": [
+  {
+   "src": 0.0,
+   "dur": 2.4,
+   "note": "serviette"
+  },
+  {
+   "src": 2.6,
+   "dur": 1.7,
+   "note": "1re position debout"
+  },
+  {
+   "src": 5.3,
+   "dur": 2.5,
+   "name": "COBRA"
+  },
+  {
+   "src": 9.0,
+   "dur": 2.5,
+   "name": "CHIEN TÊTE EN BAS"
+  },
+  {
+   "src": 13.5,
+   "dur": 2.5,
+   "name": "FENTE PROFONDE",
+   "time": "30 SEC CHAQUE CÔTÉ"
+  },
+  {
+   "src": 18.5,
+   "dur": 2.5,
+   "name": "ÉTIREMENT ISCHIOS",
+   "time": "30 SEC CHAQUE CÔTÉ"
+  },
+  {
+   "src": 23.0,
+   "dur": 2.5,
+   "name": "POSITION DE L'ENFANT"
+  },
+  {
+   "src": 29.5,
+   "dur": 2.5,
+   "name": "PIGEON",
+   "time": "30 SEC CHAQUE CÔTÉ"
+  },
+  {
+   "src": 34.0,
+   "dur": 2.5,
+   "name": "TORSION DU DOS",
+   "time": "30 SEC CHAQUE CÔTÉ"
+  },
+  {
+   "src": 38.0,
+   "dur": 4.6,
+   "name": "PAPILLON",
+   "labelDur": 2.5
+  }
+ ],
+ "hook": {
+  "a": "22 JOURS POUR PRÉPARER",
+  "b": "MON 1ER TRAIL",
+  "c": "Jour 4 : ma routine d'étirements",
+  "top": 1150
+ },
+ "cta": {
+  "text": "Abonne-toi pour suivre les 22 jours",
+  "beforeEnd": 2.1
+ }
 }
