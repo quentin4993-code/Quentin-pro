@@ -110,7 +110,7 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 | Interdit | Pourquoi |
 |---|---|
-| Écrire « Jour X/22 » (hook, couverture, description) sans que Quentin le demande | « Ça n'a rien à voir » (Jour 4) |
+| Écrire « Jour X/22 » sur une vidéo **Communauté** (conseils, classement…) | « Ça n'a rien à voir » (Jour 4). OK sur les vidéos **Défi**. |
 | « Abonne-toi pour suivre les 22 jours » | Inutile → « Abonne-toi pour la suite » |
 | Zooms (transitions, faux changements de plan, zooms lents sur les paysages) | Trop, rendu bâclé |
 | Flashs blancs, flous de transition | Trop |

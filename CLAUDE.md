@@ -13,7 +13,7 @@ Raccourci d'envoi des vidéos pour Quentin : https://claude.ai/artifact/RYnegRCE
 - Parler à Quentin en **français**, simplement (il travaille souvent depuis iPad/iPhone).
 - Quentin **prépare** son premier trail (22 jours de prépa) : ne jamais écrire comme s'il le courait (« PRÉPA 1ER TRAIL », pas « MON 1ER TRAIL » seul).
 - Style : pro, dynamique, sobre. **Pas de zoom, pas de flash, pas de gros textes « motivation », pas de mots en jaune dans les sous-titres, une seule jauge (la ligne de parcours en bas).**
-- **Ne pas écrire « Jour X/22 »** (hook, couverture, description) sauf demande explicite. Fin : « **Abonne-toi pour la suite** » (pas « pour suivre les 22 jours »).
+- **Deux formats par jour** (stratégie validée) : 1) **vidéo « Défi »** = journal de prépa, garde « Jour X/22 » ; 2) **vidéo « Communauté »** = conseil / classement / avis qui parle au spectateur (type Jour 4), **sans** « Jour X/22 ». Voir `docs/STRATEGIE.md`. Fin : « **Abonne-toi pour la suite** » (pas « pour suivre les 22 jours »).
 - Garder : hook en 3 blocs (blanc / jaune / petite ligne), sous-titres classiques blancs contour noir, compteur « IL RESTE X KM », ligne de parcours, fin « Abonne-toi » + flèche.
 - Musique : vraie musique énergique libre de droits (incompetech.com), jamais de musique synthétisée maison ; rappeler le crédit pour la description TikTok.
 - Pour chaque vidéo, proposer aussi une description accrocheuse (3 options, voir `docs/DESCRIPTIONS.md`) et 2 couvertures TikTok (`src/tiktok/Cover.tsx`) : plan d'action + gros plan visage.
