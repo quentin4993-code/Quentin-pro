@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` (étirements) | 8 étirements, sans voix, hook + noms + « 30 SEC » | 1080×1920 · 30 fps | 26 s | 🟡 V2 livrée, musique à choisir | Release `jour-16` (nommée par erreur, c'est le Jour 4) | `out/Jour4-TikTok-V2.mp4` |
+| `Jour4` (étirements) | 8 étirements, sans voix, hook + noms + « 30 SEC » | 1080×1920 · 30 fps | 26 s | ✅ V2 validée (« parfait »), musique ajoutée dans TikTok | Release `jour-16` (nommée par erreur, c'est le Jour 4) | `out/Jour4-TikTok-V2.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
