@@ -47,14 +47,14 @@ export const RemotionRoot: React.FC = () => {
         component={Cover}
         width={1080}
         height={1920}
-        defaultProps={{ bg: "covers/jour4-visage.jpg", day: "JOUR 4 / 22", highlight: "PRÉPA 1ER TRAIL", sub: "Mon matos : indispensable ou pas ?", position: "bottom" as const }}
+        defaultProps={{ bg: "covers/jour4-visage.jpg", day: "MATOS DE TRAIL", highlight: "INDISPENSABLE ?", sub: "Mon classement honnête", position: "bottom" as const }}
       />
       <Still
         id="CoverJour4Large"
         component={Cover}
         width={1080}
         height={1920}
-        defaultProps={{ bg: "covers/jour4-large.jpg", day: "JOUR 4 / 22", highlight: "PRÉPA 1ER TRAIL", sub: "Mon matos : indispensable ou pas ?", position: "bottom" as const }}
+        defaultProps={{ bg: "covers/jour4-large.jpg", day: "MATOS DE TRAIL", highlight: "INDISPENSABLE ?", sub: "Mon classement honnête", position: "bottom" as const }}
       />
       <Composition
         id="HelloWorld"

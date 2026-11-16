@@ -1,12 +1,12 @@
-// Montage « Jour 4/22 » : mon classement du matériel de trail.
+// Montage « Jour 4 » : mon classement du matériel de trail (sans mention « Jour X/22 »).
 // Source : public/videos/jour4.mp4 = intro (prise a, 3,3 s) + vidéo principale (décalée de +3,3 s).
 // Fichier généré à partir de la transcription, puis relu.
 import type { VideoEdit } from "./types";
 
 export const jour4: VideoEdit = {
   src: "videos/jour4.mp4",
-  hook: { top: "MATOS DE TRAIL", highlight: "INDISPENSABLE ?", sub: "Jour 4/22 · prépa 1er trail", duration: 3.3 },
-  cta: "Abonne-toi pour suivre les 22 jours",
+  hook: { top: "MATOS DE TRAIL", highlight: "INDISPENSABLE ?", sub: "Mon classement honnête", duration: 3.3 },
+  cta: "Abonne-toi pour la suite",
   ctaAt: 249.20,
   clips: [
     { in: 0.00, out: 3.30, kind: "talk" },

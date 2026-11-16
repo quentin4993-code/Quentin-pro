@@ -66,7 +66,8 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 ### Fin ✅ « super cool »
 - Récap Strava de la vidéo d'origine.
-- Bouton **jaune** « Abonne-toi pour suivre les 22 jours », qui pulse, + **flèche** blanche qui rebondit.
+- Bouton **jaune** « **Abonne-toi pour la suite** » (ou équivalent court), qui pulse, + **flèche** blanche qui rebondit.
+- ❌ Pas de « pour suivre les 22 jours » : ça ne sert à rien.
 - La ligne de parcours s'efface juste avant.
 
 ### Couverture TikTok ✅
@@ -107,6 +108,8 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 | Interdit | Pourquoi |
 |---|---|
+| Écrire « Jour X/22 » (hook, couverture, description) sans que Quentin le demande | « Ça n'a rien à voir » (Jour 4) |
+| « Abonne-toi pour suivre les 22 jours » | Inutile → « Abonne-toi pour la suite » |
 | Zooms (transitions, faux changements de plan, zooms lents sur les paysages) | Trop, rendu bâclé |
 | Flashs blancs, flous de transition | Trop |
 | Secousses de l'image dans la vidéo | Trop (seule exception : l'impact du hook) |

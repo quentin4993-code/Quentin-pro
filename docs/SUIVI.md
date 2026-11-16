@@ -11,7 +11,7 @@
 | Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
 | Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
 | Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
-| Vidéo Jour 4 (`Jour4`) | 🟡 V1 livrée — en attente de retours |
+| Vidéo Jour 4 (`Jour4`) | 🟡 V2 livrée — en attente de retours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | « Jour 4/22 » : classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V1 | Release `jour-4` | `out/Jour4-TikTok-V1.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V2 | Release `jour-4` | `out/Jour4-TikTok-V2.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -103,3 +103,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Pas de ligne de parcours ni de compteur km (pas de course) → **tableau de classement** en haut (`src/tiktok/TierBoard.tsx`), « entre les deux » = étiquette en pointillés à cheval sur deux colonnes.
 - Hook « MATOS DE TRAIL / INDISPENSABLE ? / Jour 4/22 · prépa 1er trail ». Musique « Raving Energy » (version longue `raving-energy-long.mp3`), basse sous la voix, fondu de fin.
 - Couvertures : `out/Couverture-Jour4-Visage-V1.jpg`, `out/Couverture-Jour4-Large-V1.jpg`. Descriptions : `docs/DESCRIPTIONS.md`.
+
+### Jour 4, V2 — retours
+- Retiré « Jour 4/22 » partout (hook, couvertures, descriptions) : « ça n'a rien à voir ».
+- Fin : « Abonne-toi pour la suite » au lieu de « pour suivre les 22 jours ».
+- Hook : « MATOS DE TRAIL / INDISPENSABLE ? / Mon classement honnête ». Couvertures : même texte.
+- Règles ajoutées dans `DA.md` et `CLAUDE.md`.
