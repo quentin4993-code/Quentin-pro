@@ -11,7 +11,7 @@
 | Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
 | Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
 | Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
-| Vidéo Jour 4 (`Jour4`) | 🟡 V4 livrée — en attente de retours |
+| Vidéo Jour 4 (`Jour4`) | 🟡 V5 livrée — en attente de retours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 53 | 🟡 V4 | Release `jour-4` | `out/Jour4-TikTok-V4.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🟡 V5 | Release `jour-4` | `out/Jour4-TikTok-V5.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -121,3 +121,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - « Trop bref » → explications remises pour chaque objet (blancs > 0,35 s coupés) : 1 min 04 → 1 min 53.
 - Icônes : Material Design Icons (Apache 2.0) dans `src/tiktok/icons.ts`, casquette dessinée à la main.
 - Sous-titres refaits à partir du son monté (`subtitleTime: "output"`) puis relus à la main.
+
+### Jour 4, V5 — retours
+- « Garde pas tous les détails, alterne entre les deux » → verdict + **une** explication par objet : 1 min 53 → 1 min 21.
+- Synchro vérifiée : son final retranscrit = temps des sous-titres (écart ≤ 0,1 s).

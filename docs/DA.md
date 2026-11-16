@@ -80,7 +80,7 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 - Pas de ligne de parcours ni de compteur km.
 - **Tableau de classement** sobre en haut (sous les onglets TikTok) : 3 colonnes INDISPENSABLE (jaune) / UTILE (blanc) / PAS INDISPENSABLE (noir) ; chaque objet apparaît au moment du verdict ; « entre les deux » = étiquette en pointillés à cheval.
 - Quand un objet est annoncé : **carte avec icône** à côté du visage, qui **vole** se ranger dans sa colonne au verdict (+ pop).
-- Garder les **explications** de Quentin sur chaque objet (« ça fait très bref » sinon) : couper seulement les blancs et les redites. Jour 4 : ~1 min 50.
+- Par objet : **verdict + une seule explication** (la plus parlante). Ni trop bref (1 min 04 = « très bref »), ni tout garder (1 min 53 = trop). Jour 4 validé à ~1 min 20.
 
 ---
 
