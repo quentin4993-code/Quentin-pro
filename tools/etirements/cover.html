@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf8"><style>
+@font-face{font-family:M;src:url(../../public/fonts/montserrat-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:M;src:url(../../public/fonts/montserrat-latin-900-normal.woff2);font-weight:900}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.g{position:absolute;inset:0}
+.wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;gap:18px}
+.b{display:inline-block;padding:12px 34px;border-radius:22px;font-family:M;font-weight:900;line-height:1.02;white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+</style></head><body><img id=bg><div class=g id=g></div><div class=wrap id=w>
+<div class=b style="font-size:150px;color:#000;background:#fff" id=day></div>
+<div class=b style="color:#000;background:#FFD60A;transform:rotate(-2deg)" id=hl></div>
+<div class=b style="margin-top:8px;font-size:50px;font-weight:800;color:#fff;background:rgba(0,0,0,.72);box-shadow:none" id=sub></div></div>
+<script>
+const q=new URLSearchParams(location.search), isTop=q.get('pos')==='top';
+bg.src=q.get('bg'); day.textContent=q.get('day'); hl.textContent=q.get('hl'); sub.textContent=q.get('sub');
+hl.style.fontSize=Math.min(112,Math.floor(940/(q.get('hl').length*.7)))+'px';
+g.style.background=isTop?'linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 40%)':'linear-gradient(0deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 40%)';
+w.style.justifyContent=isTop?'flex-start':'flex-end'; w.style.paddingTop=isTop?'270px':0; w.style.paddingBottom=isTop?0:'290px';
+</script></body></html>

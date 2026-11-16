@@ -105,3 +105,6 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### Jour 4, V2
 - Hook comme le Jour 3 : « 22 JOURS POUR PRÉPARER » / « MON 1ER TRAIL » / « Jour 4 : ma routine d'étirements ».
 - « ⏱ 30 SEC CHAQUE CÔTÉ » sur fente profonde, ischios, pigeon, torsion du dos ; « 30 SEC » sur les autres.
+
+### Couvertures Jour 4
+- `out/Couverture-Jour4-Action.jpg` (chien tête en bas, texte en haut) et `out/Couverture-Jour4-Visage.jpg` (cobra, texte en bas). Outil : `tools/etirements/cover.js`.
