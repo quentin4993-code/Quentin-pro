@@ -11,7 +11,7 @@
 | Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
 | Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
 | Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
-| Vidéo suivante | ⬜ En attente des rushes (`rushes-2`) |
+| Vidéo Jour 4 (`Jour4`) | 🟡 V1 livrée — en attente de retours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -20,6 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
+| `Jour4` | « Jour 4/22 » : classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V1 | Release `jour-4` | `out/Jour4-TikTok-V1.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -93,3 +94,12 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Fichiers de travail supprimés à la demande de Quentin (il a tout enregistré) : rushes téléchargés (`public/videos/`), images de couverture (`public/covers/`), rendus (`out/`), fichiers temporaires.
 - Gardé : DA, méthode, suivi, descriptions, code du montage, police et musique.
 - Pour refaire un rendu du Jour 3 : retélécharger `rushes-1` depuis les Releases (si elle existe encore) puis relancer `scripts/prepare_rush.sh` (voir `METHODE.md`).
+
+### 2026-11-16 — Jour 4, V1
+- Rushes : Release `jour-4` (3 fichiers DJI Mimo) : 2 prises de l'intro (4 s) + face caméra intérieur de 4 min 09, sans images de course.
+- Sujet : classement de 12 objets (gilet, flasques, frontale, veste, gels/barres, bâtons, lunettes, casquette/buff, crème anti-frottement, sifflet, montre GPS, écouteurs).
+- Source unique `public/videos/jour4.mp4` = intro (prise a, 0,3 → 3,6 s) + vidéo principale ; temps de la principale décalés de +3,3 s.
+- Montage 4 min 09 → 1 min 04 : pauses, répétitions et ratés de fin coupés ; coupes vérifiées en retranscrivant le son monté.
+- Pas de ligne de parcours ni de compteur km (pas de course) → **tableau de classement** en haut (`src/tiktok/TierBoard.tsx`), « entre les deux » = étiquette en pointillés à cheval sur deux colonnes.
+- Hook « MATOS DE TRAIL / INDISPENSABLE ? / Jour 4/22 · prépa 1er trail ». Musique « Raving Energy » (version longue `raving-energy-long.mp3`), basse sous la voix, fondu de fin.
+- Couvertures : `out/Couverture-Jour4-Visage-V1.jpg`, `out/Couverture-Jour4-Large-V1.jpg`. Descriptions : `docs/DESCRIPTIONS.md`.

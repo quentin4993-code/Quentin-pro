@@ -11,7 +11,7 @@ if [ -n "${DELOGO:-}" ]; then
   IFS=: read -r x y w h until <<<"$DELOGO"
   vf="$vf,delogo=x=$x:y=$y:w=$w:h=$h:enable='lt(t,$until)'"
 fi
-ffmpeg -v error -y -i "$in" -vf "$vf" -c:v libx264 -preset veryfast -crf 18 \
+ffmpeg -v error -y -i "$in" -map 0:v:0 -map 0:a:0 -vf "$vf" -c:v libx264 -preset veryfast -crf 18 \
   -af "highpass=f=80,acompressor=threshold=-24dB:ratio=3:attack=5:release=120,loudnorm=I=-14:TP=-1.5:LRA=9" \
   -c:a aac -b:a 192k -ar 48000 -movflags +faststart "$out"
 echo "OK $out"

@@ -75,6 +75,11 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 - Texte placé là où il ne cache pas le visage (en haut sur le ciel, ou en bas), toujours dans la zone centrale 3:4 visible sur la grille du profil (y 240–1680).
 - Proposer 2 options : un **plan d'action** (course) et un **gros plan visage**.
 
+### Vidéos sans course (face caméra, conseils, classement) — proposé Jour 4
+- Pas de ligne de parcours ni de compteur km.
+- **Tableau de classement** sobre en haut (sous les onglets TikTok) : 3 colonnes INDISPENSABLE (jaune) / UTILE (blanc) / PAS INDISPENSABLE (noir) ; chaque objet apparaît au moment du verdict ; « entre les deux » = étiquette en pointillés à cheval.
+- Durée visée ≤ 1 min (4 min de rush → ~1 min).
+
 ---
 
 ## 5. Montage

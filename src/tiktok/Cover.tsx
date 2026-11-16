@@ -50,7 +50,7 @@ export const Cover: React.FC<CoverProps> = ({ bg, day, highlight, sub, position 
             style={{
               ...box,
               marginTop: 8,
-              fontSize: 50,
+              fontSize: Math.min(50, Math.floor(980 / (sub.length * 0.6))),
               fontWeight: 800,
               color: "white",
               backgroundColor: "rgba(0,0,0,0.72)",

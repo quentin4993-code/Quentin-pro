@@ -24,6 +24,9 @@ export type VideoEdit = {
   callouts?: Callout[];
   // Ligne de parcours : points de repère (seconde source -> km parcourus)
   route?: { totalKm: number; checkpoints: { at: number; km: number }[] };
+  // Tableau de classement (vidéo « tier list ») : at = seconde source du verdict
+  tiers?: { label: string; col: number; at: number }[];
+  ctaAt?: number; // seconde source où apparaît « Abonne-toi » (sinon : début du dernier plan)
 };
 
 export const FPS = 30;

@@ -13,6 +13,7 @@ import { f, placeClips, PlacedClip, toOutputFrame, VideoEdit } from "./types";
 import { ACCENT, fontFamily } from "./style";
 import { Counter, Progress, shakeOffset, Slam } from "./Animations";
 import { Circuit } from "./Circuit";
+import { TierBoard } from "./TierBoard";
 
 const MUSIC_TALK = 0.13; // musique sous la voix
 const MUSIC_BROLL = 0.6; // musique sur les paysages
@@ -85,7 +86,7 @@ const Hook: React.FC<{ hook: VideoEdit["hook"] }> = ({ hook }) => {
         style={{
           ...box,
           top: 308,
-          fontSize: 102,
+          fontSize: Math.min(102, Math.floor(960 / (hook.highlight.length * 0.74))),
           color: "black",
           backgroundColor: ACCENT,
           opacity: frame >= 5 ? 1 : 0,
@@ -224,7 +225,9 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
   const finishFrame = cps.length ? cps[cps.length - 1].fr : 0;
 
   // volume de la musique : bas sous la voix, fort sur les paysages
-  const musicVolume = (fr: number) => {
+  const videoEnd = last.from + last.frames;
+  const musicVolume = (fr: number) => musicLevel(fr) * interpolate(fr, [videoEnd - 30, videoEnd], [1, 0], clamp);
+  const musicLevel = (fr: number) => {
     const c = clips.find((cl) => fr >= cl.from && fr < cl.from + cl.frames) ?? last;
     const target = c.kind === "talk" ? MUSIC_TALK : MUSIC_BROLL;
     const prev = clips[clips.indexOf(c) - 1];
@@ -278,11 +281,26 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
         <Hook hook={edit.hook} />
       </Sequence>
 
-      {edit.cta && (
-        <Sequence from={last.from + 18} durationInFrames={last.frames - 18}>
-          <Cta text={edit.cta} />
-        </Sequence>
+      {edit.tiers && (
+        <TierBoard
+          items={edit.tiers.flatMap((t) => {
+            const fr = toOutputFrame(clips, t.at);
+            return fr === null ? [] : [{ label: t.label, col: t.col, frame: fr }];
+          })}
+          startFrame={f(edit.hook.duration)}
+          hideFrom={1e9}
+        />
       )}
+
+      {edit.cta && (() => {
+        const ctaFrom = (edit.ctaAt !== undefined ? toOutputFrame(clips, edit.ctaAt) : null) ?? last.from + 18;
+        const end = last.from + last.frames;
+        return (
+          <Sequence from={ctaFrom} durationInFrames={end - ctaFrom}>
+            <Cta text={edit.cta} />
+          </Sequence>
+        );
+      })()}
 
       {edit.route && (
         <Circuit

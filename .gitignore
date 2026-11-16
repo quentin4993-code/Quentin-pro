@@ -3,3 +3,5 @@ out
 public/videos/*.mov
 public/videos/*.mp4
 public/covers/*.jpg
+public/videos/**/*.mp4
+public/videos/**/*.mov
