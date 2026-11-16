@@ -7,6 +7,7 @@ export const jour4: VideoEdit = {
   src: "videos/jour4.mp4",
   hook: { top: "MATOS DE TRAIL", highlight: "INDISPENSABLE ?", sub: "Mon classement honnête", duration: 3.3 },
   cta: "Abonne-toi pour la suite",
+  sfx: true,
   ctaAt: 249.20,
   clips: [
     { in: 0.00, out: 3.30, kind: "talk" },

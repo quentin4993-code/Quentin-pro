@@ -101,6 +101,7 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 - **Crédit obligatoire** dans la description TikTok pour les musiques incompetech :
   `Musique : "Raving Energy" – Kevin MacLeod (incompetech.com) – CC BY 4.0`
 - ❌ Pas de musique « faite maison » (synthétisée) : jugée nulle.
+- **Bruitages** (demandés Jour 4) : pop à chaque objet rangé / élément important, whoosh + impact sur le hook, ding sur « Abonne-toi ». Discrets, sous la voix. Option `sfx: true`.
 
 ---
 

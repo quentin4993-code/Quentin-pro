@@ -200,6 +200,13 @@ const Cta: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
+// ---------- Bruitage ponctuel ----------
+const Sfx: React.FC<{ at: number; name: string; volume: number }> = ({ at, name, volume }) => (
+  <Sequence from={Math.max(0, at)} durationInFrames={40}>
+    <Audio src={staticFile(`sfx/${name}.wav`)} volume={volume} />
+  </Sequence>
+);
+
 // ---------- Composition complète ----------
 export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit, music }) => {
   const frame = useCurrentFrame();
@@ -290,6 +297,24 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
           startFrame={f(edit.hook.duration)}
           hideFrom={1e9}
         />
+      )}
+
+      {edit.sfx && (
+        <>
+          {/* hook : whoosh puis impact quand le bloc jaune tombe */}
+          <Sfx at={0} name="whoosh" volume={0.3} />
+          <Sfx at={8} name="thud" volume={0.55} />
+          {/* tableau : apparition puis un pop par objet rangé (aigu → grave selon la colonne) */}
+          {edit.tiers && <Sfx at={f(edit.hook.duration)} name="whoosh" volume={0.2} />}
+          {(edit.tiers ?? []).map((t, i) => {
+            const fr = toOutputFrame(clips, t.at);
+            const name = t.col < 1 ? "pop-hi" : t.col < 2 ? "pop-mid" : "pop-lo";
+            return fr === null ? null : <Sfx key={`pop-${i}`} at={fr} name={name} volume={0.55} />;
+          })}
+          {edit.cta && (
+            <Sfx at={(edit.ctaAt !== undefined ? toOutputFrame(clips, edit.ctaAt) : null) ?? last.from + 18} name="ding" volume={0.3} />
+          )}
+        </>
       )}
 
       {edit.cta && (() => {

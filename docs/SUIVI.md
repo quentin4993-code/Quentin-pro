@@ -11,7 +11,7 @@
 | Direction artistique | ✅ Validée — voir [DA.md](DA.md) |
 | Méthode de travail | ✅ À jour — voir [METHODE.md](METHODE.md) |
 | Vidéo Jour 3 (`Jour3`) | ✅ V5 validée (« parfait ») |
-| Vidéo Jour 4 (`Jour4`) | 🟡 V2 livrée — en attente de retours |
+| Vidéo Jour 4 (`Jour4`) | 🟡 V3 livrée — en attente de retours |
 
 Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V2 | Release `jour-4` | `out/Jour4-TikTok-V2.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 64 s | 🟡 V3 | Release `jour-4` | `out/Jour4-TikTok-V3.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -109,3 +109,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Fin : « Abonne-toi pour la suite » au lieu de « pour suivre les 22 jours ».
 - Hook : « MATOS DE TRAIL / INDISPENSABLE ? / Mon classement honnête ». Couvertures : même texte.
 - Règles ajoutées dans `DA.md` et `CLAUDE.md`.
+
+### Jour 4, V3 — bruitages
+- Demande : ajouter des bruitages (clics, pops) pour plus de dynamisme, notamment quand les objets se rangent.
+- Bruitages générés par `scripts/make_sfx.py` → `public/sfx/` : pop (aigu INDISPENSABLE / moyen UTILE / grave PAS INDISPENSABLE), whoosh + impact sur le hook, whoosh à l'apparition du tableau, ding sur « Abonne-toi ».
+- Activés par `sfx: true` dans le montage. Vérifié : 12 pops alignés sur les verdicts, ~7 dB sous le niveau global.
