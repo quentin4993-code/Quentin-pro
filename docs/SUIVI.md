@@ -20,6 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
+| `Jour4` (étirements) | 8 étirements, sans voix, hook + noms + « 30 SEC » | 1080×1920 · 30 fps | 26 s | 🟡 V1 livrée, musique à choisir | Release `jour-16` (nommée par erreur, c'est le Jour 4) | `out/Jour4-TikTok-V1.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -47,6 +48,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | 11 | Photo de couverture TikTok dans le style du hook | 2 couvertures : `out/Couverture-Jour3-Course.jpg` et `out/Couverture-Jour3-Visage.jpg` |
 | 12 | Description TikTok accrocheuse | 3 options dans `docs/DESCRIPTIONS.md` |
 | 14 | Raccourci pour envoyer les vidéos lourdes | Page https://claude.ai/artifact/RYnegRCEi893sVQPtRhuJx |
+| 15 | Jour 4 : vidéo d'étirements, même DA, hook sur la serviette + 1re position, noms des étirements, musique cool pas électro, couper les longueurs | V1 : 43 s → 26 s (≈2,5 s par posture), nom + « ⏱ 30 SEC » en haut, hook en bas sur la serviette, fin « Abonne-toi ». Musique en attente (incompetech bloqué dans cette session) |
 | 13 | « MON 1ER TRAIL » fait croire que je cours le trail, alors que je le **prépare** | Couvertures → « PRÉPA 1ER TRAIL » (V2), descriptions corrigées, règle ajoutée dans la DA et `CLAUDE.md` |
 
 ---
@@ -93,3 +95,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Fichiers de travail supprimés à la demande de Quentin (il a tout enregistré) : rushes téléchargés (`public/videos/`), images de couverture (`public/covers/`), rendus (`out/`), fichiers temporaires.
 - Gardé : DA, méthode, suivi, descriptions, code du montage, police et musique.
 - Pour refaire un rendu du Jour 3 : retélécharger `rushes-1` depuis les Releases (si elle existe encore) puis relancer `scripts/prepare_rush.sh` (voir `METHODE.md`).
+
+### 2026-11-16 — Jour 4 (étirements), V1
+- Source : Release `jour-16` (mal nommée), 43 s, pas de voix. Postures : cobra, chien tête en bas, fente profonde, ischios, enfant, pigeon, torsion, papillon.
+- Remotion non installable dans cette session (pas de réseau npm) → rendu des calques avec Chromium/Playwright, mêmes styles que `TikTokEdit.tsx` (`tools/etirements/`).
+- Hook placé en bas (le visage est en haut sur le plan debout). Noms en bloc blanc + « ⏱ 30 SEC » en bloc jaune, en haut.
+- Musique : pas encore (Quentin veut du dynamique, pas d'électro ; incompetech inaccessible ici).
