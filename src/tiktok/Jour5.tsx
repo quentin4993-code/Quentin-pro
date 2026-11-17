@@ -35,7 +35,7 @@ const SUBS: [number, number, string][] = [
   [23.55, 25.1, "Et puis c'est parti, let's go !"],
 ];
 
-const Sub: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
+export const Sub: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
   const o = useFade(frames, 3, 2);
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 600 }}>
@@ -47,12 +47,12 @@ const Sub: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
 };
 
 // ---------- Hook ----------
-const Hook: React.FC<{ frames: number }> = ({ frames }) => {
-  const fr = useCurrentFrame();
+export const Hook: React.FC<{ frames: number; instant?: boolean }> = ({ frames, instant }) => {
+  const fr = useCurrentFrame() + (instant ? 30 : 0); // instant : tout est déjà affiché à la 1re image
   const a = interpolate(fr, [2, 12], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
   const b = interpolate(fr, [12, 22], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
   const c = interpolate(fr, [22, 30], [0, 1], clamp);
-  const out = interpolate(fr, [frames - 6, frames], [1, 0], clamp);
+  const out = interpolate(fr - (instant ? 30 : 0), [frames - 6, frames], [1, 0], clamp);
   const line: React.CSSProperties = { fontFamily: NEUTRE.font, fontWeight: 700, fontSize: 60, lineHeight: 1.15, color: "white", textShadow: shadow, textAlign: "center" };
   return (
     <AbsoluteFill style={{ alignItems: "center", paddingTop: 270, opacity: out }}>
@@ -79,7 +79,7 @@ const Hook: React.FC<{ frames: number }> = ({ frames }) => {
 
 // ---------- « RENFO » qui s'ouvre entre les mains ----------
 // mains jointes au-dessus de la tête puis écartées : le mot se dévoile du centre vers les côtés.
-const Renfo: React.FC<{ frames: number }> = ({ frames }) => {
+export const Renfo: React.FC<{ frames: number }> = ({ frames }) => {
   const fr = useCurrentFrame();
   const open = interpolate(fr, [0, 7], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
   const out = interpolate(fr, [frames - 5, frames], [1, 0], clamp);
@@ -144,7 +144,7 @@ const Program: React.FC<{ start: number; frames: number }> = ({ start, frames })
 };
 
 // ---------- Étiquette de section (en haut) ----------
-const SectionTag: React.FC<{ text: string; frames: number; top?: number }> = ({ text, frames, top = 240 }) => {
+export const SectionTag: React.FC<{ text: string; frames: number; top?: number }> = ({ text, frames, top = 240 }) => {
   const o = useFade(frames, 8, 8);
   return (
     <AbsoluteFill style={{ alignItems: "center", paddingTop: top }}>
@@ -169,7 +169,7 @@ const SectionTag: React.FC<{ text: string; frames: number; top?: number }> = ({ 
 };
 
 // ---------- Titre d'exercice (bas d'écran) ----------
-const Exo: React.FC<{ title: string; detail?: string; frames: number; small?: boolean; top?: number }> = ({ title, detail, frames, small, top = 335 }) => {
+export const Exo: React.FC<{ title: string; detail?: string; frames: number; small?: boolean; top?: number }> = ({ title, detail, frames, small, top = 335 }) => {
   const fr = useCurrentFrame();
   const a = interpolate(fr, [0, 8], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
   const b = interpolate(fr, [5, 13], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
@@ -187,7 +187,7 @@ const Exo: React.FC<{ title: string; detail?: string; frames: number; small?: bo
 };
 
 // ---------- Fin ----------
-const Cta: React.FC = () => {
+export const Cta: React.FC = () => {
   const fr = useCurrentFrame();
   const a = interpolate(fr, [0, 10], [0, 1], clamp);
   return (
@@ -212,7 +212,7 @@ const Cta: React.FC = () => {
   );
 };
 
-const At: React.FC<{ from: number; to: number; children: React.ReactNode }> = ({ from, to, children }) => (
+export const At: React.FC<{ from: number; to: number; children: React.ReactNode }> = ({ from, to, children }) => (
   <Sequence from={f(from)} durationInFrames={Math.max(1, f(to) - f(from))}>
     {children}
   </Sequence>

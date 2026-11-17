@@ -22,6 +22,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
 | `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V7 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V7-neutre.mp4` |
 | `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V2 | Release `jour-5` | `out/Jour5-TikTok-V2.mp4` (+ `-sans-musique`) |
+| `Jour5Court` | Version courte du Jour 5 (ouverture dans l'action) | 1080×1920 · 30 fps | 22 s | 🧪 test | Release `jour-5` | `out/Jour5-COURT-V1-AVEC-MUSIQUE.mp4` / `-SANS-MUSIQUE` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -148,3 +149,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### Jour 5, V2 — retours (« le reste tout est nickel »)
 - Corde à sauter : l'ancien passage (30,5 → 36,4 s) contenait un raté → remplacé par **41,2 → 47,3 s**, vérifié image par image (régularité du mouvement la plus haute du rush, corde qui passe à chaque tour).
 - Musique : « RetroFuture Clean » refusée (« ça donne pas envie ») → **« Hotrock »** (Kevin MacLeod, rock 128 BPM, batterie / basse / guitare / saxos, tonalité majeure), départ fort de 1:37 calé sur le premier plan d'action ; coupes recalées sur le nouveau tempo (mêmes plans, mêmes textes).
+
+### Jour 5 — version courte (test « 100 vues »)
+- Constat : les vidéos plafonnent à ~100 vues (TikTok + Insta) → test d'une version **22 s** qui démarre dans l'action.
+- Ouverture sur le burpee avec le hook **affiché dès la 1re image** ; puis RENFO + « séance renfo, let's go ! » ; sac ; élastique ; squats / pompes / fentes / burpees (~2,3 s chacun) ; corde (passage sans raté) ; « Abonne-toi pour la suite ». Mêmes textes et même style que la version longue.
+- Coupes sur les temps de « Hotrock » ; musique baissée pendant la phrase. Livré avec et sans musique.
+- À faire : comparer les stats (durée moyenne, % regardé en entier, vues) avec la version longue.

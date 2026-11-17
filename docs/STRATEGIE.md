@@ -16,3 +16,7 @@
 - **Tourner léger** : la vidéo Défi peut être faite pendant la séance ; la vidéo Communauté peut être tournée à l'avance (plusieurs d'un coup).
 - **Bilan au bout de 7 jours** : comparer vues, durée moyenne, % regardé en entier, abonnés gagnés par format → garder ce qui marche, ajuster le reste.
 - Si c'est trop lourd : 1 Défi par jour + 1 Communauté **tous les 2 jours**.
+
+## Test en cours (Jour 5) : version courte
+- Pour chaque vidéo, faire aussi une **version de 20–25 s** qui démarre **dans l'action** (pas sur le face caméra), hook lisible dès la 1re image.
+- Publier la courte en premier et comparer les stats avec la longue.
