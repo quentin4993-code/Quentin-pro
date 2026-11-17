@@ -52,3 +52,23 @@
 - « Vrai ou faux ? » : idées reçues sur le trail (« il faut courir vite », « il faut des bâtons »…).
 - Réponse vidéo à un commentaire (fonction « répondre en vidéo » de TikTok).
 - Avant / après : ta foulée ou ton temps sur la même boucle à J1 et J22.
+
+---
+
+## 9. Format « expliqué simplement » (comme la vidéo D+) — trail débutant
+Face caméra au bureau + schémas animés. Un mot / une notion par vidéo.
+
+| Sujet | Hook | Schéma animé |
+|---|---|---|
+| **Le drop des chaussures** | « Le "drop" de tes chaussures, ça change tout. Je t'explique. » | Chaussure de profil : différence de hauteur talon / avant-pied qui se dessine (0 mm, 4 mm, 8 mm, 12 mm) |
+| **La barrière horaire** | « Tu peux être éliminé d'un trail même sans être blessé. » | Profil de course avec des points de contrôle + chrono : « passer avant 11 h 30 » |
+| **Lire le profil d'une course** | « Avant ton premier trail, apprends à lire ça. » | Profil réel : axe km / axe altitude, montées, descentes, ravitos, barrières qui s'allument |
+| **Pourquoi la descente fait plus mal que la montée** | « Le lendemain d'un trail, c'est pas les montées qui font mal. » | Muscle de la cuisse qui « freine » en descente, courbatures en rouge |
+| **Combien de temps pour faire un trail** | « 10 km en trail, ça te prend combien de temps ? » | Calcul : km + D+ ÷ 100 = km-effort → × ton allure sur plat (suite logique de la vidéo D+) |
+| **Les distances de trail** | « Trail court, trail, ultra : c'est quoi la différence ? » | Échelle de distance qui se remplit (repères approximatifs : moins de 21 km, 21–41, 42–79, 80 km et +) |
+| **Courir lentement pour progresser** | « Pour aller plus vite en trail, il faut courir lentement. » | Jauge cardio / « tu peux parler en courant » ; zones de couleur |
+| **Marcher en montée (power hiking)** | « En trail, marcher c'est pas abandonner. » | Pente qui se raidit : courir ↔ marcher, même vitesse mais moins d'énergie |
+| **Le balisage** | « Sur un trail, comment tu sais où aller ? » | Rubalise, flèches, panneaux qui apparaissent sur un chemin |
+| **Le matériel obligatoire** | « Sans ça, tu ne prends même pas le départ. » | Checklist qui se coche (eau, couverture de survie, sifflet, frontale… selon la course) |
+
+> Vérifier les chiffres au moment du tournage (distances, règles) : ils varient selon les courses et les fédérations.
