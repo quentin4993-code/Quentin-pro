@@ -174,3 +174,6 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Cadrage différent (tête basse, mur libre) → schémas EN HAUT, sous-titres au-dessus de la tête.
 - Animations : « LENTEMENT » lettre par lettre (tic par lettre) ; pastille « Le secret des coureurs qui progressent » ; barre 80 % très facile / 20 % ; « = endurance fondamentale » ; test de la parole (✓ parler, chanter, faire des phrases / ✗ essoufflé → trop vite) ; moteur (muscles + cœur qui bat) ; 20 % séances dures « tu envoies » ; question + « Abonne-toi pour la suite ».
 - Miniatures « pro » : `Miniature-Lent-Surpris-V1.jpg` (80/20 · Cours plus lentement), `Miniature-Lent-Explique-V1.jpg` (LENT · Tu cours trop vite). Composant générique `CoverPro` dans `src/tiktok/CoverJ6Pro.tsx`.
+
+### « Courir lentement » V2 — hook plus punchy
+- Retour : « le hook est trop mou, les gens s'endorment ». Nouveau hook : arrivée caméra (recul rapide) + whoosh/impact, blocs POUR ALLER / PLUS VITE / EN TRAIL, / IL FAUT COURIR… au rythme de la voix avec tics, puis avancée caméra + assombrissement + « LENTEMENT » qui claque (gros impact). Sous-titres masqués pendant le hook (le texte animé les remplace). Reste inchangé.

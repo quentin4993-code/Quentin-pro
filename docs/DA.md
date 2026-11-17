@@ -90,6 +90,13 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 - Titre dans un **bandeau marron** légèrement penché + pastille blanche en dessous. Fondu beige en bas pour effacer les restes du décor.
 - Code : `src/tiktok/CoverJ6Pro.tsx` (à réutiliser en changeant le mot-clé, le titre et la photo).
 
+### Hook « punch » (validé à tester — vidéo « Courir lentement » V2)
+- Demandé par Quentin (« le hook est trop mou ») : **exception au « pas de zoom » limitée aux 5 premières secondes**.
+- Arrivée choc : recul rapide de la caméra (1,28 → 1) + whoosh + impact sourd dès l'image 0.
+- Texte du hook en **blocs qui claquent au rythme de la voix** (un « tic » par bloc), texte présent dès la 1re image.
+- Mot-clé final : avancée rapide sur le visage, image assombrie, mot en très gros qui claque avec un gros impact sonore.
+- Code : `Hook` + `hookScale` dans `src/tiktok/Lent.tsx`.
+
 ## 5. Montage
 
 - **Face caméra** : coupes franches sur les pauses et hésitations. Pas de zoom.

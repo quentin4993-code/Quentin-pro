@@ -63,33 +63,81 @@ const Sub: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
   );
 };
 
-// ---------- Hook : « LENTEMENT » lettre par lettre ----------
-const WORD = "LENTEMENT";
-export const LETTER_STEP = 0.075;
+// ---------- Hook « punch » : arrivée choc, texte au rythme de la voix, LENTEMENT qui claque ----------
+// temps (s) dans la vidéo finale : chaque bloc arrive quand le mot est prononcé
+export const HOOK_CHUNKS: [number, string][] = [
+  [0.0, "POUR ALLER"],
+  [1.01, "PLUS VITE"],
+  [1.91, "EN TRAIL,"],
+  [3.31, "IL FAUT COURIR…"],
+];
 const Hook: React.FC<{ frames: number }> = ({ frames }) => {
   const fr = useCurrentFrame();
-  const out = interpolate(fr, [frames - 6, frames], [1, 0], clamp);
-  const t0 = f(LT_EV.lentement) - 2;
+  const L = f(LT_EV.lentement);
+  const out = interpolate(fr, [frames - 4, frames], [1, 0], clamp);
+  const before = interpolate(fr, [L - 2, L + 1], [1, 0], clamp); // les blocs s'effacent quand LENTEMENT arrive
+  const slam = interpolate(fr, [L, L + 5], [0, 1], { ...clamp, easing: Easing.out(Easing.back(1.6)) });
+  const spread = interpolate(fr, [L + 5, frames], [0, 1], clamp); // les lettres s'écartent lentement
   return (
-    <AbsoluteFill style={{ alignItems: "center", paddingTop: 250, opacity: out }}>
-      <div style={{ fontFamily: NEUTRE.font, fontWeight: 700, fontSize: 64, lineHeight: 1.15, color: "white", textShadow: shadow, textAlign: "center" }}>
-        Pour aller plus vite en trail,
-        <br />
-        il faut courir…
-      </div>
-      <div style={{ marginTop: 26, display: "flex", fontFamily: NEUTRE.font, fontWeight: 800, fontSize: 132, letterSpacing: 6, color: "white", textShadow: "0 4px 24px rgba(0,0,0,0.5)" }}>
-        {WORD.split("").map((ch, i) => {
-          const s = t0 + Math.round(i * LETTER_STEP * FPS);
-          const p = interpolate(fr, [s, s + 6], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+    <AbsoluteFill style={{ opacity: out }}>
+      <AbsoluteFill style={{ alignItems: "center", paddingTop: 230, opacity: before }}>
+        {HOOK_CHUNKS.map(([t, txt], i) => {
+          const s0 = f(t);
+          if (fr < s0) return null;
+          const p = i === 0 ? interpolate(fr, [0, 4], [0.75, 1], { ...clamp, easing: Easing.out(Easing.back(2)) }) : interpolate(fr, [s0, s0 + 5], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+          const last = i === HOOK_CHUNKS.length - 1;
           return (
-            <span key={i} style={{ opacity: p, transform: `translateY(${(1 - p) * 18}px)`, display: "inline-block" }}>
-              {ch}
-            </span>
+            <div
+              key={i}
+              style={{
+                fontFamily: NEUTRE.font,
+                fontWeight: 800,
+                fontSize: last ? 92 : 112,
+                lineHeight: 1.08,
+                color: i === 1 ? NEUTRE.beige : "white",
+                textShadow: "0 4px 22px rgba(0,0,0,0.55)",
+                transform: `scale(${interpolate(p, [0, 1], [1.6, 1])})`,
+                opacity: Math.min(1, p * 2),
+              }}
+            >
+              {txt}
+            </div>
           );
         })}
-      </div>
+      </AbsoluteFill>
+      {/* LENTEMENT : assombrissement + mot qui claque, puis lettres qui s'écartent */}
+      <AbsoluteFill style={{ backgroundColor: "black", opacity: 0.5 * slam }} />
+      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", paddingBottom: 520 }}>
+        <div
+          style={{
+            fontFamily: NEUTRE.font,
+            fontWeight: 900,
+            fontSize: 136,
+            letterSpacing: interpolate(spread, [0, 1], [0, 5]),
+            color: "white",
+            textShadow: "0 6px 30px rgba(0,0,0,0.6)",
+            opacity: Math.min(1, slam * 2),
+            transform: `scale(${interpolate(slam, [0, 1], [2.4, 1])})`,
+          }}
+        >
+          LENTEMENT
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
+};
+
+// mouvement de caméra du hook uniquement : arrivée (recul rapide) puis avancée sur « lentement »
+const hookScale = (fr: number) => {
+  const L = f(LT_EV.lentement);
+  const arrive = interpolate(fr, [0, 7], [1.28, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const push = interpolate(fr, [L, L + 4], [1, 1.14], { ...clamp, easing: Easing.out(Easing.cubic) });
+  return arrive * push;
+};
+
+const HookCam: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const fr = useCurrentFrame();
+  return <AbsoluteFill style={{ transform: `scale(${hookScale(fr)})`, transformOrigin: "50% 58%" }}>{children}</AbsoluteFill>;
 };
 
 // ---------- Pastille « le secret » ----------
@@ -255,7 +303,13 @@ export const Lent: React.FC<{ music?: boolean }> = ({ music = false }) => {
     <AbsoluteFill style={{ backgroundColor: "black" }}>
       {placed.map((c, i) => (
         <Sequence key={i} from={c.from} durationInFrames={c.frames} premountFor={30}>
-          <OffthreadVideo src={staticFile(c.src)} trimBefore={f(c.in)} trimAfter={f(c.in) + c.frames} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          {i === 0 ? (
+            <HookCam>
+              <OffthreadVideo src={staticFile(c.src)} trimBefore={f(c.in)} trimAfter={f(c.in) + c.frames} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </HookCam>
+          ) : (
+            <OffthreadVideo src={staticFile(c.src)} trimBefore={f(c.in)} trimAfter={f(c.in) + c.frames} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          )}
         </Sequence>
       ))}
 
@@ -287,10 +341,15 @@ export const Lent: React.FC<{ music?: boolean }> = ({ music = false }) => {
         </At>
       ))}
 
-      {/* « tic » à chaque lettre de LENTEMENT, puis pops discrets */}
-      {WORD.split("").map((_, i) => (
-        <Sfx key={`l${i}`} at={E.lentement - 2 / 30 + i * LETTER_STEP} name="pop-mid" volume={0.28} />
+      {/* hook : arrivée (whoosh + impact), un tic par bloc de texte, gros impact sur LENTEMENT */}
+      <Sfx at={0} name="whoosh" volume={0.55} />
+      <Sfx at={0.03} name="thud" volume={0.85} />
+      {HOOK_CHUNKS.slice(1).map(([t], i) => (
+        <Sfx key={`h${i}`} at={t} name="pop-hi" volume={0.5} />
       ))}
+      <Sfx at={E.lentement - 0.12} name="whoosh" volume={0.45} />
+      <Sfx at={E.lentement} name="thud" volume={1} />
+      <Sfx at={E.lentement} name="pop-lo" volume={0.6} />
       <Sfx at={E.pct80} name="pop-hi" volume={0.4} />
       <Sfx at={E.fondamentale} name="pop-mid" volume={0.35} />
       <Sfx at={E.parler} name="pop-hi" volume={0.4} />

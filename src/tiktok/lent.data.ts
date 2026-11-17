@@ -37,10 +37,6 @@ export const LT_EV = {
   fond: 36.833,
 } as const;
 export const LT_SUBS: [number, number, string][] = [
-  [0.0, 1.733, "Pour aller plus vite dans le trail"],
-  [1.733, 3.233, "et la course à pied,"],
-  [3.233, 4.333, "il faut courir…"],
-  [4.333, 5.0, "lentement."],
   [5.0, 6.933, "Alors oui, ça paraît bizarre dit comme ça,"],
   [6.933, 8.967, "mais c'est ce que font la plupart des coureurs pour progresser."],
   [8.967, 11.367, "À peu près 80 % des entraînements"],
