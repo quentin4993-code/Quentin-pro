@@ -37,8 +37,15 @@ const Profile: React.FC<{ top: number }> = ({ top }) => {
   );
 };
 
-export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ variant }) => {
-  const cut = variant === "doigts" ? "covers/jour6-cut-doigts.png" : "covers/jour6-cut-calme.png";
+export type CoverProProps = { cut: string; keyword: string; kwSize?: number; title: string; titleSize?: number; sub: string; imgTop?: number; kwTop?: number };
+export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ variant }) =>
+  variant === "doigts" ? (
+    <CoverPro cut="covers/jour6-cut-doigts.png" keyword="D+" title="10 km ≠ 10 km" titleSize={128} sub="Le D+ expliqué simplement" />
+  ) : (
+    <CoverPro cut="covers/jour6-cut-calme.png" keyword="D+" title={"C'est quoi le D+\u00a0?"} titleSize={112} sub="Expliqué simplement pour débuter" />
+  );
+
+export const CoverPro: React.FC<CoverProProps> = ({ cut, keyword, kwSize = 560, title, titleSize = 120, sub, imgTop = 230, kwTop = 170 }) => {
   return (
     <AbsoluteFill style={{ background: `linear-gradient(180deg, ${BEIGE_1} 0%, ${BEIGE_2} 100%)`, overflow: "hidden" }}>
       <Contours />
@@ -49,17 +56,17 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
           position: "absolute",
           left: 0,
           right: 0,
-          top: 170,
+          top: kwTop,
           textAlign: "center",
           fontFamily: NEUTRE.font,
           fontWeight: 800,
-          fontSize: 560,
+          fontSize: kwSize,
           letterSpacing: -20,
           lineHeight: 1,
           color: NEUTRE.blue,
         }}
       >
-        D+
+        {keyword}
       </div>
       {/* silhouette détourée */}
       <Img
@@ -67,7 +74,7 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
         style={{
           position: "absolute",
           left: 0,
-          top: 230,
+          top: imgTop,
           width: 1080,
           height: 1920,
           objectFit: "cover",
@@ -83,7 +90,7 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
           style={{
             fontFamily: NEUTRE.font,
             fontWeight: 800,
-            fontSize: variant === "doigts" ? 128 : 112,
+            fontSize: titleSize,
             color: "white",
             backgroundColor: NEUTRE.brown,
             padding: "14px 44px",
@@ -93,7 +100,7 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
             whiteSpace: "nowrap",
           }}
         >
-          {variant === "doigts" ? "10 km ≠ 10 km" : "C'est quoi le D+ ?"}
+          {title}
         </div>
         <div
           style={{
@@ -107,7 +114,7 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
             boxShadow: "0 10px 26px rgba(40,25,10,0.18)",
           }}
         >
-          {variant === "doigts" ? "Le D+ expliqué simplement" : "Expliqué simplement pour débuter"}
+          {sub}
         </div>
       </div>
     </AbsoluteFill>

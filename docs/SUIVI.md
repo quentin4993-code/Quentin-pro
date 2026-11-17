@@ -24,6 +24,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V2 | Release `jour-5` | `out/Jour5-TikTok-V2.mp4` (+ `-sans-musique`) |
 | `Jour5Court` | Version courte du Jour 5 (ouverture dans l'action) | 1080×1920 · 30 fps | 22 s | 🧪 test | Release `jour-5` | `out/Jour5-COURT-V1-AVEC-MUSIQUE.mp4` / `-SANS-MUSIQUE` |
 | `Jour6` | « Le D+ expliqué simplement » (Communauté, au bureau) | 1080×1920 · 30 fps | 49 s | 🟡 V1 | Release `jour-6` | `out/Denivele-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
+| `Lent` | « Courir lentement pour progresser » (Communauté, au bureau) | 1080×1920 · 30 fps | 38 s | 🟡 V1 | Release `jour-1` | `out/Lent-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -167,3 +168,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### D+ — V2 + miniatures « pro »
 - V2 : rafale de 14 petits « D+ » qui apparaissent un par un (« tic » sonore à chacun) sur « et c'est à cause de ça ».
 - Miniatures refaites (« mes images ressemblent à rien ») : silhouette détourée sur fond beige + courbes de niveau + profil + énorme « D+ » bleu derrière + bandeau titre. `out/Miniature-Denivele-Doigts-V1.jpg`, `out/Miniature-Denivele-Question-V1.jpg`.
+
+### 2026-11-17 — « Courir lentement pour progresser » (V1)
+- 13 rushs (Release `jour-1`). Prises : hook r02 (trail en premier, pause sur « courir… »), r04, r06, r08 (2e prise), r09, r10 (2e moitié = prise complète), r12, r13 (2e prise). Phrase « récup / blessures » non tournée.
+- Cadrage différent (tête basse, mur libre) → schémas EN HAUT, sous-titres au-dessus de la tête.
+- Animations : « LENTEMENT » lettre par lettre (tic par lettre) ; pastille « Le secret des coureurs qui progressent » ; barre 80 % très facile / 20 % ; « = endurance fondamentale » ; test de la parole (✓ parler, chanter, faire des phrases / ✗ essoufflé → trop vite) ; moteur (muscles + cœur qui bat) ; 20 % séances dures « tu envoies » ; question + « Abonne-toi pour la suite ».
+- Miniatures « pro » : `Miniature-Lent-Surpris-V1.jpg` (80/20 · Cours plus lentement), `Miniature-Lent-Explique-V1.jpg` (LENT · Tu cours trop vite). Composant générique `CoverPro` dans `src/tiktok/CoverJ6Pro.tsx`.

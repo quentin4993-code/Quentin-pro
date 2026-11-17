@@ -115,3 +115,30 @@ Tu le savais ? 👇
 #trail #trailrunning #denivele #debutanttrail #runnerfr #lareunion
 ```
 > Version avec musique publiée ? Ajouter : Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+
+## Courir lentement pour progresser (vidéo Communauté)
+
+**Option 1 (retenue par défaut)**
+```
+Pour aller plus vite en trail… il faut courir lentement 🐢 La règle des 80/20 expliquée simplement + le test de la parole pour savoir si tu vas trop vite.
+Et toi, tu cours lentement ou t'es toujours à fond ? 👇
+
+#trail #trailrunning #enduranceFondamentale #debutantrunning #prepatrail #runnerfr #conseilrunning
+```
+
+**Option 2**
+```
+Tu cours sûrement trop vite. Et c'est pour ça que tu progresses pas 😅
+80 % facile, 20 % dur : le secret des coureurs qui progressent.
+
+#running #trail #courseapied #debutanttrail #runnerfr #prepatrail
+```
+
+**Option 3**
+```
+Si tu peux pas parler en courant, tu vas trop vite 🗣️ Voilà pourquoi courir lentement te fera progresser.
+Enregistre la vidéo pour ta prochaine sortie.
+
+#trail #trailrunning #running #enduranceFondamentale #runnerfr
+```
+> Version avec musique publiée ? Ajouter : Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0

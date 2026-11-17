@@ -8,7 +8,8 @@ import { CoverJ5 } from "./tiktok/CoverJ5";
 import { Jour5Court, J5C_FRAMES } from "./tiktok/Jour5Court";
 import { Jour6, J6_FRAMES } from "./tiktok/Jour6";
 import { CoverJ6 } from "./tiktok/CoverJ6";
-import { CoverJ6Pro } from "./tiktok/CoverJ6Pro";
+import { CoverJ6Pro, CoverPro } from "./tiktok/CoverJ6Pro";
+import { Lent, LT_FRAMES } from "./tiktok/Lent";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -48,7 +49,11 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Jour5CourtSansMusique" component={Jour5Court} durationInFrames={J5C_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="Jour6" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="Jour6AvecMusique" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
+      <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       {/* Couvertures TikTok (images fixes) */}
+      <Still id="MiniatureLentSurpris" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/lent-cut-surpris.png", keyword: "80/20", kwSize: 380, kwTop: 260, title: "Cours plus lentement", titleSize: 90, sub: "pour progresser plus vite en trail", imgTop: -330 }} />
+      <Still id="MiniatureLentExplique" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/lent-cut-explique.png", keyword: "LENT", kwSize: 420, kwTop: 250, title: "Tu cours trop vite", titleSize: 116, sub: "Le secret des coureurs qui progressent", imgTop: -330 }} />
       <Still id="CoverDeniveleProDoigts" component={CoverJ6Pro} width={1080} height={1920} defaultProps={{ variant: "doigts" as const }} />
       <Still id="CoverDeniveleProQuestion" component={CoverJ6Pro} width={1080} height={1920} defaultProps={{ variant: "question" as const }} />
       <Still id="CoverDeniveleHook" component={CoverJ6} width={1080} height={1920} defaultProps={{ variant: "hook" as const }} />
