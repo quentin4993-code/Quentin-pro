@@ -21,7 +21,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
 | `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V7 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V7-neutre.mp4` |
-| `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V1 | Release `jour-5` | `out/Jour5-TikTok-V1.mp4` (+ `-sans-musique`) |
+| `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V2 | Release `jour-5` | `out/Jour5-TikTok-V2.mp4` (+ `-sans-musique`) |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -144,3 +144,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Carte « Le programme » synchronisée avec la voix ; échauffement (élastique, tête, hanches, genoux) ; circuit (squats, pompes, fentes, burpees, « 10 répétitions », « Circuit training · 5 tours ») ; corde à sauter « 5 × 1 minute » ; fin « Abonne-toi pour la suite ».
 - Musique : « RetroFuture Clean » (Kevin MacLeod, funk-rock, sans synthé), montée d'énergie de 2:04 calée sur le premier plan d'action ; coupes sur les temps (92 BPM). Voix ~12 dB au-dessus de la musique dans l'intro. Version sans musique livrée aussi.
 - Couvertures : `Couverture-Jour5-Renfo-V1.jpg` (geste RENFO) et `Couverture-Jour5-Saut-V1.jpg` (burpee en l'air).
+
+### Jour 5, V2 — retours (« le reste tout est nickel »)
+- Corde à sauter : l'ancien passage (30,5 → 36,4 s) contenait un raté → remplacé par **41,2 → 47,3 s**, vérifié image par image (régularité du mouvement la plus haute du rush, corde qui passe à chaque tour).
+- Musique : « RetroFuture Clean » refusée (« ça donne pas envie ») → **« Hotrock »** (Kevin MacLeod, rock 128 BPM, batterie / basse / guitare / saxos, tonalité majeure), départ fort de 1:37 calé sur le premier plan d'action ; coupes recalées sur le nouveau tempo (mêmes plans, mêmes textes).

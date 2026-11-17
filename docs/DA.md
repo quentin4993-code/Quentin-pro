@@ -96,7 +96,8 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 ## 6. Son
 
 - **Voix** : nettoyée et normalisée (−14 LUFS), toujours bien audible.
-- **Musique : aucune.** ❌ Plus jamais de musique électro (« Raving Energy », musiques synthétisées) : « nulle ». Les vidéos sont livrées sans musique ; Quentin ajoute un **son tendance dans l'appli**.
+- **Musique** : si demandée, rock énergique / sportif non électro (Jour 5 V2 « Hotrock »), sinon aucune.
+- (Ancienne règle) **Musique : aucune.** ❌ Plus jamais de musique électro (« Raving Energy », musiques synthétisées) : « nulle ». Les vidéos sont livrées sans musique ; Quentin ajoute un **son tendance dans l'appli**.
 - **Bruitages** : pop à chaque objet rangé, whoosh léger à l'arrivée des cartes. En DA neutre : plus discrets, pas d'impact sur le hook, pas de ding final.
 
 ---

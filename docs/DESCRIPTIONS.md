@@ -65,7 +65,7 @@ Tu l'aurais tenu jusqu'au bout ? 👇
 
 #trail #trailrunning #renforcement #circuittraining #prepatrail #runnerfr #lareunion
 
-Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
 ```
 
 **Option 2**
@@ -75,7 +75,7 @@ Jour 5/22. Tu fais du renfo, toi ? 👇
 
 #trail #renfo #musculation #running #prepatrail #runnerfr
 
-Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
 ```
 
 **Option 3**
@@ -85,6 +85,6 @@ Sauvegarde le circuit pour le tester 👇
 
 #trail #trailrunning #renforcementmusculaire #circuittraining #runnerfr #prepatrail
 
-Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
 ```
 > Si tu publies la version **sans musique** avec un son TikTok, enlève la ligne « Musique : … ».
