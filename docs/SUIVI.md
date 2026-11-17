@@ -25,6 +25,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | `Jour5Court` | Version courte du Jour 5 (ouverture dans l'action) | 1080×1920 · 30 fps | 22 s | 🧪 test | Release `jour-5` | `out/Jour5-COURT-V1-AVEC-MUSIQUE.mp4` / `-SANS-MUSIQUE` |
 | `Jour6` | « Le D+ expliqué simplement » (Communauté, au bureau) | 1080×1920 · 30 fps | 49 s | 🟡 V1 | Release `jour-6` | `out/Denivele-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
 | `Lent` | « Courir lentement pour progresser » (Communauté, au bureau) | 1080×1920 · 30 fps | 38 s | 🟡 V1 | Release `jour-1` | `out/Lent-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
+| `Semaine` | « Combien de fois par semaine courir quand on débute » (Communauté) | 1080×1920 · 30 fps | 34 s | 🟡 V1 | Release `jour-2` | `out/Semaine-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -177,3 +178,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 ### « Courir lentement » V2 — hook plus punchy
 - Retour : « le hook est trop mou, les gens s'endorment ». Nouveau hook : arrivée caméra (recul rapide) + whoosh/impact, blocs POUR ALLER / PLUS VITE / EN TRAIL, / IL FAUT COURIR… au rythme de la voix avec tics, puis avancée caméra + assombrissement + « LENTEMENT » qui claque (gros impact). Sous-titres masqués pendant le hook (le texte animé les remplace). Reste inchangé.
+
+### 2026-11-17 — « Combien de fois par semaine » (V1)
+- 6 rushs (Release `jour-2`), plusieurs phrases par prise. Prises : r01 (2e « tu débutes »), r02 (2e prise « super motivé »), r03, r04, r05 (sans le « pour ma part » tronqué), r06.
+- Phrases non tournées (2-3 sorties, repos, progrès pendant le repos) → montrées par la carte « semaine type ».
+- Hook punch (arrivée caméra, TU DÉBUTES ? / UN CONSEIL : / NE COURS PAS TOUS LES JOURS qui claque). Cartes : piège du débutant ; jauges souffle / muscles ; semaine type 2-3 sorties + repos, + 1 séance ; compteur « Ma prépa trail » 2 → 5 séances ; question + abonnement.
+- Miniatures pro : `Miniature-Semaine-A-V1.jpg` (2-3× · Pas tous les jours !), `Miniature-Semaine-B-V1.jpg` (REPOS · Combien par semaine ?).

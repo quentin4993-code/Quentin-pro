@@ -142,3 +142,30 @@ Enregistre la vidéo pour ta prochaine sortie.
 #trail #trailrunning #running #enduranceFondamentale #runnerfr
 ```
 > Version avec musique publiée ? Ajouter : Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+
+## Combien de fois par semaine courir quand on débute (vidéo Communauté)
+
+**Option 1 (retenue par défaut)**
+```
+Tu débutes la course à pied ? Cours pas tous les jours 🙅‍♂️ Au début, 2 à 3 sorties par semaine avec du repos entre, et on augmente petit à petit.
+Et toi, tu cours combien de fois par semaine ? 👇
+
+#debutantrunning #courseapied #trail #runnerfr #conseilrunning #prepatrail
+```
+
+**Option 2**
+```
+L'erreur n°1 des débutants en course à pied : vouloir courir tous les jours 😬
+Moi j'ai commencé à 2 séances par semaine… aujourd'hui j'en fais 5 pour préparer mon premier trail.
+
+#running #debutant #trailrunning #runnerfr #prepatrail
+```
+
+**Option 3**
+```
+Ton souffle progresse vite… tes muscles beaucoup moins 👀 Voilà pourquoi il faut y aller doucement quand tu débutes.
+Enregistre la vidéo si tu commences à courir.
+
+#courseapied #debutantrunning #trail #runnerfr #conseilrunning
+```
+> Version avec musique publiée ? Ajouter : Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
