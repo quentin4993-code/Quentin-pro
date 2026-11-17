@@ -23,6 +23,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V7 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V7-neutre.mp4` |
 | `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V2 | Release `jour-5` | `out/Jour5-TikTok-V2.mp4` (+ `-sans-musique`) |
 | `Jour5Court` | Version courte du Jour 5 (ouverture dans l'action) | 1080×1920 · 30 fps | 22 s | 🧪 test | Release `jour-5` | `out/Jour5-COURT-V1-AVEC-MUSIQUE.mp4` / `-SANS-MUSIQUE` |
+| `Jour6` | « Le D+ expliqué simplement » (Communauté, au bureau) | 1080×1920 · 30 fps | 49 s | 🟡 V1 | Release `jour-6` | `out/Denivele-V1-SANS-MUSIQUE.mp4` (+ `-AVEC-MUSIQUE`) |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -155,3 +156,10 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Ouverture sur le burpee avec le hook **affiché dès la 1re image** ; puis RENFO + « séance renfo, let's go ! » ; sac ; élastique ; squats / pompes / fentes / burpees (~2,3 s chacun) ; corde (passage sans raté) ; « Abonne-toi pour la suite ». Mêmes textes et même style que la version longue.
 - Coupes sur les temps de « Hotrock » ; musique baissée pendant la phrase. Livré avec et sans musique.
 - À faire : comparer les stats (durée moyenne, % regardé en entier, vues) avec la version longue.
+
+### 2026-11-17 — Jour 6 : « Le D+ expliqué simplement » (V1)
+- 14 rushs au bureau (Release `jour-6`), une phrase par prise. Prises retenues : hook r14, définition r02 (meilleure des 4), r05, r06, r07, r08, r10 (plus fluide que r09), r11 et r12 (2e prise à l'intérieur du fichier).
+- Phrase « même si tu finis là où tu as commencé… » non tournée → montrée par le schéma (Départ / Arrivée au même niveau, D+ 500 / D– 500).
+- Schémas animés synchronisés sur les mots : définition + flèche ; profil 10 km (montées bleues +100/+200/+200, compteur D+ → 500 m ; descentes marron, D– 500 m) ; immeuble qui se remplit jusqu'à 170 étages ; règle 100 m D+ ≈ +1 km ; calcul 10 km + 500 m D+ ≈ 15 km à plat ; checklist « les kilomètres / le D+ » ; question + « Abonne-toi pour la suite ».
+- Mise en page : schémas en bas (torse), sous-titres sous le menton, visage jamais caché. Pops discrets. Livré sans musique (principal) + avec « Hotrock » très bas.
+- Couvertures : `Couverture-Denivele-Hook-V1.jpg` (10 km ≠ 10 km), `Couverture-Denivele-Question-V1.jpg` (C'est quoi le D+ ? + mini profil).

@@ -88,3 +88,30 @@ Sauvegarde le circuit pour le tester 👇
 Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
 ```
 > Si tu publies la version **sans musique** avec un son TikTok, enlève la ligne « Musique : … ».
+
+## Le D+ expliqué simplement (vidéo Communauté, Jour 6)
+
+**Option 1 (retenue par défaut)**
+```
+10 km en trail, c'est pas vraiment 10 km 👀 Je t'explique le D+ simplement (et pourquoi il faut le regarder avant de t'inscrire).
+Et toi, c'est quoi ton plus gros D+ ? 👇
+
+#trail #trailrunning #debutanttrail #denivele #prepatrail #runnerfr #conseilrunning
+```
+
+**Option 2**
+```
+D+, D–, dénivelé… tu comprends rien ? En 45 secondes c'est réglé ⛰️
+Enregistre la vidéo pour ton premier trail.
+
+#trail #trailrunning #denivele #debutantrunning #runnerfr #prepatrail
+```
+
+**Option 3**
+```
+500 m de D+ = environ 170 étages 😮‍💨 Voilà pourquoi 10 km en trail, c'est comme 15 km sur du plat.
+Tu le savais ? 👇
+
+#trail #trailrunning #denivele #debutanttrail #runnerfr #lareunion
+```
+> Version avec musique publiée ? Ajouter : Musique : "Hotrock" – Kevin MacLeod (incompetech.com) – CC BY 4.0
