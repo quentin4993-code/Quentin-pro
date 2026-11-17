@@ -54,3 +54,37 @@ Et toi, c'est quoi ton indispensable ? 👇
 
 #trail #trailrunning #materieltrail #lareunion #runnerfr #prepatrail
 ```
+
+## Jour 5 / 22 — séance renfo (vidéo Défi)
+
+**Option 1 (retenue par défaut)**
+```
+Pas un seul kilomètre aujourd'hui… et pourtant ça pique 🥵
+Jour 5/22 de prépa pour mon premier trail : circuit training 5 tours (squats, pompes, fentes, burpees) + corde à sauter.
+Tu l'aurais tenu jusqu'au bout ? 👇
+
+#trail #trailrunning #renforcement #circuittraining #prepatrail #runnerfr #lareunion
+
+Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+```
+
+**Option 2**
+```
+Le renfo que je fais pour préparer mon premier trail 💪 5 tours : 10 squats, 10 pompes, 10 fentes, 10 burpees… et 5 × 1 min de corde à sauter.
+Jour 5/22. Tu fais du renfo, toi ? 👇
+
+#trail #renfo #musculation #running #prepatrail #runnerfr
+
+Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+```
+
+**Option 3**
+```
+Courir, c'est pas que courir. Jour 5/22 : séance renfo pour préparer mes jambes au trail ⛰️
+Sauvegarde le circuit pour le tester 👇
+
+#trail #trailrunning #renforcementmusculaire #circuittraining #runnerfr #prepatrail
+
+Musique : "RetroFuture Clean" – Kevin MacLeod (incompetech.com) – CC BY 4.0
+```
+> Si tu publies la version **sans musique** avec un son TikTok, enlève la ligne « Musique : … ».

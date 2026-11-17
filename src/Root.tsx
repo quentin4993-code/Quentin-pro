@@ -3,6 +3,8 @@ import { HelloWorld } from "./HelloWorld";
 import { TikTokEdit } from "./tiktok/TikTokEdit";
 import { rush1 } from "./tiktok/rush1";
 import { jour4, jour4Neutre } from "./tiktok/jour4";
+import { Jour5, J5_FRAMES } from "./tiktok/Jour5";
+import { CoverJ5 } from "./tiktok/CoverJ5";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -36,7 +38,11 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ edit: jour4Neutre, music: "" }}
       />
+      <Composition id="Jour5" component={Jour5} durationInFrames={J5_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition id="Jour5SansMusique" component={Jour5} durationInFrames={J5_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       {/* Couvertures TikTok (images fixes) */}
+      <Still id="CoverJour5Renfo" component={CoverJ5} width={1080} height={1920} defaultProps={{ variant: "renfo" as const }} />
+      <Still id="CoverJour5Saut" component={CoverJ5} width={1080} height={1920} defaultProps={{ variant: "saut" as const }} />
       <Still
         id="CoverJour3Course"
         component={Cover}

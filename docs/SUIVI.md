@@ -21,6 +21,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
 | `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V7 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V7-neutre.mp4` |
+| `Jour5` | « Jour 5/22 » séance renfo : intro, sac, échauffement, circuit, corde à sauter | 1080×1920 · 30 fps | 63 s | 🟡 V1 | Release `jour-5` | `out/Jour5-TikTok-V1.mp4` (+ `-sans-musique`) |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -135,3 +136,11 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### Jour 4, V7 — retours
 - V6 avait modifié les textes (hook fusionné, libellés en minuscules) : **refusé**. V7 reprend **exactement** les textes de la V5 ; seule la présentation (police, couleurs, animations) change.
 - Règle ajoutée dans `CLAUDE.md` et `DA.md` : un changement de DA ne touche jamais aux textes.
+
+### 2026-11-17 — Jour 5, V1 (séance renfo)
+- 11 rushs (Release `jour-5`), remis dans l'ordre de tournage par l'heure enregistrée. Intro montée 1 → 3 → 2 (la vidéo 2 commence par « mais avant ça » : elle suit logiquement la 3).
+- Les vidéos du sac (tournées après la séance) placées juste après l'intro, comme demandé.
+- Hook « Pas un seul kilomètre aujourd'hui… et pourtant, ça va piquer. » + « Jour 5/22 · prépa 1er trail ». « RENFO » révélé entre les mains au moment où elles s'ouvrent (5,15 → 6,35 s du rush).
+- Carte « Le programme » synchronisée avec la voix ; échauffement (élastique, tête, hanches, genoux) ; circuit (squats, pompes, fentes, burpees, « 10 répétitions », « Circuit training · 5 tours ») ; corde à sauter « 5 × 1 minute » ; fin « Abonne-toi pour la suite ».
+- Musique : « RetroFuture Clean » (Kevin MacLeod, funk-rock, sans synthé), montée d'énergie de 2:04 calée sur le premier plan d'action ; coupes sur les temps (92 BPM). Voix ~12 dB au-dessus de la musique dans l'intro. Version sans musique livrée aussi.
+- Couvertures : `Couverture-Jour5-Renfo-V1.jpg` (geste RENFO) et `Couverture-Jour5-Saut-V1.jpg` (burpee en l'air).

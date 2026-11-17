@@ -101,7 +101,7 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 ---
 
-## 6 bis. 🧪 DA « neutre » (test Jour 4 V6 — en attente d'avis)
+## 6 bis. DA « sobre / classique » (Jour 4 V7 test, appliquée au Jour 5 à la demande de Quentin)
 Objectif : « moins IA, plus naturel », neutre et classique.
 - **Police** : Inter (400–700).
 - **Couleurs** : beige `#F4EEE4`, marron `#4E3B2C`, blanc, touche de bleu `#3E6A9E`. Pas de jaune vif.
@@ -111,6 +111,7 @@ Objectif : « moins IA, plus naturel », neutre et classique.
 - **Tableau / cartes** : panneau beige clair, texte marron, cartes beiges sans bordure ; glissements et fondus, pas de rebond ni de rotation.
 - **Fin** : pastille beige « Abonne-toi pour la suite », sans flèche qui rebondit.
 - Code : `src/tiktok/neutre.tsx`, `src/tiktok/TierBoardNeutre.tsx`, option `theme: "neutre"`.
+- **Jour 5** (`src/tiktok/Jour5.tsx`) : hook en 2 lignes blanches + pastille « Jour X/22 · prépa 1er trail » ; mot clé révélé **entre les mains** au moment du geste ; carte « Le programme » qui se remplit pendant l'explication ; étiquettes de section en pastille beige en haut (« Le matos du jour », « Échauffement · 10-15 min », « Circuit training · 5 tours », « Pour finir ») ; titres d'exercices + répétitions **en haut sur le ciel** (ne jamais cacher le corps) ; coupes sur les temps de la musique.
 
 ---
 
