@@ -15,6 +15,8 @@ import { ACCENT, fontFamily } from "./style";
 import { Counter, Progress, shakeOffset, Slam } from "./Animations";
 import { Circuit } from "./Circuit";
 import { FLY, TierBoard } from "./TierBoard";
+import { TierBoardNeutre } from "./TierBoardNeutre";
+import { CtaNeutre, HookNeutre, SubtitleNeutre } from "./neutre";
 
 const MUSIC_TALK = 0.13; // musique sous la voix
 const MUSIC_BROLL = 0.6; // musique sur les paysages
@@ -211,6 +213,8 @@ const Sfx: React.FC<{ at: number; name: string; volume: number }> = ({ at, name,
 // ---------- Composition complète ----------
 export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit, music }) => {
   const frame = useCurrentFrame();
+  const neutre = edit.theme === "neutre";
+  const TierBoardX = neutre ? TierBoardNeutre : TierBoard;
   const clips = placeClips(edit.clips);
   const last = clips[clips.length - 1];
   const callouts = (edit.callouts ?? []).flatMap((c) => {
@@ -270,7 +274,7 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
         if (from === null || to === null || to <= from) return null;
         return (
           <Sequence key={`sub-${i}`} from={from} durationInFrames={to - from}>
-            <SubtitleLine text={s.t} frames={to - from} />
+            {neutre ? <SubtitleNeutre text={s.t} frames={to - from} /> : <SubtitleLine text={s.t} frames={to - from} />}
           </Sequence>
         );
       })}
@@ -287,11 +291,15 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
       })}
 
       <Sequence durationInFrames={f(edit.hook.duration)}>
-        <Hook hook={edit.hook} />
+        {neutre ? (
+          <HookNeutre title={`${edit.hook.top}\u00a0: ${edit.hook.highlight}`} sub={edit.hook.sub} frames={f(edit.hook.duration)} />
+        ) : (
+          <Hook hook={edit.hook} />
+        )}
       </Sequence>
 
       {edit.tiers && (
-        <TierBoard
+        <TierBoardX
           items={edit.tiers.flatMap((t) => {
             const fr = toOutputFrame(clips, t.at);
             const ann = t.ann !== undefined ? toOutputFrame(clips, t.ann) ?? undefined : undefined;
@@ -304,10 +312,10 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
       {edit.sfx && (
         <>
           {/* hook : whoosh puis impact quand le bloc jaune tombe */}
-          <Sfx at={0} name="whoosh" volume={0.3} />
-          <Sfx at={8} name="thud" volume={0.55} />
+          {!neutre && <Sfx at={0} name="whoosh" volume={0.3} />}
+          {!neutre && <Sfx at={8} name="thud" volume={0.55} />}
           {/* tableau : apparition puis un pop par objet rangé (aigu → grave selon la colonne) */}
-          {edit.tiers && <Sfx at={f(edit.hook.duration)} name="whoosh" volume={0.2} />}
+          {edit.tiers && <Sfx at={f(edit.hook.duration)} name="whoosh" volume={neutre ? 0.1 : 0.2} />}
           {(edit.tiers ?? []).map((t, i) => {
             const fr = toOutputFrame(clips, t.at);
             const ann = t.ann !== undefined ? toOutputFrame(clips, t.ann) : null;
@@ -315,13 +323,13 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
             return fr === null ? null : (
               <Fragment key={`pop-${i}`}>
                 {/* arrivée de la carte (petit whoosh) puis pop à l'atterrissage dans le tableau */}
-                {ann !== null && <Sfx at={ann} name="whoosh" volume={0.22} />}
-                <Sfx at={fr} name="whoosh" volume={0.18} />
-                <Sfx at={fr + FLY} name={name} volume={0.9} />
+                {ann !== null && <Sfx at={ann} name="whoosh" volume={neutre ? 0.12 : 0.22} />}
+                <Sfx at={fr} name="whoosh" volume={neutre ? 0.1 : 0.18} />
+                <Sfx at={fr + FLY} name={name} volume={neutre ? 0.6 : 0.9} />
               </Fragment>
             );
           })}
-          {edit.cta && (
+          {edit.cta && !neutre && (
             <Sfx at={(edit.ctaAt !== undefined ? toOutputFrame(clips, edit.ctaAt) : null) ?? last.from + 18} name="ding" volume={0.3} />
           )}
         </>
@@ -332,7 +340,7 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
         const end = last.from + last.frames;
         return (
           <Sequence from={ctaFrom} durationInFrames={end - ctaFrom}>
-            <Cta text={edit.cta} />
+            {neutre ? <CtaNeutre text={edit.cta} /> : <Cta text={edit.cta} />}
           </Sequence>
         );
       })()}
@@ -346,7 +354,7 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
           hideFrom={last.from + 10}
         />
       )}
-      <Audio src={staticFile(music)} volume={musicVolume} />
+      {music ? <Audio src={staticFile(music)} volume={musicVolume} /> : null}
     </AbsoluteFill>
   );
 };

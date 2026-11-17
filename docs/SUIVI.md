@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🟡 V5 | Release `jour-4` | `out/Jour4-TikTok-V5.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V6 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V6-neutre.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -125,3 +125,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 ### Jour 4, V5 — retours
 - « Garde pas tous les détails, alterne entre les deux » → verdict + **une** explication par objet : 1 min 53 → 1 min 21.
 - Synchro vérifiée : son final retranscrit = temps des sous-titres (écart ≤ 0,1 s).
+
+### 2026-11-17 — Jour 4, V6 : test DA « neutre », sans musique
+- Musique électro supprimée de la vidéo **et du projet** (« plus jamais ce genre de son »). Vérifié : pendant les blancs, −58 dB (silence) au lieu de −41 dB.
+- Nouvelle présentation « moins IA, plus naturelle » : Inter en casse normale, beige / marron / blanc + bleu, hook en simple phrase, sous-titres à ombre légère, tableau et cartes beiges, fondus doux, fin en pastille.
+- Bruitages gardés mais plus discrets (pas d'impact au hook, pas de ding).
+- Composition `Jour4Neutre` (`theme: "neutre"`).

@@ -2,7 +2,7 @@ import { Composition, Still } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { TikTokEdit } from "./tiktok/TikTokEdit";
 import { rush1 } from "./tiktok/rush1";
-import { jour4 } from "./tiktok/jour4";
+import { jour4, jour4Neutre } from "./tiktok/jour4";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -16,7 +16,7 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1080}
         height={1920}
-        defaultProps={{ edit: rush1, music: "music/raving-energy.mp3" }}
+        defaultProps={{ edit: rush1, music: "" }}
       />
       <Composition
         id="Jour4"
@@ -25,7 +25,16 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1080}
         height={1920}
-        defaultProps={{ edit: jour4, music: "music/raving-energy-long.mp3" }}
+        defaultProps={{ edit: jour4, music: "" }}
+      />
+      <Composition
+        id="Jour4Neutre"
+        component={TikTokEdit}
+        durationInFrames={totalFrames(jour4Neutre.clips)}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{ edit: jour4Neutre, music: "" }}
       />
       {/* Couvertures TikTok (images fixes) */}
       <Still

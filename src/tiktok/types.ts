@@ -27,6 +27,7 @@ export type VideoEdit = {
   route?: { totalKm: number; checkpoints: { at: number; km: number }[] };
   // Tableau de classement (vidéo « tier list ») : at = seconde source du verdict
   tiers?: { label: string; col: number; at: number; ann?: number }[]; // at = verdict, ann = annonce de l'objet
+  theme?: "neutre"; // DA « neutre » (Inter, beige / marron, animations douces)
   sfx?: boolean; // bruitages (pop sur le tableau, whoosh/impact du hook, ding de fin)
   ctaAt?: number; // seconde source où apparaît « Abonne-toi » (sinon : début du dernier plan)
 };

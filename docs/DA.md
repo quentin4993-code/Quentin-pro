@@ -96,13 +96,20 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 ## 6. Son
 
 - **Voix** : nettoyée et normalisée (−14 LUFS), toujours bien audible.
-- **Musique** : **électro énergique et motivante** (~120–130 BPM, tonalité positive).
-  - Actuelle : « Raving Energy » – Kevin MacLeod (incompetech.com), passage 1:11 → 1:55.
-  - **Basse sous la voix** (~13 %), **forte sur les paysages** (~60 %), transitions douces.
-- **Crédit obligatoire** dans la description TikTok pour les musiques incompetech :
-  `Musique : "Raving Energy" – Kevin MacLeod (incompetech.com) – CC BY 4.0`
-- ❌ Pas de musique « faite maison » (synthétisée) : jugée nulle.
-- **Bruitages** (demandés Jour 4) : pop à chaque objet rangé / élément important, whoosh + impact sur le hook, ding sur « Abonne-toi ». Discrets, sous la voix. Option `sfx: true`.
+- **Musique : aucune.** ❌ Plus jamais de musique électro (« Raving Energy », musiques synthétisées) : « nulle ». Les vidéos sont livrées sans musique ; Quentin ajoute un **son tendance dans l'appli**.
+- **Bruitages** : pop à chaque objet rangé, whoosh léger à l'arrivée des cartes. En DA neutre : plus discrets, pas d'impact sur le hook, pas de ding final.
+
+---
+
+## 6 bis. 🧪 DA « neutre » (test Jour 4 V6 — en attente d'avis)
+Objectif : « moins IA, plus naturel », neutre et classique.
+- **Police** : Inter (400–700), **casse normale** (pas de tout-majuscules).
+- **Couleurs** : beige `#F4EEE4`, marron `#4E3B2C`, blanc, touche de bleu `#3E6A9E`. Pas de jaune vif.
+- **Hook** : une phrase blanche simple avec ombre douce + petite pastille beige (ex. « Matos de trail : indispensable ou pas ? » / « Mon classement honnête »). Fondu doux, pas de blocs, pas de secousse.
+- **Sous-titres** : blanc, Inter 600, ombre légère (pas de gros contour noir).
+- **Tableau / cartes** : panneau beige clair, texte marron, cartes beiges sans bordure ; glissements et fondus, pas de rebond ni de rotation.
+- **Fin** : pastille beige « Abonne-toi pour la suite », sans flèche qui rebondit.
+- Code : `src/tiktok/neutre.tsx`, `src/tiktok/TierBoardNeutre.tsx`, option `theme: "neutre"`.
 
 ---
 
@@ -122,3 +129,4 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 | Barre de progression en haut de l'écran | Remplacée par la ligne de parcours |
 | Texte déjà incrusté dans la vidéo source + hook | Répétition |
 | Musique synthétisée maison | Nulle |
+| **Musique électro** (« Raving Energy » ou du même genre) | « Nulle, plus jamais » |

@@ -125,3 +125,10 @@ export const jour4: VideoEdit = {
     { label: "ÉCOUTEURS", col: 0.5, ann: 186.70, at: 188.50 },
   ],
 };
+
+// Test DA « neutre » (V6) : sans musique, présentation sobre et naturelle.
+export const jour4Neutre: VideoEdit = {
+  ...jour4,
+  theme: "neutre",
+  hook: { top: "Matos de trail", highlight: "indispensable ou pas\u00a0?", sub: "Mon classement honnête", duration: 3.3 },
+};
