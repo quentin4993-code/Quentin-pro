@@ -72,3 +72,17 @@ Face caméra au bureau + schémas animés. Un mot / une notion par vidéo.
 | **Le matériel obligatoire** | « Sans ça, tu ne prends même pas le départ. » | Checklist qui se coche (eau, couverture de survie, sifflet, frontale… selon la course) |
 
 > Vérifier les chiffres au moment du tournage (distances, règles) : ils varient selon les courses et les fédérations.
+
+---
+
+## 10. Sujets SIMPLES pour débutants (demande de Quentin : « pas technique »)
+- Combien de fois par semaine courir quand on débute
+- Ma toute première sortie trail : ce que j'aurais aimé savoir
+- Quelles chaussures pour commencer (sans se ruiner)
+- Quoi emporter pour ta première sortie trail
+- Que manger avant d'aller courir
+- Comment trouver des sentiers près de chez toi
+- « J'ai pas le niveau pour le trail » : si, et voilà pourquoi
+- Comment ne pas abandonner les 2 premières semaines
+- Choisir sa toute première course de trail
+- Courir seul ou en groupe quand on débute
