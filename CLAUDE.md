@@ -20,6 +20,7 @@ Raccourci d'envoi des vidéos pour Quentin : https://claude.ai/artifact/RYnegRCE
 - Sur les plans d'exercice, **toujours vérifier image par image qu'il n'y a pas de raté** (corde qui s'arrête, relance…) avant de choisir le passage.
 - DA « sobre / classique » (demandée Jour 5) : police Inter, blanc + pastilles beiges, texte marron, fondus doux, pas de blocs jaunes. Modèle : `src/tiktok/Jour5.tsx` (hook, révélation de mot entre les mains, carte programme, étiquettes de section, titres d'exercices en haut sur le ciel). Voir `docs/DA.md`.
 - Sujets des vidéos Communauté : **simples, pour des débutants** en course / trail (pas technique : pas de baromètre, contraction excentrique, etc.). Scripts qui **s'enchaînent comme une histoire**, pas une liste de faits.
+- Sous-titres (vidéos au bureau) : **en bas de l'écran** (marge ~300 px au-dessus du bas) et **plus gros** (Inter 700, ~60 px), ombre marquée — demandé sur « Combien par semaine ».
 - Hook : **doit « punch »** (voir « Hook punch » dans `docs/DA.md`) — arrivée caméra + son d'impact + texte au rythme de la voix ; zoom autorisé **uniquement** dans le hook.
 - Miniatures : style **« pro »** = silhouette détourée + gros mot-clé derrière + bandeau titre (`src/tiktok/CoverJ6Pro.tsx`), plus beau que la simple photo + texte.
 - Pour chaque vidéo, proposer aussi une description accrocheuse (3 options, voir `docs/DESCRIPTIONS.md`) et 2 couvertures TikTok (`src/tiktok/Cover.tsx`) : plan d'action + gros plan visage.

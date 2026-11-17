@@ -184,3 +184,6 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Phrases non tournées (2-3 sorties, repos, progrès pendant le repos) → montrées par la carte « semaine type ».
 - Hook punch (arrivée caméra, TU DÉBUTES ? / UN CONSEIL : / NE COURS PAS TOUS LES JOURS qui claque). Cartes : piège du débutant ; jauges souffle / muscles ; semaine type 2-3 sorties + repos, + 1 séance ; compteur « Ma prépa trail » 2 → 5 séances ; question + abonnement.
 - Miniatures pro : `Miniature-Semaine-A-V1.jpg` (2-3× · Pas tous les jours !), `Miniature-Semaine-B-V1.jpg` (REPOS · Combien par semaine ?).
+
+### « Combien par semaine » V2
+- Sous-titres déplacés **en bas** et **agrandis** (Inter 700, 60 px, ombre plus marquée). Préférence enregistrée dans `CLAUDE.md`.

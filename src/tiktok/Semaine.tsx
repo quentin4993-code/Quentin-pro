@@ -54,8 +54,8 @@ const Sub: React.FC<{ text: string; frames: number }> = ({ text, frames }) => {
   const fr = useCurrentFrame();
   const o = Math.min(interpolate(fr, [0, 3], [0, 1], clamp), interpolate(fr, [frames - 2, frames], [1, 0], clamp));
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 1255 }}>
-      <div style={{ maxWidth: 1000, textAlign: "center", fontFamily: NEUTRE.font, fontWeight: 600, fontSize: 42, lineHeight: 1.18, color: "white", textShadow: shadow, opacity: o }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 300 }}>
+      <div style={{ maxWidth: 940, textAlign: "center", fontFamily: NEUTRE.font, fontWeight: 700, fontSize: 60, lineHeight: 1.18, color: "white", textShadow: "0 0 4px rgba(0,0,0,0.85), 0 3px 14px rgba(0,0,0,0.6)", opacity: o }}>
         {text}
       </div>
     </AbsoluteFill>
