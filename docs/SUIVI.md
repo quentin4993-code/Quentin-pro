@@ -20,7 +20,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 | ID composition | Sujet | Format | Durée | Statut | Source | Fichier final |
 |---|---|---|---|---|---|---|
 | `Jour3` | Vlog course « Jour 3/22 », sortie longue 10 km | 1080×1920 · 30 fps | 43 s | ✅ V5 validée | `rushes-1` | `out/Jour3-TikTok-V5.mp4` |
-| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V6 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V6-neutre.mp4` |
+| `Jour4` | Classement du matériel de trail (indispensable / utile / pas indispensable) | 1080×1920 · 30 fps | 1 min 21 | 🧪 V7 (DA neutre) | Release `jour-4` | `out/Jour4-TikTok-V7-neutre.mp4` |
 | `HelloWorld` | Test d'installation | 1920×1080 · 30 fps | 5 s | ✅ | — | — |
 
 ## Prochaines étapes
@@ -131,3 +131,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Nouvelle présentation « moins IA, plus naturelle » : Inter en casse normale, beige / marron / blanc + bleu, hook en simple phrase, sous-titres à ombre légère, tableau et cartes beiges, fondus doux, fin en pastille.
 - Bruitages gardés mais plus discrets (pas d'impact au hook, pas de ding).
 - Composition `Jour4Neutre` (`theme: "neutre"`).
+
+### Jour 4, V7 — retours
+- V6 avait modifié les textes (hook fusionné, libellés en minuscules) : **refusé**. V7 reprend **exactement** les textes de la V5 ; seule la présentation (police, couleurs, animations) change.
+- Règle ajoutée dans `CLAUDE.md` et `DA.md` : un changement de DA ne touche jamais aux textes.

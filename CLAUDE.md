@@ -10,6 +10,7 @@ Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail 
 Raccourci d'envoi des vidéos pour Quentin : https://claude.ai/artifact/RYnegRCEi893sVQPtRhuJx (Releases nommées `jour-X`). Chercher la dernière Release avec l'outil GitHub `list_releases`.
 
 ## Règles essentielles
+- **Quand Quentin demande de changer le style / la DA, ne JAMAIS toucher aux textes** (hook, sous-titres, tableau, fin) : seulement police, couleurs, animations.
 - Parler à Quentin en **français**, simplement (il travaille souvent depuis iPad/iPhone).
 - Quentin **prépare** son premier trail (22 jours de prépa) : ne jamais écrire comme s'il le courait (« PRÉPA 1ER TRAIL », pas « MON 1ER TRAIL » seul).
 - Style : pro, dynamique, sobre. **Pas de zoom, pas de flash, pas de gros textes « motivation », pas de mots en jaune dans les sous-titres, une seule jauge (la ligne de parcours en bas).**

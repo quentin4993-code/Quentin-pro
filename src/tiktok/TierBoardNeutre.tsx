@@ -5,7 +5,7 @@ import { ICONS } from "./icons";
 import { NEUTRE } from "./neutre";
 import { FLY, TierItem } from "./TierBoard";
 
-const COLS = ["Indispensable", "Utile", "Pas indispensable"];
+const COLS = ["INDISPENSABLE", "UTILE", "PAS INDISPENSABLE"];
 const W = 980;
 const LEFT = (1080 - W) / 2;
 const TOP = 215;
@@ -16,22 +16,6 @@ const CARD = { x: 900, y: 770, w: 240, h: 240 };
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-// libellés en casse normale
-const NICE: Record<string, string> = {
-  GILET: "Gilet",
-  FLASQUES: "Flasques",
-  FRONTALE: "Frontale",
-  VESTE: "Veste",
-  "GELS / BARRES": "Gels / barres",
-  BÂTONS: "Bâtons",
-  LUNETTES: "Lunettes",
-  "CASQUETTE/BUFF": "Casquette / buff",
-  CRÈME: "Crème",
-  SIFFLET: "Sifflet",
-  "MONTRE GPS": "Montre GPS",
-  ÉCOUTEURS: "Écouteurs",
-};
-const nice = (l: string) => NICE[l] ?? l;
 
 const Icon: React.FC<{ name: string; size: number; color: string }> = ({ name, size, color }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" style={{ display: "block", flexShrink: 0 }}>
@@ -134,7 +118,7 @@ export const TierBoardNeutre: React.FC<{ items: TierItem[]; startFrame: number }
             }}
           >
             <Icon name={p.label} size={26} color={NEUTRE.brown} />
-            {nice(p.label)}
+            {p.label}
           </div>
         );
       })}
@@ -172,7 +156,7 @@ export const TierBoardNeutre: React.FC<{ items: TierItem[]; startFrame: number }
           >
             <Icon name={p.label} size={110} color={NEUTRE.brown} />
             <div style={{ fontFamily: NEUTRE.font, fontWeight: 600, fontSize: 30, color: NEUTRE.brown, textAlign: "center", padding: "0 12px" }}>
-              {nice(p.label)}
+              {p.label}
             </div>
           </div>
         );

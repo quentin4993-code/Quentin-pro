@@ -103,9 +103,10 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 ## 6 bis. 🧪 DA « neutre » (test Jour 4 V6 — en attente d'avis)
 Objectif : « moins IA, plus naturel », neutre et classique.
-- **Police** : Inter (400–700), **casse normale** (pas de tout-majuscules).
+- **Police** : Inter (400–700).
 - **Couleurs** : beige `#F4EEE4`, marron `#4E3B2C`, blanc, touche de bleu `#3E6A9E`. Pas de jaune vif.
-- **Hook** : une phrase blanche simple avec ombre douce + petite pastille beige (ex. « Matos de trail : indispensable ou pas ? » / « Mon classement honnête »). Fondu doux, pas de blocs, pas de secousse.
+- **Textes : identiques** à la version d'origine (même hook, mêmes libellés, même fin). Changer la DA = changer **seulement** police, couleurs, animations.
+- **Hook** : les mêmes 3 textes, en blanc avec ombre douce + petite pastille beige pour la 3e ligne. Fondu doux, pas de blocs, pas de secousse.
 - **Sous-titres** : blanc, Inter 600, ombre légère (pas de gros contour noir).
 - **Tableau / cartes** : panneau beige clair, texte marron, cartes beiges sans bordure ; glissements et fondus, pas de rebond ni de rotation.
 - **Fin** : pastille beige « Abonne-toi pour la suite », sans flèche qui rebondit.

@@ -22,7 +22,7 @@ for (const weight of ["400", "500", "600", "700"]) {
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // ---------- Hook : titre simple + petite ligne, fondu doux ----------
-export const HookNeutre: React.FC<{ title: string; sub?: string; frames: number }> = ({ title, sub, frames }) => {
+export const HookNeutre: React.FC<{ top: string; highlight: string; sub?: string; frames: number }> = ({ top, highlight, sub, frames }) => {
   const frame = useCurrentFrame();
   const a = interpolate(frame, [0, 8], [0, 1], clamp);
   const b = interpolate(frame, [6, 14], [0, 1], clamp);
@@ -43,7 +43,9 @@ export const HookNeutre: React.FC<{ title: string; sub?: string; frames: number 
           transform: `translateY(${interpolate(a, [0, 1], [14, 0])}px)`,
         }}
       >
-        {title}
+        {top}
+        <br />
+        {highlight}
       </div>
       {sub && (
         <div

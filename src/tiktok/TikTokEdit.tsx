@@ -292,7 +292,7 @@ export const TikTokEdit: React.FC<{ edit: VideoEdit; music: string }> = ({ edit,
 
       <Sequence durationInFrames={f(edit.hook.duration)}>
         {neutre ? (
-          <HookNeutre title={`${edit.hook.top}\u00a0: ${edit.hook.highlight}`} sub={edit.hook.sub} frames={f(edit.hook.duration)} />
+          <HookNeutre top={edit.hook.top} highlight={edit.hook.highlight} sub={edit.hook.sub} frames={f(edit.hook.duration)} />
         ) : (
           <Hook hook={edit.hook} />
         )}

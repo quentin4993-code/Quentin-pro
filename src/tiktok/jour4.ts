@@ -128,7 +128,6 @@ export const jour4: VideoEdit = {
 
 // Test DA « neutre » (V6) : sans musique, présentation sobre et naturelle.
 export const jour4Neutre: VideoEdit = {
-  ...jour4,
+  ...jour4, // mêmes textes que la V5 (hook, sous-titres, fin) : seule la présentation change
   theme: "neutre",
-  hook: { top: "Matos de trail", highlight: "indispensable ou pas\u00a0?", sub: "Mon classement honnête", duration: 3.3 },
 };
