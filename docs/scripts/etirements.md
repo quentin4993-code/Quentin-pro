@@ -31,3 +31,16 @@ Hook alternatif : « Arrête de t'étirer avant de courir. »
 
 ## Plans en plus (optionnels)
 - 2–3 s de toi qui fais des montées de genoux, des talons-fesses, des balancements de jambes (dehors ou dans ton salon).
+
+---
+
+# Version 2 (retenue) — script qui s'enchaîne comme une histoire
+Logique : problème → preuve → pire → la vraie raison → la solution → où mettre les étirements → question.
+
+1. Tu t'étires pour éviter les blessures ? Mauvaise nouvelle.
+2. Quand tu tiens un étirement avant de courir, ton muscle n'est pas mieux protégé. Les études le montrent : ça ne change quasiment rien au risque de blessure.
+3. Pire : si tu tiens la position plus d'une minute, ton muscle est un peu moins fort pendant ta sortie.
+4. Parce qu'en fait, avant de courir, ton corps n'a pas besoin d'être étiré. Il a besoin d'être chaud.
+5. Donc à la place, tu fais 5 à 10 minutes de footing tout doux, puis quelques montées de genoux et des talons-fesses. Là, tes muscles sont prêts.
+6. Et les étirements, garde-les pour après ta séance : c'est là qu'ils t'aident à te détendre.
+7. Et toi, tu t'étires avant ou après ? Dis-le-moi en commentaire.
