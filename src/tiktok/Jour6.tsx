@@ -84,6 +84,63 @@ const Hook: React.FC<{ frames: number }> = ({ frames }) => {
   );
 };
 
+// ---------- Rafale de « D+ » sur « à cause de ça » ----------
+// positions choisies autour du visage (yeux jamais cachés) et sur le torse, hors du texte « 10 km ≠ 10 km »
+const BURST: [number, number, number, number][] = [
+  // x, y, taille, rotation
+  [170, 320, 70, -8],
+  [905, 280, 62, 7],
+  [130, 640, 56, 5],
+  [955, 660, 74, -6],
+  [540, 150, 58, 3],
+  [260, 920, 64, 9],
+  [830, 950, 58, -9],
+  [110, 1000, 50, -4],
+  [985, 1010, 52, 6],
+  [200, 1470, 72, -7],
+  [880, 1480, 66, 8],
+  [420, 1450, 54, 4],
+  [660, 1640, 70, -5],
+  [300, 1680, 56, 6],
+];
+export const BURST_START = 2.85; // juste avant « à cause de ça »
+export const BURST_STEP = 0.055; // ~ toutes les 2 images : « tic tic tic »
+const Burst: React.FC = () => {
+  const fr = useCurrentFrame(); // relatif au début de la rafale
+  const end = f(J6_SEC.hook[1] + 0.12) - f(BURST_START);
+  const out = interpolate(fr, [end - 5, end], [1, 0], clamp);
+  return (
+    <AbsoluteFill style={{ opacity: out }}>
+      {BURST.map(([x, y, size, rot], i) => {
+        const t0 = Math.round(i * BURST_STEP * FPS);
+        if (fr < t0) return null;
+        const p = interpolate(fr - t0, [0, 4], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: x,
+              top: y,
+              transform: `translate(-50%, -50%) scale(${p}) rotate(${rot}deg)`,
+              fontFamily: NEUTRE.font,
+              fontWeight: 800,
+              fontSize: size,
+              color: BLUE,
+              backgroundColor: NEUTRE.beigeT,
+              padding: "4px 18px",
+              borderRadius: 999,
+              boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+            }}
+          >
+            D+
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
 // ---------- 1. Définition ----------
 const DefCard: React.FC = () => (
   <Card from={J6_SEC.def[0]} to={J6_SEC.def[1]} height={420}>
@@ -367,6 +424,9 @@ export const Jour6: React.FC<{ music?: boolean }> = ({ music = false }) => {
       <At from={0} to={J6_SEC.hook[1]}>
         <Hook frames={f(J6_SEC.hook[1])} />
       </At>
+      <At from={BURST_START} to={J6_SEC.hook[1] + 0.12}>
+        <Burst />
+      </At>
       <At from={J6_SEC.def[0]} to={J6_SEC.def[1]}>
         <DefCard />
       </At>
@@ -395,6 +455,10 @@ export const Jour6: React.FC<{ music?: boolean }> = ({ music = false }) => {
         </At>
       ))}
 
+      {/* « tic » à chaque D+ de la rafale */}
+      {BURST.map((_, i) => (
+        <Sfx key={`b${i}`} at={BURST_START + i * BURST_STEP} name="pop-hi" volume={0.32} />
+      ))}
       {/* bruitages discrets : un pop à chaque élément important */}
       {[E.add_100, E.add_200a, E.add_200b].map((t, i) => (
         <Sfx key={`c${i}`} at={t} name="pop-hi" volume={0.45} />
