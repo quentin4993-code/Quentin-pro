@@ -31,3 +31,19 @@
 - Boucle départ = arrivée avec D+ / D–.
 - Comparaison tour Eiffel / 500 m.
 - Calcul « km-effort ».
+
+---
+
+# Version « au bureau » (face caméra assis, comme la vidéo matos) — ~40 s
+
+| Temps | Tu dis | À l'écran (ajouté au montage) |
+|---|---|---|
+| 0–3 s | « Tu débutes le trail et tu vois partout "D+" sur les courses ? Je t'explique en 30 secondes. » | Texte : **D+ = ?** |
+| 3–9 s | « Le D+, c'est le dénivelé positif. En gros, c'est **le nombre de mètres que tu montes** pendant toute ta course. » | Mot « D+ » + flèche qui monte |
+| 9–16 s | « Et on **additionne toutes les montées**. Une côte de 100 mètres, puis une de 200, puis une de 200 : ça fait 500 mètres de D+. » | **Schéma** : profil, chaque montée s'allume, compteur 100 + 200 + 200 = 500 |
+| 16–22 s | « Les descentes, elles, c'est le D–. Et même si tu finis là où tu as commencé, tes 500 mètres de montée, tu les as quand même faits. » | **Schéma** : boucle départ = arrivée, D+ / D– |
+| 22–28 s | « Pour te faire une idée : 500 mètres, c'est environ **170 étages d'escaliers**. » | **Schéma** : immeuble / escaliers qui montent jusqu'à 500 m |
+| 28–35 s | « C'est pour ça qu'en trail on dit que **100 mètres de D+, c'est à peu près un kilomètre en plus**. 10 km avec 500 de D+, c'est comme 15 km à plat. » | **Schéma** : 10 km + 5 = ≈ 15 km d'effort |
+| 35–40 s | « Donc avant de t'inscrire, regarde pas que les kilomètres : regarde le D+. Et toi, c'est quoi ton plus gros D+ ? Dis-le en commentaire. » | « Abonne-toi pour la suite » |
+
+Conseils de tournage : même cadre que la vidéo matos (téléphone fixe, lumière de face) ; une prise par ligne du tableau ; tu peux mimer la montée avec la main (geste qui monte) et compter sur tes doigts pour 100 + 200 + 200.
