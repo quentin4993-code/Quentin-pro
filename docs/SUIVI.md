@@ -163,3 +163,7 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Schémas animés synchronisés sur les mots : définition + flèche ; profil 10 km (montées bleues +100/+200/+200, compteur D+ → 500 m ; descentes marron, D– 500 m) ; immeuble qui se remplit jusqu'à 170 étages ; règle 100 m D+ ≈ +1 km ; calcul 10 km + 500 m D+ ≈ 15 km à plat ; checklist « les kilomètres / le D+ » ; question + « Abonne-toi pour la suite ».
 - Mise en page : schémas en bas (torse), sous-titres sous le menton, visage jamais caché. Pops discrets. Livré sans musique (principal) + avec « Hotrock » très bas.
 - Couvertures : `Couverture-Denivele-Hook-V1.jpg` (10 km ≠ 10 km), `Couverture-Denivele-Question-V1.jpg` (C'est quoi le D+ ? + mini profil).
+
+### D+ — V2 + miniatures « pro »
+- V2 : rafale de 14 petits « D+ » qui apparaissent un par un (« tic » sonore à chacun) sur « et c'est à cause de ça ».
+- Miniatures refaites (« mes images ressemblent à rien ») : silhouette détourée sur fond beige + courbes de niveau + profil + énorme « D+ » bleu derrière + bandeau titre. `out/Miniature-Denivele-Doigts-V1.jpg`, `out/Miniature-Denivele-Question-V1.jpg`.

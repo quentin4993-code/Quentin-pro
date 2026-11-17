@@ -84,6 +84,12 @@ Pas d'autre couleur. Le jaune est réservé aux **éléments graphiques** (hook,
 
 ---
 
+### Miniature « pro » (demandée sur la vidéo D+) ✅ à privilégier
+- Silhouette **détourée** (outil `rembg`, modèle `u2net_human_seg`) posée sur un **fond graphique** : dégradé beige, courbes de niveau discrètes, profil de montagne (montées bleues / descentes marron).
+- **Énorme mot-clé** bleu derrière la tête (ex. « D+ »), la silhouette passe devant.
+- Titre dans un **bandeau marron** légèrement penché + pastille blanche en dessous. Fondu beige en bas pour effacer les restes du décor.
+- Code : `src/tiktok/CoverJ6Pro.tsx` (à réutiliser en changeant le mot-clé, le titre et la photo).
+
 ## 5. Montage
 
 - **Face caméra** : coupes franches sur les pauses et hésitations. Pas de zoom.

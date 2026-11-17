@@ -8,6 +8,7 @@ import { CoverJ5 } from "./tiktok/CoverJ5";
 import { Jour5Court, J5C_FRAMES } from "./tiktok/Jour5Court";
 import { Jour6, J6_FRAMES } from "./tiktok/Jour6";
 import { CoverJ6 } from "./tiktok/CoverJ6";
+import { CoverJ6Pro } from "./tiktok/CoverJ6Pro";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -48,6 +49,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Jour6" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="Jour6AvecMusique" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       {/* Couvertures TikTok (images fixes) */}
+      <Still id="CoverDeniveleProDoigts" component={CoverJ6Pro} width={1080} height={1920} defaultProps={{ variant: "doigts" as const }} />
+      <Still id="CoverDeniveleProQuestion" component={CoverJ6Pro} width={1080} height={1920} defaultProps={{ variant: "question" as const }} />
       <Still id="CoverDeniveleHook" component={CoverJ6} width={1080} height={1920} defaultProps={{ variant: "hook" as const }} />
       <Still id="CoverDeniveleQuestion" component={CoverJ6} width={1080} height={1920} defaultProps={{ variant: "question" as const }} />
       <Still id="CoverJour5Renfo" component={CoverJ5} width={1080} height={1920} defaultProps={{ variant: "renfo" as const }} />
