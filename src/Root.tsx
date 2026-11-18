@@ -12,6 +12,7 @@ import { CoverJ6Pro, CoverPro } from "./tiktok/CoverJ6Pro";
 import { Lent, LT_FRAMES } from "./tiktok/Lent";
 import { Semaine, SM_FRAMES } from "./tiktok/Semaine";
 import { Genoux, GN_FRAMES } from "./tiktok/Genoux";
+import { Run6, R6_FRAMES } from "./tiktok/Run6";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -53,6 +54,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Jour6AvecMusique" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition id="Run6" component={Run6} durationInFrames={R6_FRAMES} fps={FPS} width={1080} height={1920} />
       <Composition id="Genoux" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="GenouxAvecMusique" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="GenouxSansTexte" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true, texts: false }} />
