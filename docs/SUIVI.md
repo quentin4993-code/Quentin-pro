@@ -194,3 +194,10 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Retouche naturelle : `scripts/retouche_portrait.py` (débruitage, balance chaude, ombres/cernes relevées, lissage doux de la peau, netteté légère) + détourage qui ne garde que la silhouette (plus de main coupée au bord). Photo descendue (imgTop −80) : le micro passe derrière le bandeau titre.
 - Fichiers : `out/Miniature-Semaine-C-V2.jpg` (2-3×), `out/Miniature-Semaine-D-V2.jpg` (REPOS). Compositions `MiniatureSemaineC/D`.
 - **À faire pour toutes les prochaines miniatures** : choisir l'image image par image (expression, yeux, pas de micro) et passer la photo dans `retouche_portrait.py`.
+
+### Vidéo courte « 3 exercices genoux » V1 (format 15-20 s)
+- Rushes : Release `jour-1` (IMG_8950 hook mimé, 8951 fentes, 8952 chaise au mur, 8953 montée sur chaise). **Pas de voix** → vidéo portée par le texte + bruitages.
+- Montage `src/tiktok/Genoux.tsx` (18,8 s) : hook punch « MAL AUX / GENOUX ? » calé sur les bras en croix, « 3 EXERCICES » sur les 3 doigts, étiquettes d'exercice (numéro + nom + reps) en haut, à gauche pour la montée sur chaise (la tête monte en haut de l'image), points 1/3-3/3, fin « 2× par semaine · Enregistre la vidéo » + « Abonne-toi pour la suite ».
+- Répétitions vérifiées image par image : fentes 5,75-10,75 s, chaise 6,5-10,5 s, montée 6,5-11 s (pas de raté).
+- Sorties : `out/Genoux-V1-SANS-MUSIQUE.mp4`, `out/Genoux-V1-AVEC-MUSIQUE.mp4` (Hotrock), couvertures `out/Couverture-1-Genoux-V1.jpg` (bras en croix, GENOUX) et `out/Couverture-2-Genoux-V1.jpg` (fente, 3).
+- Fiche de tournage : `docs/tournage-genoux.html` (https://claude.ai/artifact/R7D7gDZkjGjCuWZ38aoxZR).

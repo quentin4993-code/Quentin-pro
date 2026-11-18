@@ -11,6 +11,7 @@ import { CoverJ6 } from "./tiktok/CoverJ6";
 import { CoverJ6Pro, CoverPro } from "./tiktok/CoverJ6Pro";
 import { Lent, LT_FRAMES } from "./tiktok/Lent";
 import { Semaine, SM_FRAMES } from "./tiktok/Semaine";
+import { Genoux, GN_FRAMES } from "./tiktok/Genoux";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -52,9 +53,13 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Jour6AvecMusique" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition id="Genoux" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
+      <Composition id="GenouxAvecMusique" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="Semaine" component={Semaine} durationInFrames={SM_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="SemaineAvecMusique" component={Semaine} durationInFrames={SM_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       {/* Couvertures TikTok (images fixes) */}
+      <Still id="MiniatureGenouxX" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/genoux-cut-x.png", keyword: "GENOUX", kwSize: 250, kwTop: 170, title: "Mal aux genoux ?", titleSize: 104, sub: "3 exercices sans matériel", imgTop: 180 }} />
+      <Still id="MiniatureGenouxFente" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/genoux-cut-fente.png", keyword: "3", kwSize: 700, kwTop: 20, title: "3 exercices genoux", titleSize: 96, sub: "pour courir avec des genoux solides", imgTop: 0 }} />
       <Still id="MiniatureSemaineA" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/sem-cut-a.png", keyword: "2-3×", kwSize: 330, kwTop: 110, title: "Pas tous les jours !", titleSize: 92, sub: "Le conseil pour bien débuter", imgTop: -170 }} />
       <Still id="MiniatureSemaineC" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/sem-cut-c.png", keyword: "2-3×", kwSize: 330, kwTop: 110, title: "Pas tous les jours !", titleSize: 92, sub: "Le conseil pour bien débuter", imgTop: -80 }} />
       <Still id="MiniatureSemaineD" component={CoverPro} width={1080} height={1920} defaultProps={{ cut: "covers/sem-cut-d.png", keyword: "REPOS", kwSize: 300, kwTop: 125, title: "Combien par semaine ?", titleSize: 84, sub: "Quand tu débutes la course", imgTop: -80 }} />
