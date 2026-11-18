@@ -1,5 +1,6 @@
 // Jour 6/22 — premier run social à Saint-Paul. Montage SOBRE demandé : coupes sur les blancs,
-// paroles laissées telles quelles, sous-titres classiques, fondus doux sur les plans d'ambiance, pas de musique.
+// paroles laissées telles quelles, sous-titres classiques, fondus doux sur les plans d'ambiance (son coupé), pas de musique.
+// Photo de fin dézoomée (toute la photo visible, fond flouté) : public/videos/run6/photo.jpg.
 import { AbsoluteFill, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { NEUTRE } from "./neutre";
 import { R6_CLIPS, R6_END, R6_PHOTO, R6_SUBS, R6_VOICE_END } from "./run6.data";
@@ -48,7 +49,7 @@ const Photo: React.FC<{ frames: number }> = ({ frames }) => {
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <Img src={staticFile("videos/run6/photo.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 340 }}>
+      <AbsoluteFill style={{ alignItems: "center", paddingTop: 140 }}>
         <div style={{ fontFamily: NEUTRE.font, fontWeight: 600, fontSize: 46, color: NEUTRE.brown, backgroundColor: NEUTRE.beigeT, padding: "14px 36px", borderRadius: 999, boxShadow: "0 8px 24px rgba(0,0,0,0.25)", opacity: cta }}>Abonne-toi pour la suite</div>
       </AbsoluteFill>
     </AbsoluteFill>
