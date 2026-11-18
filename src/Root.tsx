@@ -55,6 +55,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="Genoux" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="GenouxAvecMusique" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Composition id="GenouxSansTexte" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true, texts: false }} />
+      <Composition id="GenouxSansTexteMuet" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false, texts: false }} />
       <Composition id="Semaine" component={Semaine} durationInFrames={SM_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="SemaineAvecMusique" component={Semaine} durationInFrames={SM_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       {/* Couvertures TikTok (images fixes) */}

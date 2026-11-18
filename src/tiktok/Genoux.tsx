@@ -128,7 +128,8 @@ const Sfx: React.FC<{ at: number; name: string; volume: number }> = ({ at, name,
   </Sequence>
 );
 
-export const Genoux: React.FC<{ music?: boolean }> = ({ music = false }) => {
+// texts=false : version « sans texte » (images seules + musique éventuelle, sans bruitages)
+export const Genoux: React.FC<{ music?: boolean; texts?: boolean }> = ({ music = false, texts = true }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "black" }}>
       {CLIPS.map((c, i) => {
@@ -140,6 +141,7 @@ export const Genoux: React.FC<{ music?: boolean }> = ({ music = false }) => {
         );
       })}
 
+      {texts && (<>
       <Sequence from={0} durationInFrames={f(T.ex1)}>
         <Hook />
       </Sequence>
@@ -168,6 +170,7 @@ export const Genoux: React.FC<{ music?: boolean }> = ({ music = false }) => {
       ))}
       <Sfx at={T.fin} name="whoosh" volume={0.4} />
       <Sfx at={T.fin + 0.55} name="pop-mid" volume={0.45} />
+      </>)}
 
       {music && <Audio src={staticFile("music/hotrock.mp3")} trimBefore={f(97)} volume={(fr) => interpolate(fr, [0, 6, GN_FRAMES - 20, GN_FRAMES], [0, 0.5, 0.5, 0], clamp)} />}
     </AbsoluteFill>
