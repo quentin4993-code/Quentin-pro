@@ -201,3 +201,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Répétitions vérifiées image par image : fentes 5,75-10,75 s, chaise 6,5-10,5 s, montée 6,5-11 s (pas de raté).
 - Sorties : `out/Genoux-V1-SANS-MUSIQUE.mp4`, `out/Genoux-V1-AVEC-MUSIQUE.mp4` (Hotrock), couvertures `out/Couverture-1-Genoux-V1.jpg` (bras en croix, GENOUX) et `out/Couverture-2-Genoux-V1.jpg` (fente, 3).
 - Fiche de tournage : `docs/tournage-genoux.html` (https://claude.ai/artifact/R7D7gDZkjGjCuWZ38aoxZR).
+
+### Jour 6/22 — premier run social à Saint-Paul, V1 (montage sobre)
+- Rushes : Release `jour-6` (IMG_8957 → 8976 + photo de groupe IMG_8992). Demande : « sobre et classique, laisser les mots comme je les ai dits, belles coupes sur les blancs ».
+- `src/tiktok/Run6.tsx` + `run6.data.ts` (59,8 s) : 8 plans face caméra coupés au mot près (sous-titres Inter 700 58 px en bas), pastille « Jour 6/22 · prépa 1er trail » au début, 8 plans d'ambiance (falaises, groupe, coucher de soleil) en fondus de 6 images avec le son d'ambiance bas, pastille « Run social · 1re édition », fin sur la photo de groupe + « Abonne-toi pour la suite ». Pas de musique, pas d'effets.
+- Vérifié en re-transcrivant l'audio final : aucun mot coupé.
+- Sortie : `out/Jour6-RunSocial-V1.mp4`.
