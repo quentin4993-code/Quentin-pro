@@ -37,7 +37,7 @@ const Profile: React.FC<{ top: number }> = ({ top }) => {
   );
 };
 
-export type CoverProProps = { cut: string; keyword: string; kwSize?: number; title: string; titleSize?: number; sub: string; imgTop?: number; kwTop?: number };
+export type CoverProProps = { cut: string; keyword: string; kwSize?: number; title: string; titleSize?: number; sub: string; imgTop?: number; kwTop?: number; titleTop?: number };
 export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ variant }) =>
   variant === "doigts" ? (
     <CoverPro cut="covers/jour6-cut-doigts.png" keyword="D+" title="10 km ≠ 10 km" titleSize={128} sub="Le D+ expliqué simplement" />
@@ -45,7 +45,7 @@ export const CoverJ6Pro: React.FC<{ variant: "doigts" | "question" }> = ({ varia
     <CoverPro cut="covers/jour6-cut-calme.png" keyword="D+" title={"C'est quoi le D+\u00a0?"} titleSize={112} sub="Expliqué simplement pour débuter" />
   );
 
-export const CoverPro: React.FC<CoverProProps> = ({ cut, keyword, kwSize = 560, title, titleSize = 120, sub, imgTop = 230, kwTop = 170 }) => {
+export const CoverPro: React.FC<CoverProProps> = ({ cut, keyword, kwSize = 560, title, titleSize = 120, sub, imgTop = 230, kwTop = 170, titleTop = 1300 }) => {
   return (
     <AbsoluteFill style={{ background: `linear-gradient(180deg, ${BEIGE_1} 0%, ${BEIGE_2} 100%)`, overflow: "hidden" }}>
       <Contours />
@@ -85,7 +85,7 @@ export const CoverPro: React.FC<CoverProProps> = ({ cut, keyword, kwSize = 560, 
       <div style={{ position: "absolute", left: 0, right: 0, top: 1560, bottom: 0, background: `linear-gradient(180deg, rgba(232,220,203,0) 0%, ${BEIGE_2} 55%)` }} />
       <div style={{ position: "absolute", left: 0, top: 1450, width: 140, bottom: 0, background: `linear-gradient(90deg, ${BEIGE_2} 20%, rgba(232,220,203,0) 100%)` }} />
       {/* titre */}
-      <div style={{ position: "absolute", left: 0, right: 0, top: 1300, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: titleTop, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
         <div
           style={{
             fontFamily: NEUTRE.font,
