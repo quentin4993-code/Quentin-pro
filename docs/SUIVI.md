@@ -187,3 +187,10 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 
 ### « Combien par semaine » V2
 - Sous-titres déplacés **en bas** et **agrandis** (Inter 700, 60 px, ombre plus marquée). Préférence enregistrée dans `CLAUDE.md`.
+
+### Miniatures « Combien par semaine » V2 (photo retouchée)
+- Demande : « améliore ma tête, les photos sont pourries ».
+- Nouvelles images choisies dans les rushes : yeux ouverts, sourcils levés, bouche fermée, sans micro devant la bouche (r06 à 2,76 s, r04 à 2,14 s).
+- Retouche naturelle : `scripts/retouche_portrait.py` (débruitage, balance chaude, ombres/cernes relevées, lissage doux de la peau, netteté légère) + détourage qui ne garde que la silhouette (plus de main coupée au bord). Photo descendue (imgTop −80) : le micro passe derrière le bandeau titre.
+- Fichiers : `out/Miniature-Semaine-C-V2.jpg` (2-3×), `out/Miniature-Semaine-D-V2.jpg` (REPOS). Compositions `MiniatureSemaineC/D`.
+- **À faire pour toutes les prochaines miniatures** : choisir l'image image par image (expression, yeux, pas de micro) et passer la photo dans `retouche_portrait.py`.
