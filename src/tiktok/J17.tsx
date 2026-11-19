@@ -4,6 +4,8 @@
 // V4 : la piste son est faite de 8 phrases COMPLÈTES, chacune vérifiée seule à la transcription
 // (aucun faux départ, aucune coupe au milieu d'un mot, rien avant la première phrase).
 // Les changements d'image sont indépendants du son (le son ne repart plus à chaque plan).
+// V5 : respiration avant l'affiche, plan de la mer plus long, plan Strava prolongé sur « Ça veut dire »,
+// logo « S'abonner » à la fin (demandé par Quentin).
 import { AbsoluteFill, Audio, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { NEUTRE } from "./neutre";
 
@@ -25,8 +27,10 @@ const PIECES: [number, number][] = [
   [62.6, 67.65], // Sur ce compte, je vais vous partager… jusqu'au jour J de la course.
   [79.65, 82.05], // Donc si toi aussi t'as envie de suivre l'aventure, n'hésite pas à t'abonner.
 ];
+// Respirations ajoutées APRÈS une phrase (s) : la mer reste à l'écran, l'affiche arrive sur un temps.
+const GAP_AFTER: number[] = [0, 1.0, 0.35, 0, 0, 0, 0, 0];
 const STARTS: number[] = [];
-PIECES.reduce((t, [a, b]) => (STARTS.push(t), t + (b - a)), 0);
+PIECES.reduce((t, [a, b], i) => (STARTS.push(t), t + (b - a) + GAP_AFTER[i]), 0);
 const VOICE_END = STARTS[STARTS.length - 1] + (PIECES[PIECES.length - 1][1] - PIECES[PIECES.length - 1][0]);
 const TAIL = 1.6; // le drone continue après la dernière phrase
 export const J17_FRAMES = f(VOICE_END + TAIL);
@@ -51,10 +55,10 @@ const SHOTS: [number, Vis][] = [
   [20.25, { kind: "face" }],
   [27.52, { kind: "video", src: "videos/j17/r_sea.mp4" }], // « et j'habite sur l'île de La Réunion »
   [31.18, { kind: "face" }],
-  [37.22, { kind: "img", src: "videos/j17/v_affiche.jpg" }],
+  [33.4, { kind: "img", src: "videos/j17/v_affiche.jpg" }], // arrive pendant la respiration
   [51.45, { kind: "face" }],
   [52.35, { kind: "strava", src: "videos/j17/r_trail2.mp4" }],
-  [57.58, { kind: "face" }],
+  [58.15, { kind: "face" }], // le plan Strava continue sur « Ça veut dire » (il attendait avant de parler)
   [62.6, { kind: "video", src: "videos/j17/r_climb.mp4" }],
   [64.3, { kind: "video", src: "videos/j17/r_selfie.mp4" }],
   [65.95, { kind: "video", src: "videos/j17/r_sunset.mp4" }],
@@ -127,6 +131,21 @@ const Shot: React.FC<{ vis: Vis }> = ({ vis }) => {
   );
 };
 
+// Petit logo « abonnement » façon TikTok, demandé par Quentin quand le drone part vers l'avant
+const FOLLOW_AT = VOICE_END - 0.9;
+const FollowBadge: React.FC = () => {
+  const fr = useCurrentFrame();
+  const p = interpolate(fr, [0, 8], [0, 1], { ...clamp, easing: (x) => 1 - Math.pow(1 - x, 3) });
+  return (
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", paddingBottom: 120 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, backgroundColor: "rgba(255,255,255,0.95)", borderRadius: 999, padding: "14px 34px 14px 16px", boxShadow: "0 8px 26px rgba(0,0,0,0.3)", opacity: p, transform: `scale(${0.85 + 0.15 * p})` }}>
+        <div style={{ width: 64, height: 64, borderRadius: 32, backgroundColor: "#FE2C55", color: "white", fontFamily: NEUTRE.font, fontWeight: 800, fontSize: 52, lineHeight: "64px", textAlign: "center" }}>+</div>
+        <div style={{ fontFamily: NEUTRE.font, fontWeight: 700, fontSize: 44, color: "#161823" }}>S’abonner</div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 const EndFade: React.FC = () => {
   const fr = useCurrentFrame();
   return <AbsoluteFill style={{ backgroundColor: "black", opacity: interpolate(fr, [J17_FRAMES - 10, J17_FRAMES], [0, 1], clamp) }} />;
@@ -172,6 +191,9 @@ export const J17: React.FC = () => (
         </Sequence>
       );
     })}
+    <Sequence from={f(FOLLOW_AT)} durationInFrames={J17_FRAMES - f(FOLLOW_AT)}>
+      <FollowBadge />
+    </Sequence>
     <EndFade />
   </AbsoluteFill>
 );
