@@ -2,6 +2,15 @@
 
 Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail de Quentin), montés avec Remotion au format TikTok 1080×1920.
 
+## ⚠️ NOUVELLE DIRECTION (19 nov 2026) — prioritaire sur tout le reste
+Quentin : « ça fait trop IA, trop enfant, et ça ne fait pas de vues ». On repart de zéro :
+- **Histoire** : compte à rebours vers son 1er trail, **Urban Trail de Saint-Leu, 26 km / 500 D+, le 6 décembre 2026** → « J-X avant mon premier trail » (plus de « Jour X/22 »). Le record du tour de La Réunion (2027) : **ne pas en parler** sur les réseaux tant que le plan n'est pas défini.
+- **3 sujets** : la prépa (vraies séances, sensations), La Réunion en courant (spots, paysages), le run social du mercredi (Cap La Houssaye).
+- **Montage naturel, « comme un humain sur CapCut »** : coupes nettes sur les blancs, mots tels quels, sous-titres simples seulement quand il parle, une seule phrase de hook sans animation, vraies images qui respirent, son tendance ajouté dans TikTok.
+- **Interdit désormais** : cartes/tableaux animés, pastilles, bruitages (pop, whoosh, impact), zooms « punch », bouton « Abonne-toi », miniatures détourées avec gros mot-clé. Couverture = une vraie image de la vidéo + 3-4 mots.
+- 4-5 vidéos/semaine, 20-40 s, publiées le soir (18h-21h heure de La Réunion). Toujours livrer une version légère (< 50 Mo) téléchargeable sur téléphone.
+- Les règles ci-dessous (hook punch, miniatures pro, DA sobre à pastilles, etc.) sont **remplacées** par ce bloc quand elles le contredisent.
+
 ## À lire avant toute vidéo
 1. `docs/DA.md` — direction artistique **validée** (obligatoire, notamment la section « À NE PLUS FAIRE »).
 2. `docs/METHODE.md` — processus complet : envoi des rushes par les Releases GitHub, préparation, transcription, montage, rendu.
