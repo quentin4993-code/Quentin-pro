@@ -214,3 +214,4 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - `src/tiktok/J17.tsx` (30,8 s) : coupes sur les blancs, voix de la prise face caméra qui continue sur l'affiche, le tracé « 18 km », le sentier, la montée, le coucher de soleil et le drone ; « J-17 » seul texte de hook ; sous-titres simples sans animation ; aucun bruitage ; fondu au noir final.
 - Vérifié en re-transcrivant l'audio final : phrases complètes, coupe invisible à l'oreille.
 - Sortie : `out/J17-Lancement-V1.mp4` (20 Mo).
+- **V2** : le tracé seul est remplacé par la capture Strava (18,00 km · 484 m D+ · 2 h 22 min). Sortie `out/J17-Lancement-V2.mp4`.

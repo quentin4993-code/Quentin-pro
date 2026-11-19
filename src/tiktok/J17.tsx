@@ -19,7 +19,7 @@ const SEGS: Seg[] = [
   { in: 31.2, out: 34.3, vis: { kind: "face" } },
   { in: 37.3, out: 41.25, vis: { kind: "img", src: "videos/j17/v_affiche.jpg" } },
   { in: 51.2, out: 52.4, vis: { kind: "face" } },
-  { in: 52.4, out: 54.95, vis: { kind: "img", src: "videos/j17/v_trace.jpg", label: "18 km" } },
+  { in: 52.4, out: 54.95, vis: { kind: "img", src: "videos/j17/v_strava.jpg" } },
   { in: 55.2, out: 56.85, vis: { kind: "face" } },
   { in: 57.55, out: 59.35, vis: { kind: "face" } },
   { in: 62.6, out: 67.6, vis: { kind: "broll", parts: [["videos/j17/r_trail.mp4", 1.7], ["videos/j17/r_climb.mp4", 1.65], ["videos/j17/r_sunset.mp4", 1.65]] } },
