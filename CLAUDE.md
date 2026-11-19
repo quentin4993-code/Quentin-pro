@@ -4,7 +4,7 @@ Série de vlogs course à pied « Jour X / 22 » (préparation du premier trail 
 
 ## ⚠️ NOUVELLE DIRECTION (19 nov 2026) — prioritaire sur tout le reste
 Quentin : « ça fait trop IA, trop enfant, et ça ne fait pas de vues ». On repart de zéro :
-- **Histoire** : compte à rebours vers son 1er trail, **Urban Trail de Saint-Leu, 26 km / 500 D+, le 6 décembre 2026** → « J-X avant mon premier trail » (plus de « Jour X/22 »). Le record du tour de La Réunion (2027) : **ne pas en parler** sur les réseaux tant que le plan n'est pas défini.
+- **Histoire** : compte à rebours vers son 1er trail, **Leu Trail des Musées (Saint-Leu), 26 km / 560 D+, le 6 décembre 2026** → « J-X avant mon premier trail » (plus de « Jour X/22 »). Le record du tour de La Réunion (2027) : **ne pas en parler** sur les réseaux tant que le plan n'est pas défini.
 - **3 sujets** : la prépa (vraies séances, sensations), La Réunion en courant (spots, paysages), le run social du mercredi (Cap La Houssaye).
 - **Montage naturel, « comme un humain sur CapCut »** : coupes nettes sur les blancs, mots tels quels, sous-titres simples seulement quand il parle, une seule phrase de hook sans animation, vraies images qui respirent, son tendance ajouté dans TikTok.
 - **Interdit désormais** : cartes/tableaux animés, pastilles, bruitages (pop, whoosh, impact), zooms « punch », bouton « Abonne-toi », miniatures détourées avec gros mot-clé. Couverture = une vraie image de la vidéo + 3-4 mots.
