@@ -207,3 +207,10 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - `src/tiktok/Run6.tsx` + `run6.data.ts` (59,8 s) : 8 plans face caméra coupés au mot près (sous-titres Inter 700 58 px en bas), pastille « Jour 6/22 · prépa 1er trail » au début, 8 plans d'ambiance (falaises, groupe, coucher de soleil) en fondus de 6 images avec le son d'ambiance bas, pastille « Run social · 1re édition », fin sur la photo de groupe + « Abonne-toi pour la suite ». Pas de musique, pas d'effets.
 - Vérifié en re-transcrivant l'audio final : aucun mot coupé.
 - Sortie : `out/Jour6-RunSocial-V1.mp4`.
+
+### J-17 — vidéo de lancement de la série « premier trail » V1 (nouveau style naturel)
+- Rushes : Release `jour-17` (prise face caméra assis sur une chaise rouge devant la canne, plans trail / montée / coucher de soleil / drone) + affiche de la course et tracé de la sortie de 18 km envoyés en image.
+- La course s'appelle **Leu Trail des Musées** (26 km / 560 D+). Quentin dit « urban trail de Saint-Lieu, la première édition » → coupé (« je vais prendre le départ… d'un trail de 26 km ») et l'affiche est montrée à ce moment-là.
+- `src/tiktok/J17.tsx` (30,8 s) : coupes sur les blancs, voix de la prise face caméra qui continue sur l'affiche, le tracé « 18 km », le sentier, la montée, le coucher de soleil et le drone ; « J-17 » seul texte de hook ; sous-titres simples sans animation ; aucun bruitage ; fondu au noir final.
+- Vérifié en re-transcrivant l'audio final : phrases complètes, coupe invisible à l'oreille.
+- Sortie : `out/J17-Lancement-V1.mp4` (20 Mo).
