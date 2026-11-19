@@ -14,6 +14,7 @@ import { Semaine, SM_FRAMES } from "./tiktok/Semaine";
 import { Genoux, GN_FRAMES } from "./tiktok/Genoux";
 import { Run6, R6_FRAMES } from "./tiktok/Run6";
 import { J17, J17_FRAMES } from "./tiktok/J17";
+import { CoverSimple } from "./tiktok/CoverSimple";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
 
@@ -55,6 +56,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Jour6AvecMusique" component={Jour6} durationInFrames={J6_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
+      <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
+      <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />
       <Composition id="Run6" component={Run6} durationInFrames={R6_FRAMES} fps={FPS} width={1080} height={1920} />
       <Composition id="Genoux" component={Genoux} durationInFrames={GN_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
