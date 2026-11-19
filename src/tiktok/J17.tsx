@@ -4,6 +4,8 @@
 // V4 : la piste son est faite de 8 phrases COMPLÈTES, chacune vérifiée seule à la transcription
 // (aucun faux départ, aucune coupe au milieu d'un mot, rien avant la première phrase).
 // Les changements d'image sont indépendants du son (le son ne repart plus à chaque plan).
+// V6 : « Le 6 décembre 2026, je vais prendre le départ d'un trail de 26 km » d'une traite (raccord sur le « d »),
+// piste voix unique voice.wav (plus de micro-coupures aux raccords).
 // V5 : respiration avant l'affiche, plan de la mer plus long, plan Strava prolongé sur « Ça veut dire »,
 // logo « S'abonner » à la fin (demandé par Quentin).
 import { AbsoluteFill, Audio, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
@@ -20,15 +22,15 @@ const FC_OFFSET = 18;
 const PIECES: [number, number][] = [
   [20.25, 23.25], // Il me reste 17 jours pour être capable de courir 26 km.
   [25.88, 28.85], // Moi c'est Quentin, j'ai 24 ans et j'habite sur l'île de La Réunion.
-  [31.18, 33.4], // Le 6 décembre 2026,
-  [37.22, 41.2], // un trail de 26 km avec plus de 500 m de dénivelé positif.
+  [31.18, 34.33], // Le 6 décembre 2026, je vais prendre le départ d-
+  [37.28, 41.2], // -'un trail de 26 km avec plus de 500 m de dénivelé positif. (raccord testé : « départ d'un trail »)
   [51.45, 55.0], // À l'heure où je vous parle, ma plus grande distance parcourue, c'est 18 km.
   [57.58, 59.2], // Ça veut dire qu'il m'en resterait 8.
   [62.6, 67.65], // Sur ce compte, je vais vous partager… jusqu'au jour J de la course.
   [79.65, 82.05], // Donc si toi aussi t'as envie de suivre l'aventure, n'hésite pas à t'abonner.
 ];
 // Respirations ajoutées APRÈS une phrase (s) : la mer reste à l'écran, l'affiche arrive sur un temps.
-const GAP_AFTER: number[] = [0, 1.0, 0.35, 0, 0, 0, 0, 0];
+const GAP_AFTER: number[] = [0, 1.0, 0, 0, 0, 0, 0, 0]; // doit correspondre à public/videos/j17/voice.wav
 const STARTS: number[] = [];
 PIECES.reduce((t, [a, b], i) => (STARTS.push(t), t + (b - a) + GAP_AFTER[i]), 0);
 const VOICE_END = STARTS[STARTS.length - 1] + (PIECES[PIECES.length - 1][1] - PIECES[PIECES.length - 1][0]);
@@ -55,7 +57,7 @@ const SHOTS: [number, Vis][] = [
   [20.25, { kind: "face" }],
   [27.52, { kind: "video", src: "videos/j17/r_sea.mp4" }], // « et j'habite sur l'île de La Réunion »
   [31.18, { kind: "face" }],
-  [33.4, { kind: "img", src: "videos/j17/v_affiche.jpg" }], // arrive pendant la respiration
+  [33.45, { kind: "img", src: "videos/j17/v_affiche.jpg" }], // dès « je vais prendre le départ » : le raccord son est caché sous l'affiche
   [51.45, { kind: "face" }],
   [52.35, { kind: "strava", src: "videos/j17/r_trail2.mp4" }],
   [58.15, { kind: "face" }], // le plan Strava continue sur « Ça veut dire » (il attendait avant de parler)
@@ -70,8 +72,8 @@ const SUBS: [number, number, string][] = [
   [21.46, 23.25, "pour être capable de courir 26 kilomètres."],
   [25.88, 27.52, "Moi c’est Quentin, j’ai 24 ans"],
   [27.52, 28.85, "et j’habite sur l’île de La Réunion."],
-  [31.18, 33.4, "Le 6 décembre 2026,"],
-  [37.22, 38.72, "un trail de 26 kilomètres"],
+  [31.18, 33.45, "Le 6 décembre 2026,"],
+  [33.45, 38.72, "je vais prendre le départ d’un trail de 26 kilomètres"],
   [38.72, 41.2, "avec plus de 500 mètres de dénivelé positif."],
   [51.45, 52.35, "À l’heure où je vous parle,"],
   [52.35, 53.9, "ma plus grande distance parcourue,"],
@@ -165,14 +167,8 @@ export const J17: React.FC = () => (
       );
     })}
 
-    {PIECES.map(([a, b], i) => {
-      const len = f(b - a);
-      return (
-        <Sequence key={`a${i}`} from={f(STARTS[i])} durationInFrames={len}>
-          <Audio src={staticFile("videos/j17/fc.mp4")} trimBefore={f(a - FC_OFFSET)} volume={(fr) => interpolate(fr, [0, 2, len - 2, len], [0, 1, 1, 0], clamp)} />
-        </Sequence>
-      );
-    })}
+    {/* piste voix montée à l'échantillon près (6 ms de fondu par phrase), voir docs/SUIVI.md */}
+    <Audio src={staticFile("videos/j17/voice.wav")} />
 
     <Sequence from={0} durationInFrames={f(STARTS[1])}>
       <AbsoluteFill style={{ alignItems: "center", paddingTop: 250 }}>
