@@ -8,3 +8,4 @@ public/videos/**/*.mov
 public/covers/*.png
 public/videos/**/*.jpeg
 public/videos/**/*.jpg
+public/videos/**/*.png
