@@ -215,3 +215,5 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Vérifié en re-transcrivant l'audio final : phrases complètes, coupe invisible à l'oreille.
 - Sortie : `out/J17-Lancement-V1.mp4` (20 Mo).
 - **V2** : le tracé seul est remplacé par la capture Strava (18,00 km · 484 m D+ · 2 h 22 min). Sortie `out/J17-Lancement-V2.mp4`.
+- **V3** (Quentin : « tous mes moments de bug », « écran noir avec le chrono, ça ressemble à rien ») : faux départs retirés (« Moi c'est… » et « Ça veut dire que… » dits deux fois — repérés en re-transcrivant AVEC les hésitations, prompt « euh… »), plan de la mer sur « j'habite sur l'île de La Réunion », stats Strava (tracé + 18,00 km · 484 m · 2 h 22) en surimpression sur le plan où il court face à la mer au lieu de l'écran noir, plans selfie montée/mer ajoutés, micro-fondus audio de 2 images à chaque coupe. Sortie `out/J17-Lancement-V3.mp4`.
+- **Leçon** : toujours re-transcrire le rendu final avec un prompt d'hésitations pour détecter les répétitions ; ne jamais montrer une capture d'écran plein écran, la poser sur une vraie image.
