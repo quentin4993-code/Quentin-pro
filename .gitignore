@@ -9,3 +9,4 @@ public/covers/*.png
 public/videos/**/*.jpeg
 public/videos/**/*.jpg
 public/videos/**/*.png
+public/videos/**/*.wav
