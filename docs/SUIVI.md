@@ -226,3 +226,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - **Format validé** : prise face caméra assis (chaise dehors, micro), voix qui continue sur de vraies images (mer, affiche, plan de course + stats Strava en surimpression, drone), phrase de série « Il me reste X jours pour être capable de courir 26 km » + « J-X » seul texte de hook, sous-titres simples, aucun bruitage ni animation, logo « + S'abonner » sur le dernier plan.
 - **À reproduire** pour chaque vidéo de la série (J-16, J-15…). Le numéro = jour de PUBLICATION ; une vidéo par jour, publiée le jour même (le 19/11 : lancement l'après-midi + sortie le soir, tous deux en J-17).
 - Méthode audio obligatoire : phrases complètes uniquement, bornes dans les silences, piste voix montée à l'échantillon près (`voice.wav`), re-transcription du rendu final avec prompt d'hésitations.
+
+### J-16 — renfo avec le groupe Sport & Co 974 V1
+- Rushes : Release `jour-16` (intro, présentation du groupe, plans de la séance sur la piste, bilan, infos pratiques).
+- Nouveau composant réutilisable `src/tiktok/Episode.tsx` (format validé J-17) + données `src/tiktok/j16.data.ts` générées : 11 morceaux de phrases vérifiés un par un (retirés : « hum » après « l'animer », « Ça se place… », « euh » avant « C'était juste exceptionnel », deux hésitations dans « petit jeu ludique avec des abdos, avec un peu de culture générale »). Voix `public/videos/j16/voice.wav` (chaque rush nettoyé + normalisé avant montage). Plans de la séance muets sur « où on se rejoint… », le circuit, le jeu et le lieu ; visage sur le reste ; « J-16 » ; logo « + S'abonner » sur la dernière phrase.
+- Rendu final re-transcrit : chaque phrase une seule fois, aucune hésitation. Sortie `out/J16-Renfo-V1.mp4` (37 s, 24 Mo).
