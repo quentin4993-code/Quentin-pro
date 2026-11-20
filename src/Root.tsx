@@ -59,6 +59,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="J16" component={Episode} durationInFrames={episodeFrames(EP_J16)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J16 }} />
+      <Still id="CouvJ16Groupe" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j16-groupe.jpg", big: "Renfo en groupe", small: "J-16 · Saint-Paul", top: 420, bigSize: 130 }} />
       <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
       <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />
