@@ -233,3 +233,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Rendu final re-transcrit : chaque phrase une seule fois, aucune hésitation. Sortie `out/J16-Renfo-V1.mp4` (37 s, 24 Mo).
 - **V2** (Quentin : « améliorer le son de ma voix, qu'on entende moins autour ») : réduction de bruit spectrale non stationnaire (`noisereduce`, prop_decrease 0,9) sur chaque rush, puis passe-haut 100 Hz, coupe-haut 11 kHz, −2 dB à 220 Hz (moins sourd), +3 dB à 3,2 kHz (voix plus claire), de-esser, compresseur, porte de bruit douce, normalisation (‑16 LUFS, **‑ar 48000 obligatoire** sinon loudnorm sort en 192 kHz). Bruit de fond dans les pauses : −45 dB → −61 dB. Même montage, son remplacé. Sortie `out/J16-Renfo-V2.mp4`.
 - **À appliquer par défaut** à toutes les prochaines vidéos (voix dehors).
+
+### J-15 — 10 km en 4 blocs de 15 min V1
+- Rushes : Release `jour-15` (intro dans la voiture, explication des blocs, plans pendant la course, « Xe bloc terminé » après chaque bloc, plans de fin face à la mer) + temps intermédiaires Strava (IMG_9084) et résultat (IMG_9086).
+- Blocs reconstitués avec les temps cumulés : bloc 1 (0-15 min) = km 1-2 ; bloc 2 (15-30) = km 3-5 ; bloc 3 (30-45) = km 6-7 ; bloc 4 (45-60) = km 8-9 + 0,6 km. Vitesse = 60 / allure.
+- `src/tiktok/J15.tsx` + `j15.data.ts` (50,6 s) : allures du bloc (« Km 3 · 5:57 /km · 10,1 km/h ») affichées pendant les images du bloc et la phrase « bloc terminé » ; résultat Strava (tracé + 9,68 km · 6:12 /km · 1 h 00) sur le dernier plan face à la mer ; voix nettoyée (noisereduce + EQ) ; « hum » retiré dans l'explication. Sortie `out/J15-Blocs-V1.mp4` (34 Mo).
