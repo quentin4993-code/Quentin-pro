@@ -242,3 +242,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - **Règle** : plus de `noisereduce` agressif. Traitement voix par défaut = la chaîne douce ci-dessus ; un peu de bruit naturel vaut mieux qu'une voix robotique.
 - **V3** (Quentin : « on sent le début de chaque vidéo, les blancs… coupe tout nickel ») : chaque prise face caméra recoupée au plus près de la parole avec l'enveloppe sonore au 1/20 s (début et fin de chaque prise, souffle/vent avant de parler retiré) ; pauses internes coupées (« EF, … ensuite », « Deuxième bloc fini. … Ça pique », « Troisième bloc terminé. … Plus que un », « Quatrième bloc. … C'est fini »). 50,6 s → 43,9 s. Sortie `out/J15-Blocs-V3.mp4`.
 - **Règle** : toujours couper chaque prise de 0,05 s avant le premier mot à 0,05 s après le dernier, et réduire toute pause > 0,25 s.
+
+### J-14 — journée foot, vidéo « chill » V1
+- Rushes : Release `jour-14` (6 prises face caméra + plan du terrain de foot). Pas de couverture (Quentin la fournit).
+- Coupes automatiques au plus près de la parole (`scratchpad/tight.py` : enveloppe au 1/100 s, silences > 0,22 s réduits) puis vérifiées une par une à la transcription ; retirés : « euh » ×2, « uuune » traînant (« une session de foot »), blanc + « donc » hésitant avant « Ça m'a suffi pour ce week-end », fin hésitante « et de vous donner… pour… pour venir » (la phrase s'arrête à « je prendrai le temps de vous répondre »).
+- Plan du terrain de foot sur « je vous mettrai juste le cadre où on a joué, qui était juste magnifique ». Logo « S'abonner » déplacé en haut (ne cache plus le visage sur les vidéos face caméra). Voix : traitement doux. Sortie `out/J14-Foot-V1.mp4` (41 s, 26 Mo).
