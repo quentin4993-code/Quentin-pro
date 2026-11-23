@@ -18,6 +18,7 @@ import { CoverSimple } from "./tiktok/CoverSimple";
 import { Episode, episodeFrames } from "./tiktok/Episode";
 import { EP as EP_J16 } from "./tiktok/j16.data";
 import { EP as EP_J14 } from "./tiktok/j14.data";
+import { EP as EP_J13 } from "./tiktok/j13.data";
 import { J15, J15_FRAMES } from "./tiktok/J15";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
@@ -61,6 +62,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="J15" component={J15} durationInFrames={J15_FRAMES} fps={FPS} width={1080} height={1920} />
+      <Composition id="J13" component={Episode} durationInFrames={episodeFrames(EP_J13)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J13 }} />
       <Composition id="J14" component={Episode} durationInFrames={episodeFrames(EP_J14)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J14 }} />
       <Composition id="J16" component={Episode} durationInFrames={episodeFrames(EP_J16)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J16 }} />
       <Still id="CouvJ16Groupe" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j16-groupe.jpg", big: "Renfo en groupe", small: "J-16 · Saint-Paul", top: 420, bigSize: 130 }} />
