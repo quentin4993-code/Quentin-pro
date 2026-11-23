@@ -8,6 +8,7 @@ Quentin : « ça fait trop IA, trop enfant, et ça ne fait pas de vues ». On re
 - **3 sujets** : la prépa (vraies séances, sensations), La Réunion en courant (spots, paysages), le run social du mercredi (Cap La Houssaye).
 - **Montage naturel, « comme un humain sur CapCut »** : coupes nettes sur les blancs, mots tels quels, sous-titres simples seulement quand il parle, une seule phrase de hook sans animation, vraies images qui respirent, son tendance ajouté dans TikTok.
 - **Interdit désormais** : cartes/tableaux animés, pastilles, bruitages (pop, whoosh, impact), zooms « punch », bouton « Abonne-toi », miniatures détourées avec gros mot-clé. Couverture = une vraie image de la vidéo + 3-4 mots.
+- **Voix : laisser la voix d'origine** (demandé le 23/11/2026) — aucun débruitage, aucun EQ, aucun compresseur ; seulement les coupes et un réglage de volume global.
 - 4-5 vidéos/semaine, 20-40 s, publiées le soir (18h-21h heure de La Réunion). Toujours livrer une version légère (< 50 Mo) téléchargeable sur téléphone.
 - Les règles ci-dessous (hook punch, miniatures pro, DA sobre à pastilles, etc.) sont **remplacées** par ce bloc quand elles le contredisent.
 
