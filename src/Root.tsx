@@ -20,6 +20,7 @@ import { EP as EP_J16 } from "./tiktok/j16.data";
 import { EP as EP_J14 } from "./tiktok/j14.data";
 import { EP as EP_J13 } from "./tiktok/j13.data";
 import { EP as EP_J12 } from "./tiktok/j12.data";
+import { EP as EP_J11 } from "./tiktok/j11.data";
 import { J15, J15_FRAMES } from "./tiktok/J15";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
@@ -63,6 +64,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Lent" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: false }} />
       <Composition id="LentAvecMusique" component={Lent} durationInFrames={LT_FRAMES} fps={FPS} width={1080} height={1920} defaultProps={{ music: true }} />
       <Composition id="J15" component={J15} durationInFrames={J15_FRAMES} fps={FPS} width={1080} height={1920} />
+      <Composition id="J11" component={Episode} durationInFrames={episodeFrames(EP_J11)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J11 }} />
       <Composition id="J12" component={Episode} durationInFrames={episodeFrames(EP_J12)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J12 }} />
       <Composition id="J13" component={Episode} durationInFrames={episodeFrames(EP_J13)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J13 }} />
       <Composition id="J14" component={Episode} durationInFrames={episodeFrames(EP_J14)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J14 }} />
@@ -77,6 +79,7 @@ export const RemotionRoot: React.FC = () => {
       <Still id="CouvJ13Tortue" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j13-tortue.jpg", big: "Visite surprise", small: "J-13 · récup à la plage", top: 330, bigSize: 130 }} />
       <Still id="CouvJ12Jungle" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j12-jungle.jpg", big: "Perdu dans la jungle", small: "J-12", top: 270, bigSize: 110 }} />
       <Still id="CouvJ12Sentier" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j12-sentier.jpg", big: "Je me suis perdu", small: "J-12 · rando en forêt", top: 1250, bigSize: 118 }} />
+      <Still id="CouvJ11Groupe" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j11-groupe.jpg", big: "Run social #3", small: "J-11 · Cap La Houssaye", top: 300, bigSize: 130 }} />
       <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
       <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />

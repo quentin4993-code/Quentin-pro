@@ -261,3 +261,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Tri : hook r01 ; présentation r02 (2e essai, sans le nom de la rando ni les « euh / donc donc ») ; « je me suis perdu » r12 ; « autre chemin / portion fermée » r13 (sans « et là j'ai pris un autre chemin mais… ») ; récit du demi-tour r19 (pas r18, moins bon) avec « hum » et blancs retirés ; question aux abonnés r03 pour finir (« Hésitez pas à me dire en commentaire si vous préparez des courses en 2027… »).
 - Plans : marche sur le sentier sur la présentation, montage muet de 6 s (chemin, escaliers, mousse, fleur), jungle sur « dans la jungle », panneau sur « portion du sentier fermée », brume sur « ça s'est mis à se couvrir », boue sur « la gadou », forêt sur « ravines ».
 - Voix d'origine : aucun filtre, seulement un gain par prise pour égaliser le volume (+12 dB sur la prise « perdu », très basse). Sortie `out/J12-Rando-V1.mp4` (46 s, 29 Mo).
+
+### J-11 — run social #3 (Cap La Houssaye → Saint-Paul) V1
+- Rushes : Release `jour-11` (6 prises dans la voiture, 9 plans de la sortie, photo de groupe IMG_9206).
+- Tri : hook IMG_9186 ; édition 3 IMG_9187 ; séance IMG_9190 (meilleure que 9188 ; « euh », « hum » et « donc donc » retirés) ; nouvelles personnes IMG_9191 ; « C'est parti ! » ; montage MUET de 7 plans (chemin, groupe qui court, mer, groupe sous la falaise, côte, plage au coucher de soleil, soleil) ; infos run social/renfo IMG_9192 (faux départ « je vous… je vous met… » retiré) avec la photo de groupe sur « comme ça je vous mettrai dans le groupe » + « S'abonner ».
+- Voix d'origine (gain par prise seulement). Sortie `out/J11-RunSocial-V1.mp4` (45 s, 26 Mo). Couverture : selfie de groupe + « Run social #3 · J-11 · Cap La Houssaye ».
