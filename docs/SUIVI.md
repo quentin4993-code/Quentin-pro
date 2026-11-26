@@ -271,3 +271,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Rushes : Release `jour-10` (prises en K-way au départ, échauffement, arrivée « lieu du carnage », 2 montées, explication de la difficulté, fin 11 km).
 - Tri : hook IMG_9211, programme 9212, K-way 9217 (« donc euh » retiré), objectif D+ et échauffement 9219 (pieds + chemin en image sur l'échauffement), arrivée 9220, « premier temps fini » 9223, « deuxième montée finie » 9226, difficulté 9227 (on garde « pas raide mais longue » + « tenir la régularité, c'est là où c'est dur » ; retirés : le détail faux plat et « 600, 600 mètres »), bilan 9232 (11 km). Écartés : bouts sans paroles utiles (« Quentin, Quentin… »).
 - Deux passages muets pour la musique (6 s de montée, 3,6 s de paysage). Voix d'origine (gain par prise). Sortie `out/J10-Cotes-V1.mp4` (49 s, 30 Mo). Couverture : en pleine montée + « Séance de côtes · J-10 · 11 km ».
+
+### J-10 — V2 (26/11/2026)
+- Ajout du résultat Strava (demandé) : tracé orange + « Distance 10,73 km · D+ 323 m · Temps 1 h 19 », posé en haut sur un plan paysage (IMG_9229) pendant « On a fait presque 11 km. C'était bon, ça. Une bonne séance. ».
+- Logo « S'abonner » décalé sur « Je suis content » pour ne pas chevaucher les chiffres.
+- `Episode.tsx` accepte maintenant un champ optionnel `strava` (réutilisable pour les prochains épisodes).
+- Livré : `out/J10-Cotes-V2.mp4` (~31 Mo).

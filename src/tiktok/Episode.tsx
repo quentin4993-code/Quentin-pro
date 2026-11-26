@@ -2,7 +2,7 @@
 // Style naturel : voix = piste unique montée à l'échantillon près (voice.wav), visage synchronisé
 // sur chaque phrase, plans d'ambiance muets par-dessus, « J-X » seul texte de hook,
 // sous-titres simples sans animation, logo « + S'abonner » sur la dernière phrase. Aucun bruitage.
-import { AbsoluteFill, Audio, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { NEUTRE } from "./neutre";
 
 const FPS = 30;
@@ -18,6 +18,7 @@ export type EpisodeData = {
   voiceEnd: number;
   tail: number;
   badgeAt: number;
+  strava?: { start: number; end: number; dist: string; dplus: string; time: string; trace: string };
 };
 export const episodeFrames = (ep: EpisodeData) => f(ep.voiceEnd + ep.tail);
 
@@ -34,6 +35,31 @@ const FollowBadge: React.FC = () => {
         <div style={{ width: 64, height: 64, borderRadius: 32, backgroundColor: "#FE2C55", color: "white", fontFamily: NEUTRE.font, fontWeight: 800, fontSize: 52, lineHeight: "64px", textAlign: "center" }}>+</div>
         <div style={{ fontFamily: NEUTRE.font, fontWeight: 700, fontSize: 44, color: "#161823" }}>S’abonner</div>
       </div>
+    </AbsoluteFill>
+  );
+};
+
+// Résultat Strava posé sur un plan de course (pas d'écran noir) : tracé + 3 chiffres
+const StravaStats: React.FC<{ s: NonNullable<EpisodeData["strava"]> }> = ({ s }) => {
+  const fr = useCurrentFrame();
+  const o = interpolate(fr, [0, 6], [0, 1], clamp);
+  const stat = (label: string, value: string) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+      <div style={{ ...textStyle, fontWeight: 600, fontSize: 30 }}>{label}</div>
+      <div style={{ ...textStyle, fontWeight: 800, fontSize: 62, lineHeight: 1.05 }}>{value}</div>
+    </div>
+  );
+  return (
+    <AbsoluteFill style={{ opacity: o }}>
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%)" }} />
+      <AbsoluteFill style={{ alignItems: "center", paddingTop: 230, gap: 24 }}>
+        <Img src={staticFile(s.trace)} style={{ height: 300, filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.6))" }} />
+        <div style={{ display: "flex", gap: 56 }}>
+          {stat("Distance", s.dist)}
+          {stat("D+", s.dplus)}
+          {stat("Temps", s.time)}
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
@@ -72,6 +98,12 @@ export const Episode: React.FC<{ ep: EpisodeData }> = ({ ep }) => {
           <div style={{ ...textStyle, fontWeight: 800, fontSize: 110 }}>{ep.hook}</div>
         </AbsoluteFill>
       </Sequence>
+
+      {ep.strava ? (
+        <Sequence from={f(ep.strava.start)} durationInFrames={f(ep.strava.end) - f(ep.strava.start)}>
+          <StravaStats s={ep.strava} />
+        </Sequence>
+      ) : null}
 
       {ep.subs.map(([a, b, t], i) => (
         <Sequence key={`t${i}`} from={f(a)} durationInFrames={Math.max(1, f(b) - f(a))}>
