@@ -266,3 +266,8 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Rushes : Release `jour-11` (6 prises dans la voiture, 9 plans de la sortie, photo de groupe IMG_9206).
 - Tri : hook IMG_9186 ; édition 3 IMG_9187 ; séance IMG_9190 (meilleure que 9188 ; « euh », « hum » et « donc donc » retirés) ; nouvelles personnes IMG_9191 ; « C'est parti ! » ; montage MUET de 7 plans (chemin, groupe qui court, mer, groupe sous la falaise, côte, plage au coucher de soleil, soleil) ; infos run social/renfo IMG_9192 (faux départ « je vous… je vous met… » retiré) avec la photo de groupe sur « comme ça je vous mettrai dans le groupe » + « S'abonner ».
 - Voix d'origine (gain par prise seulement). Sortie `out/J11-RunSocial-V1.mp4` (45 s, 26 Mo). Couverture : selfie de groupe + « Run social #3 · J-11 · Cap La Houssaye ».
+
+### J-10 — séance de côtes V1
+- Rushes : Release `jour-10` (prises en K-way au départ, échauffement, arrivée « lieu du carnage », 2 montées, explication de la difficulté, fin 11 km).
+- Tri : hook IMG_9211, programme 9212, K-way 9217 (« donc euh » retiré), objectif D+ et échauffement 9219 (pieds + chemin en image sur l'échauffement), arrivée 9220, « premier temps fini » 9223, « deuxième montée finie » 9226, difficulté 9227 (on garde « pas raide mais longue » + « tenir la régularité, c'est là où c'est dur » ; retirés : le détail faux plat et « 600, 600 mètres »), bilan 9232 (11 km). Écartés : bouts sans paroles utiles (« Quentin, Quentin… »).
+- Deux passages muets pour la musique (6 s de montée, 3,6 s de paysage). Voix d'origine (gain par prise). Sortie `out/J10-Cotes-V1.mp4` (49 s, 30 Mo). Couverture : en pleine montée + « Séance de côtes · J-10 · 11 km ».
