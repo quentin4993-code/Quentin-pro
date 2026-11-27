@@ -277,3 +277,11 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Logo « S'abonner » décalé sur « Je suis content » pour ne pas chevaucher les chiffres.
 - `Episode.tsx` accepte maintenant un champ optionnel `strava` (réutilisable pour les prochains épisodes).
 - Livré : `out/J10-Cotes-V2.mp4` (~31 Mo).
+
+### J-9 — V1 (27/11/2026) — jour de repos
+- Rushes : 9249-9251 (face caméra à la plage), plans muets 9252 (plage), 9255 (arbres), 9256/9257 (mer), 9258/9259/9261 (couchant). 9255 « Bonsoir », 9260 « C'est 18h15 », 9261 « Moi je suis Kévin » non utilisés (son coupé).
+- Pas de phrase « Il me reste 9 jours… » dans les rushes → hook « J-9 » seul.
+- Coupés : « Non, plus sérieusement », « hum », « euh » (×3), « et euh… et voilà », « Voilà ». Montage vérifié par re-transcription.
+- Voix d'origine, gain par prise. 3,2 s de couchant muet à la fin + « S'abonner ».
+- Générateur : scratchpad `j9/gen.py` → `src/tiktok/j9.data.ts`, `public/videos/j9/voice.wav`.
+- Livré : `out/J9-Repos-V1.mp4` (~17 Mo), couvertures `Couverture-J9-Oiseau.jpg` / `Couverture-J9-Couchant.jpg`.
