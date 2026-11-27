@@ -285,3 +285,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Voix d'origine, gain par prise. 3,2 s de couchant muet à la fin + « S'abonner ».
 - Générateur : scratchpad `j9/gen.py` → `src/tiktok/j9.data.ts`, `public/videos/j9/voice.wav`.
 - Livré : `out/J9-Repos-V1.mp4` (~17 Mo), couvertures `Couverture-J9-Oiseau.jpg` / `Couverture-J9-Couchant.jpg`.
+
+### J-9 — V2 (27/11/2026)
+- Ajout de IMG_9247 en ouverture : « Il me reste 9 jours pour être capable de courir 26 km et 600 de D+. » (volume aligné sur les autres prises).
+- Ajout de IMG_9263 (soleil orange) en dernier plan, après le palmier ; fin de 3,6 s sans aucun son (vérifié : silence total).
+- Tous les plans où Quentin ne parle pas restent muets.
+- Livré : `out/J9-Repos-V2.mp4` (~19 Mo, 32 s).
