@@ -291,3 +291,9 @@ Légende : ✅ fait · 🟡 en cours · ⬜ à faire · ⛔ bloqué
 - Ajout de IMG_9263 (soleil orange) en dernier plan, après le palmier ; fin de 3,6 s sans aucun son (vérifié : silence total).
 - Tous les plans où Quentin ne parle pas restent muets.
 - Livré : `out/J9-Repos-V2.mp4` (~19 Mo, 32 s).
+
+### J-8 — V1 (28/11/2026) — dernière sortie longue
+- 38 rushes (9268-9309) + capture Strava (IMG_9328 : 12,21 km · 339 m · 1 h 31).
+- Histoire : intro « Il me reste 8 jours » → départ 5h30, même boucle que le début de la prépa → montage course muet (pieds, savane, selfie, pont, falaise) → « C'est dur aujourd'hui » → alimentation (2-3 jours mal mangé, jambes lourdes, « si t'as pas une bonne nutrition c'est mort ») → plans muets (flamboyant, falaise) → fin de sortie + Strava sur la mer → repos, dernière semaine, « on devrait être prêts » → route au soleil muette + S'abonner.
+- Coupés : « Putain », 9273 (doublon 12-14 km), 9280 (5h30/chaleur), 9304, toutes les reprises et blancs. Re-transcription OK.
+- Générateur : scratchpad `j8/gen.py`. Livré : `out/J8-SortieLongue-V1.mp4` (~35 Mo, 53 s), couvertures `Couverture-J8-Falaise.jpg` / `Couverture-J8-Course.jpg`.

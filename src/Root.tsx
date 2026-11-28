@@ -23,6 +23,7 @@ import { EP as EP_J12 } from "./tiktok/j12.data";
 import { EP as EP_J11 } from "./tiktok/j11.data";
 import { EP as EP_J10 } from "./tiktok/j10.data";
 import { EP as EP_J9 } from "./tiktok/j9.data";
+import { EP as EP_J8 } from "./tiktok/j8.data";
 import { J15, J15_FRAMES } from "./tiktok/J15";
 import { FPS, totalFrames } from "./tiktok/types";
 import { Cover } from "./tiktok/Cover";
@@ -68,6 +69,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="J15" component={J15} durationInFrames={J15_FRAMES} fps={FPS} width={1080} height={1920} />
       <Composition id="J10" component={Episode} durationInFrames={episodeFrames(EP_J10)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J10 }} />
       <Composition id="J9" component={Episode} durationInFrames={episodeFrames(EP_J9)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J9 }} />
+      <Composition id="J8" component={Episode} durationInFrames={episodeFrames(EP_J8)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J8 }} />
       <Composition id="J11" component={Episode} durationInFrames={episodeFrames(EP_J11)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J11 }} />
       <Composition id="J12" component={Episode} durationInFrames={episodeFrames(EP_J12)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J12 }} />
       <Composition id="J13" component={Episode} durationInFrames={episodeFrames(EP_J13)} fps={FPS} width={1080} height={1920} defaultProps={{ ep: EP_J13 }} />
@@ -87,6 +89,8 @@ export const RemotionRoot: React.FC = () => {
       <Still id="CouvJ10Cotes" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j10-cotes.jpg", big: "Séance de côtes", small: "J-10 · 11 km", top: 290, bigSize: 124 }} />
       <Still id="CouvJ9Oiseau" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j9-oiseau.jpg", big: "Jour de repos", small: "J-9 · avant la sortie longue", top: 290, bigSize: 124 }} />
       <Still id="CouvJ9Couchant" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j9-couchant.jpg", big: "Jour de repos", small: "J-9 · avant la sortie longue", top: 290, bigSize: 124 }} />
+      <Still id="CouvJ8Falaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-falaise.jpg", big: "Dernière sortie longue", small: "J-8 · 12 km à 5h30", top: 290, bigSize: 110 }} />
+      <Still id="CouvJ8Course" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-course.jpg", big: "Dernière sortie longue", small: "J-8 · 12 km à 5h30", top: 290, bigSize: 110 }} />
       <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
       <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />
