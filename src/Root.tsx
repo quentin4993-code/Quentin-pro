@@ -91,6 +91,8 @@ export const RemotionRoot: React.FC = () => {
       <Still id="CouvJ9Couchant" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j9-couchant.jpg", big: "Jour de repos", small: "J-9 · avant la sortie longue", top: 290, bigSize: 124 }} />
       <Still id="CouvJ8Falaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-falaise.jpg", big: "Dernière sortie longue", small: "J-8 · 12 km à 5h30", top: 290, bigSize: 110 }} />
       <Still id="CouvJ8Course" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-course.jpg", big: "Dernière sortie longue", small: "J-8 · 12 km à 5h30", top: 290, bigSize: 110 }} />
+      <Still id="CouvJ8Aube" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-aube.jpg", big: "12 km à 5h30", small: "J-8 · dernière sortie longue", top: 250, bigSize: 130 }} />
+      <Still id="CouvJ8Portrait" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-portrait.jpg", big: "12 km à 5h30", small: "J-8 · dernière sortie longue", top: 250, bigSize: 130 }} />
       <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
       <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />
