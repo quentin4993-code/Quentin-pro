@@ -93,6 +93,10 @@ export const RemotionRoot: React.FC = () => {
       <Still id="CouvJ8Course" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-course.jpg", big: "Dernière sortie longue", small: "J-8 · 12 km à 5h30", top: 290, bigSize: 110 }} />
       <Still id="CouvJ8Aube" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-aube.jpg", big: "12 km à 5h30", small: "J-8 · dernière sortie longue", top: 250, bigSize: 130 }} />
       <Still id="CouvJ8Portrait" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-portrait.jpg", big: "12 km à 5h30", small: "J-8 · dernière sortie longue", top: 250, bigSize: 130 }} />
+      <Still id="CouvJ8Cash" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-cash.jpg", big: "Je l’ai payé cash", small: "J-8 · dernière sortie longue", top: 250, bigSize: 120 }} />
+      <Still id="CouvJ8Dur" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-dur.jpg", big: "C’était trop dur", small: "J-8 · 12 km à 5h30", top: 150, bigSize: 120 }} />
+      <Still id="CouvJ8Falaise2" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-falaise2.jpg", big: "Plus que 8 jours", small: "dernière sortie longue · 12 km", top: 250, bigSize: 124 }} />
+      <Still id="CouvJ8Pont" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j8-pont.jpg", big: "Dernière sortie longue", small: "J-8 avant mon premier trail", top: 250, bigSize: 110 }} />
       <Still id="CouvJ17Drone" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-drone.jpg", big: "Mon premier trail", small: "J-17 · 26 km", top: 330, bigSize: 128 }} />
       <Still id="CouvJ17Chaise" component={CoverSimple} width={1080} height={1920} defaultProps={{ img: "covers/j17-chaise.jpg", big: "De 18 à 26 km", small: "J-17", top: 1300, bigSize: 120 }} />
       <Composition id="J17" component={J17} durationInFrames={J17_FRAMES} fps={FPS} width={1080} height={1920} />
